@@ -31,7 +31,7 @@ html {
 
 @media (min-width: $tabletMedia + 1) {
   .container {
-    max-width: $laptopWidth;
+    max-width: 100%;
   }
 }
 
