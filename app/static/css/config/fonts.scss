@@ -1,0 +1,40 @@
+@mixin font($name, $family, $weight) {
+  $fonts_dir: '../fonts/';
+  $font_file_path: $fonts_dir + $family + '/' + $name;
+
+  @font-face {
+    font-family: $family;
+    src: url($font_file_path+'.woff') format('woff');
+    font-weight: $weight;
+    font-style: normal;
+  }
+}
+
+@include font('Regular', 'Monsterrat', 400);
+@include font('Medium', 'Monsterrat', 500);
+@include font('Semibold', 'Monsterrat', 600);
+@include font('Bold', 'Monsterrat', 700);
+
+@mixin font-mixin($font_name) {
+  font-family: '#{$font_name}', 'Arial', 'Helvetica', 'Tahoma', sans-serif;
+}
+
+@mixin Monsterrat() {
+  @include font-mixin('Monsterrat');
+}
+
+@mixin regular() {
+  font-weight: 400;
+}
+
+@mixin medium() {
+  font-weight: 500;
+}
+
+@mixin semibold() {
+  font-weight: 600;
+}
+
+@mixin bold() {
+  font-weight: 700;
+}

@@ -1,0 +1,129 @@
+.footer {
+  background-color: $dark-bg-color;
+  color: $white-color;
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__col {
+    width: 50%;
+    padding: 30px 20px 30px 0;
+
+    &:last-child {
+      padding: 30px 0 30px 20px;
+    }
+
+    &-inner {
+      display: flex;
+      flex-direction: column;
+    }
+    &:last-child {
+      border-left: 1px solid #33373b;
+
+      .footer__col-inner {
+        text-align: right;
+      }
+    }
+  }
+
+  &__heading {
+    margin: 15px 0 35px;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+
+  &__about {
+    &-text {
+      line-height: 22px;
+      @include medium;
+      color: $grey-second-color;
+      margin-bottom: 20px;
+    }
+
+    &-social {
+      display: flex;
+
+      &-icon {
+        display: inline-block;
+        position: relative;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background-color: $green-color;
+        margin-right: 10px;
+
+        svg {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 25px;
+          height: 25px;
+          color: $white-color;
+        }
+
+        &--vk {
+          svg {
+            margin-top: 1px;
+          }
+        }
+      }
+      li:last-child .footer__about-social-icon {
+        margin-right: 0;
+      }
+    }
+  }
+
+
+  &__contacts { 
+    &-text {
+      line-height: 22px;
+      @include medium;
+      color: $grey-second-color;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-item { 
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-bottom: 10px;
+      
+      svg {
+        min-width: 22px;
+        color: $grey-second-color;
+      }
+
+      a {
+        margin-right: 10px;
+        @include medium;
+        color: $grey-second-color;
+
+        &:hover {
+          color: $green-color;
+        }
+      }
+    }
+  }
+
+  .copyright {
+    &__wrap {
+      border-top: 1px solid #33373b;
+      padding: 25px 0;
+      color: #929292;
+    }
+    &__inner {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__text {
+      margin: 0;
+    }
+  }
+}
