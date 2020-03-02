@@ -5,11 +5,19 @@
     justify-content: space-between;
     padding: 5px 0;
     border-bottom: 1px solid #ebe9e5;
+
+    @include mobile {
+      flex-direction: column;
+    }
   }
 
   &__inner {
     display: flex;
     align-items: center;
+
+    @include mobile {
+      flex-direction: column;
+    }
 
     &-mail {
       display: flex;
@@ -41,10 +49,19 @@
       min-height: 19px;
       padding-right: 15px;
 
+      @include mobile {
+        padding: 0;
+      }
+
       &:last-child {
         padding-left: 15px;
         padding-right: 0;
         border-left: 1px solid $black-color;
+        
+        @include mobile {
+          padding: 0;
+          border: none;
+        }
       }
 
       &-list {
@@ -57,12 +74,22 @@
         justify-content: center;
         height: 35px;
         width: 35px;
+        
+        @include mobile {
+          height: 45px;
+          width: 45px;
+        }
   
         svg {
           width: 20px;
           height: 20px;
           color: $green-color;
           transition: .2s;
+        
+          @include mobile {
+            height: 25px;
+            width: 25px;
+          }
         }
   
         &:hover svg {
@@ -73,6 +100,10 @@
       &-phone {
         display: flex;
         align-items: center;
+        
+        @include mobile {
+          line-height: 36px;
+        }
   
         svg {
           height: 16px;
@@ -97,37 +128,174 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include mobile {
+      flex-direction: column;
+    }
   }
   
   &__logo {
     padding: 20px 0;
+    margin-right: 80px;
+
     svg {
       width: 200px;
       height: 42px;
     }
+
+    @include mobile {
+      margin-right: 0;
+      padding: 15px 0;
+    }
   }
 
   &__nav {
+    position: relative;
+
+    @include tablet-and-phone {
+      width: 60%;
+
+      &.active .header__nav-list {
+        height: 1003%;
+
+        @include mobile {
+        height: 1004%;
+        }
+      }
+    }
+        
+    @include mobile {
+      width: 80%;
+    }
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
+
     &-list {
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: height .5s;
+
+      @include tablet-and-phone {
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 45px;
+        z-index: 1111111;
+        width: calc(100% - 1px);
+        background-color: $dark-color;
+        height: 0px;
+        overflow: hidden;
+      }
     }
 
     &-item {
+      position: relative;
+
+      @include tablet-and-phone {
+        width: 100%;
+      }
+
       &.active a {
         color: $green-color;
       }
 
-      a {
-        padding: 30px 15px;
+      &:hover > .header__nav-item__sublist {
+        display: block;
+      }
+
+      & > a {
+        padding: 34px 15px;
         @include bold;
         text-transform: uppercase;
         color: $dark-bg-color;
+        cursor: pointer;
+        
+        @include tablet-and-phone {
+          display: inline-block;
+          padding: 5px 10px;
+          width: 100%;
+          @include regular;
+          color: $white-color;
+          line-height: 25px;
+          border-bottom: 1px solid $black-color;
+        }
 
         &:hover {
           color: $green-color;
         }
+      }
+
+      &__sublist {
+        display: none;
+        position: absolute;
+        top: 49px;
+        left: 0;
+        z-index: 100000;
+        background-color: $white-color;
+
+        @include tablet-and-phone {
+          display: block;
+          position: static;
+          background-color: $dark-color;
+        }
+      }
+      &__subitem {
+        border-bottom: 1px solid $black-color;
+
+        & > a {
+          display: inline-block;
+          width: 100%;
+          padding: 7px 15px;
+          line-height: 25px;
+          text-transform: uppercase;
+          @include bold;
+
+          &:hover {
+            color: $green-color;
+          }
+
+          @include tablet-and-phone {
+            color: $white-color;
+            @include regular;
+            padding-left: 25px;
+          }
+        }
+      }
+    }
+
+    &-mob {
+      @include laptop-and-desctop {
+        display: none;
+      }
+
+      & button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 0 0 auto;
+        width: 100%;
+        background-color: $black-color;
+        text-align: left;
+
+
+        font-size: 16px;
+        line-height: 25px;
+        padding: 0 0 0 10px;
+        flex: 1;
+        color: $white-color;
+        border-right: 1px solid $white-color;
+        @include medium;
+        margin: 0;
+      }
+      &__btn {
+        width: 45px;
+        color: white;
+        text-align: center;
+        line-height: 45px;
+        border-left: 1px solid $white-color;
       }
     }
   }
