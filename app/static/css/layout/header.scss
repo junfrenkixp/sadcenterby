@@ -136,7 +136,7 @@
   
   &__logo {
     padding: 20px 0;
-    margin-right: 80px;
+    margin-right: 50px;
 
     svg {
       width: 200px;
@@ -271,7 +271,7 @@
         display: none;
       }
 
-      & button {
+      & .header__nav-mob__toggle {
         display: flex;
         align-items: center;
         justify-content: space-between;
