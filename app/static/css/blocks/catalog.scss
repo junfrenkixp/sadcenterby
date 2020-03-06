@@ -58,6 +58,7 @@
     flex-wrap: wrap;
     margin-right: -20px;
     margin-left: -20px;
+    margin-bottom: 20px;
 
     @include mobile {
       margin-right: -10px;
@@ -80,10 +81,8 @@
     }
 
     &-preview {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
+      display: block;
+      text-align: center;
     }
 
     &-img {
@@ -101,6 +100,7 @@
     }
 
     &-name {
+      display: block;
       margin-top: 15px;
       font-size: 20px;
       @include medium;
