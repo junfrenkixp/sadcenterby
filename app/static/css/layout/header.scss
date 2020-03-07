@@ -39,7 +39,7 @@
       svg {
         max-width: 13px;
         margin-right: 10px;
-        color: $grey-color;
+        fill: $grey-color;
       }
     }
 
@@ -83,7 +83,7 @@
         svg {
           width: 20px;
           height: 20px;
-          color: $green-color;
+          fill: $green-color;
           transition: .2s;
         
           @include mobile {
@@ -93,7 +93,7 @@
         }
   
         &:hover svg {
-          color: $black-color;
+          fill: $black-color;
         }
       }
       
@@ -108,7 +108,7 @@
         svg {
           height: 16px;
           margin-right: 10px;
-          color: $black-color;
+          fill: $black-color;
         }
   
         a {
@@ -159,7 +159,7 @@
         height: 1003%;
 
         @include mobile {
-        height: 1004%;
+          height: 1004%;
         }
       }
     }

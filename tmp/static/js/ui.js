@@ -1,6 +1,6 @@
 ;(function() {
   window.addEventListener('DOMContentLoaded', () => {
-    window.svg4everybody()
+    window.svg4everybody();
 
     $('.js-dropdown-box').each(function() {
       $(this).dropdown({
