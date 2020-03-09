@@ -42,8 +42,8 @@
   &__grid {
     display: flex;
     flex-wrap: wrap;
-    margin-right: -20px;
-    margin-left: -20px;
+    margin-right: -10px;
+    margin-left: -10px;
     margin-bottom: 20px;
 
     @include mobile {
