@@ -6,79 +6,36 @@
   <div class="banner"></div>
   <div class="container">
     <div class="catalog__wrap">
-    {{> blocks/aside }}
+    {{> blocks/accordeon }}
       <div class="catalog__inner">
         <h2 class="heading catalog__heading">Виноград</h2>
         <div class="catalog__grid">
+        {{#times 10}}
           <div class="catalog__item">
             <a class="catalog__item-preview" href="#">
-              <img class="catalog__item-img" src="../static/images/grape.jpg" alt="grape">
+              <div class="catalog__item-img">
+                <img src="../static/images/grape-3.jpg" alt="grape">
+                <button class="catalog__item-more">Подробнее</button>
+              </div>
+              <span class="catalog__item-name">Тимур</span>
+            </a>
+          </div>
+          {{/times}}
+          <div class="catalog__item">
+            <a class="catalog__item-preview" href="#">
+              <div class="catalog__item-img">
+                <img src="../static/images/grape-2.jpg" alt="grape">
+                <button class="catalog__item-more">Подробнее</button>
+              </div>
               <span class="catalog__item-name">Тимур</span>
             </a>
           </div>
           <div class="catalog__item">
             <a class="catalog__item-preview" href="#">
-              <img class="catalog__item-img" src="../static/images/grape.jpg" alt="grape">
-              <span class="catalog__item-name">Тимур</span>
-            </a>
-          </div>
-          <div class="catalog__item">
-            <a class="catalog__item-preview" href="#">
-              <img class="catalog__item-img" src="../static/images/grape.jpg" alt="grape">
-              <span class="catalog__item-name">Тимур</span>
-            </a>
-          </div>
-          <div class="catalog__item">
-            <a class="catalog__item-preview" href="#">
-              <img class="catalog__item-img" src="../static/images/grape.jpg" alt="grape">
-              <span class="catalog__item-name">Тимур</span>
-            </a>
-          </div>
-          <div class="catalog__item">
-            <a class="catalog__item-preview" href="#">
-              <img class="catalog__item-img" src="../static/images/grape.jpg" alt="grape">
-              <span class="catalog__item-name">Тимур</span>
-            </a>
-          </div>
-          <div class="catalog__item">
-            <a class="catalog__item-preview" href="#">
-              <img class="catalog__item-img" src="../static/images/grape.jpg" alt="grape">
-              <span class="catalog__item-name">Тимур</span>
-            </a>
-          </div>
-          <div class="catalog__item">
-            <a class="catalog__item-preview" href="#">
-              <img class="catalog__item-img" src="../static/images/grape.jpg" alt="grape">
-              <span class="catalog__item-name">Тимур</span>
-            </a>
-          </div>
-          <div class="catalog__item">
-            <a class="catalog__item-preview" href="#">
-              <img class="catalog__item-img" src="../static/images/grape.jpg" alt="grape">
-              <span class="catalog__item-name">Тимур</span>
-            </a>
-          </div>
-          <div class="catalog__item">
-            <a class="catalog__item-preview" href="#">
-              <img class="catalog__item-img" src="../static/images/grape.jpg" alt="grape">
-              <span class="catalog__item-name">Тимур</span>
-            </a>
-          </div>
-          <div class="catalog__item">
-            <a class="catalog__item-preview" href="#">
-              <img class="catalog__item-img" src="../static/images/grape.jpg" alt="grape">
-              <span class="catalog__item-name">Тимур</span>
-            </a>
-          </div>
-          <div class="catalog__item">
-            <a class="catalog__item-preview" href="#">
-              <img class="catalog__item-img" src="../static/images/grape.jpg" alt="grape">
-              <span class="catalog__item-name">Тимур</span>
-            </a>
-          </div>
-          <div class="catalog__item">
-            <a class="catalog__item-preview" href="#">
-              <img class="catalog__item-img" src="../static/images/grape-2.jpg" alt="grape">
+              <div class="catalog__item-img">
+                <img src="../static/images/grape.jpg" alt="grape">
+                <button class="catalog__item-more">Подробнее</button>
+              </div>
               <span class="catalog__item-name">Тимур</span>
             </a>
           </div>

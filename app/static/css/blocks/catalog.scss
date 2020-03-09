@@ -7,13 +7,14 @@
     font-size: 30px;
     text-transform: capitalize;
     text-align: left;
+    color: $dark-color;
 
     &:after {
       content: "";
       position: absolute;
       width: 50px;
       height: 2px;
-      background-color: #483b33;
+      background-color: $dark-color;
       bottom: 0;
       left: 0;
       right: 0;
@@ -25,21 +26,6 @@
 
     @include mobile {
       flex-direction: column;
-    }
-  }
-
-  &__aside {
-    max-width: 300px;
-    width: 30%;
-    height: 100%;
-    margin-bottom: 30px;
-    padding: 20px;
-    background-color: $black-color;
-    color: $white-color;
-
-    @include mobile {
-      max-width: 100%;
-      width: 100%;
     }
   }
 
@@ -69,11 +55,15 @@
   &__item {
     display: block;
     width: 33.3%;
-    padding: 10px 20px 30px;
+    margin-bottom: 20px;
 
     @include mobile {
       width: 50%;
-      padding: 10px 10px 30px;
+      margin-bottom: 10px;
+    }
+
+    @include mobile-m {
+      width: 100%;
     }
 
     @include mobile-s {
@@ -82,7 +72,20 @@
 
     &-preview {
       display: block;
-      text-align: center;
+      padding: 10px;
+
+      &:hover {
+        background-color: rgba(105,175,7,.6);
+
+        .catalog__item-img:before {
+          background-color: rgba(23,23,23,.5);
+        }
+
+        .catalog__item-more {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
     }
 
     &-img {
@@ -95,7 +98,35 @@
         bottom: 0;
         left: 0;
         right: 0;
-        background-color: $black-color;
+        transition: .3s;
+      }
+
+      img {
+        display: block;
+        max-height: 170px;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    &-more {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      visibility: hidden;
+      padding: 8px 15px;
+      border: 2px solid lighten($green-color, 5%);
+      font-size: 16px;
+      @include regular;
+      transition: .4s;
+      color: darken($white-color, 10%);
+
+      &:hover {
+        border-color: $green-color;
+        background-color: $green-color;
+        color: $white-color;
       }
     }
 
@@ -104,7 +135,6 @@
       margin-top: 15px;
       font-size: 20px;
       @include medium;
-      text-align: center;
     }
   }
 }

@@ -1,0 +1,36 @@
+.other {
+  &__heading {
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    @include semibold;
+    font-size: 30px;
+    text-transform: capitalize;
+    text-align: left;
+    color: $dark-color;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 2px;
+      background-color: $dark-color;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -20px;
+    margin-left: -20px;
+    margin-bottom: 20px;
+
+    @include mobile {
+      margin-right: -10px;
+      margin-left: -10px;
+    }
+  }
+}

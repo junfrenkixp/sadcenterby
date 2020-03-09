@@ -1,4 +1,6 @@
 .pagination {
+  overflow: auto;
+  
   &__inner {
     display: flex;
   }
@@ -25,6 +27,7 @@
     color: $white-color;
     font-size: 13px;
     line-height: 25px;
+    white-space: nowrap;
 
     &:hover {
       background-color: $green-color;
