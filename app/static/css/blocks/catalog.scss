@@ -1,26 +1,4 @@
 .catalog {
-  &__heading {
-    position: relative;
-    padding-bottom: 20px;
-    margin-bottom: 30px;
-    @include semibold;
-    font-size: 30px;
-    text-transform: capitalize;
-    text-align: left;
-    color: $dark-color;
-
-    &:after {
-      content: "";
-      position: absolute;
-      width: 50px;
-      height: 2px;
-      background-color: $dark-color;
-      bottom: 0;
-      left: 0;
-      right: 0;
-    }
-  }
-
   &__wrap {
     display: flex;
 
@@ -39,37 +17,7 @@
     }
   }
 
-  &__grid {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -10px;
-    margin-left: -10px;
-    margin-bottom: 20px;
-
-    @include mobile {
-      margin-right: -10px;
-      margin-left: -10px;
-    }
-  }
-
   &__item {
-    display: block;
-    width: 33.3%;
-    margin-bottom: 20px;
-
-    @include mobile {
-      width: 50%;
-      margin-bottom: 10px;
-    }
-
-    @include mobile-m {
-      width: 100%;
-    }
-
-    @include mobile-s {
-      width: 100%;
-    }
-
     &-preview {
       display: block;
       padding: 10px;

@@ -30,7 +30,6 @@
     margin-left: 5px;
   }
 
-
   &-primary {
     background-color: transparent;
     border-color: #898989;
@@ -40,6 +39,18 @@
       background-color: transparent;
       border-color: $green-color;
       color: $green-color;
+    }
+  }
+
+  &-secondary {
+    background-color: $green-color;
+    border-color: $green-color;
+    color: $white-color;
+
+    &:hover {
+      background-color: $black-color;
+      border-color: $black-color;
+      color: $white-color;
     }
   }
 /*
