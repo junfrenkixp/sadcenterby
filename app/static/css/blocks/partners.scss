@@ -1,0 +1,28 @@
+.partners {
+  margin-bottom: 40px;
+  
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: -10px;
+    margin-right: -10px;
+
+    @include mobile {
+      justify-content: center;
+    }
+
+    &-item {
+      max-width: 200px;
+      margin: 0 10px 20px;
+
+      @include tablet {
+        max-width: 150px;
+      }
+
+      @include mobile {
+        max-width: 100px;
+      }
+    }
+  }
+}
