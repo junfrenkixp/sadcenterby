@@ -20,4 +20,25 @@
       right: 0;
     }
   }
+  &__sub-heading {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    @include semibold;
+    font-size: 25px;
+    text-transform: capitalize;
+    text-align: left;
+    color: $dark-color;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 2px;
+      background-color: $green-color;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
 }
