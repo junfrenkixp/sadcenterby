@@ -1,0 +1,60 @@
+.why-us {
+  margin-top: 60px;
+  margin-bottom: 60px;
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -10px;
+    margin-left: -10px;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__item {
+    width: calc(50% - 20px);
+    margin: 10px;
+    padding: 25px 20px;
+    border: 1px dashed $green-color;
+
+    @include mobile {
+      width: calc(100% - 20px);
+    }
+
+    &-heading {
+      position: relative;
+      padding-left: 90px;
+      margin-top: 18px;
+      @include bold;
+      font-size: 20px;
+      line-height: 25px;
+      color: $dark-color;
+
+      @include mobile {
+        padding-left: 75px;
+        margin-top: 6px;
+      }
+
+      svg {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    &-info {
+      margin-top: 30px;
+
+      @include mobile {
+        margin-top: 20px;
+      }
+    }
+  }
+}
