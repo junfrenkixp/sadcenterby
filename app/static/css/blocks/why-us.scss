@@ -20,6 +20,16 @@
     margin: 10px;
     padding: 25px 20px;
     border: 1px dashed $green-color;
+    cursor: pointer;
+    transition: .2s;
+
+    &:hover {
+      background: darken($white-color, 2%);
+
+      .why-us__item-heading {
+        color: $green-color;
+      }
+    }
 
     @include mobile {
       width: calc(100% - 20px);
@@ -27,15 +37,16 @@
 
     &-heading {
       position: relative;
-      padding-left: 90px;
+      padding-left: 78px;
       margin-top: 18px;
       @include bold;
       font-size: 20px;
       line-height: 25px;
       color: $dark-color;
+      transition: .2s;
 
       @include mobile {
-        padding-left: 75px;
+        padding-left: 63px;
         margin-top: 6px;
       }
 
@@ -44,8 +55,9 @@
         left: 0;
         top: 50%;
         transform: translateY(-50%);
-        width: 60px;
-        height: 60px;
+        width: auto;
+        height: 48px;
+        fill: $green-color;
       }
     }
 
