@@ -23,6 +23,10 @@
     cursor: pointer;
     transition: .2s;
 
+    @include mobile {
+      text-align: center;
+    }
+
     &:hover {
       background: darken($white-color, 2%);
 
@@ -46,18 +50,25 @@
       transition: .2s;
 
       @include mobile {
-        padding-left: 63px;
-        margin-top: 6px;
+        padding-left: 0;
+        padding-top: 33px;
+        margin-top: 23px;
       }
 
       svg {
         position: absolute;
         left: 0;
         top: 50%;
-        transform: translateY(-50%);
+        transform: translate(0, -50%);
         width: auto;
         height: 48px;
         fill: $green-color;
+
+        @include mobile {
+          top: 0;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
       }
     }
 
