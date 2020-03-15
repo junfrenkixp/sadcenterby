@@ -1,0 +1,63 @@
+.culture {
+  background-image: url(../images/culture-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 60px 0;
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -10px;
+    margin-left: -10px;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    position: relative;
+    width: calc(33.3% - 20px);
+    margin: 10px;
+
+    &:hover {
+      background-color: rgba(105,175,7,.6);
+    }
+
+    @include tablet {
+      width: calc(50% - 20px);
+    }
+
+    @include mobile {
+      width: calc(100% - 20px);
+      margin-bottom: 20px;
+    }
+
+    @include mobile-l {
+      width: 80%;
+      margin-right: auto;
+      margin-left: auto;
+      margin-bottom: 20px;
+    }
+
+    img {
+      display: block;
+    }
+
+    &-name {
+      padding: 10px 20px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: $green-color;
+
+      span {
+        font-size: 20px;
+        @include medium;
+        color: $white-color;
+      }
+    }
+  }
+}
