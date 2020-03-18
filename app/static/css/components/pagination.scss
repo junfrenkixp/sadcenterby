@@ -1,8 +1,7 @@
 .pagination {
-  overflow: auto;
-  
   &__inner {
     display: flex;
+    align-items: stretch;
   }
 
   &__item {
@@ -12,6 +11,10 @@
       margin-right: 0;
     }
 
+    svg {
+      height: 39px;
+    }
+
     &.active {
       .pagination__btn {
         background-color: $green-color;
@@ -19,10 +22,11 @@
       }
     }
   }
-
+  
   &__btn {
     display: inline-block;
     padding: 7px 14px;
+    height: 100%;
     background-color: $black-color;
     color: $white-color;
     font-size: 13px;
@@ -32,6 +36,27 @@
     &:hover {
       background-color: $green-color;
       color: $white-color;
+    }
+
+    &-prev,
+    &-next {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        height: 21px;
+        width: auto;
+        fill: $white-color;
+      }
+    }
+
+    &-prev {
+      padding: 7px 16px 7px 13px;
+    }
+
+    &-next {
+      padding: 7px 13px 7px 16px;
     }
   }
 }

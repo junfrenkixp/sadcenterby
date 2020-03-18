@@ -1,10 +1,9 @@
 <div class="pagination">
   <ul class="pagination__inner">
     <li class="pagination__item">
-      <span class="pagination__btn pagination__btn-info">1 из 16</span>
-    </li>
-    <li class="pagination__item">
-      <a href="#" class="pagination__btn pagination__btn-prev">Назад</a>
+      <a href="#" class="pagination__btn pagination__btn-prev">
+        {{> svg/arrow-slider-left}}
+      </a>
     </li>
     <li class="pagination__item">
       <a href="#" class="pagination__btn">1</a>
@@ -22,7 +21,9 @@
       <a href="#" class="pagination__btn">16</a>
     </li>
     <li class="pagination__item">
-      <a href="#" class="pagination__btn pagination__btn-next">Вперёд</a>
+      <a href="#" class="pagination__btn pagination__btn-next">
+        {{> svg/arrow-slider-right}}
+      </a>
     </li>
   </ul>
 </div>

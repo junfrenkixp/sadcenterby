@@ -30,9 +30,20 @@
     }
   }
   
-  &__left,
-  &__right {
+  &__left-wrap,
+  &__right-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
     cursor: pointer;
+
+    @include mobile {
+      width: 60px;
+    }
 
     &:hover {
       svg {
@@ -41,59 +52,40 @@
     }
 
     svg {
-      max-width: 50px;
+      height: 50px;
+      width: auto;
       fill: $black-color;
       transition: .3s;
 
       @include tablet {
-        height: 200px;
+        height: 40px;
       }
 
       @include mobile {
-        max-width: 30px;
-        height: 100px;
-      }
-    }
-
-    &-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 100px;
-
-      @include mobile {
-        width: 60px;
+        height: 30px;
       }
     }
   }
 
-  &__left {
+  &__left-wrap {
+    left: 0;
+    background: linear-gradient(90deg, #38423B 0%, rgba(196, 196, 196, 0) 100%);  
 
     &:hover {
       svg {
         transform: translateX(-10px);
       }
     }
-
-    &-wrap {
-      left: 0;
-      background: linear-gradient(90deg, #38423B 0%, rgba(196, 196, 196, 0) 100%);
-    }
   }
 
-  &__right {
+  &__right-wrap {
+    right: 0;
+    background: linear-gradient(270deg, #38423B 0%, rgba(196, 196, 196, 0) 100%);
 
     &:hover {
       svg {
         transform: translateX(10px);
       }
-    }
-    &-wrap {
-      right: 0;
-      background: linear-gradient(270deg, #38423B 0%, rgba(196, 196, 196, 0) 100%);
     }
   }
 }
