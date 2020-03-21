@@ -27,4 +27,21 @@
       }
     })
 
+
+
+    let allBtns = document.querySelectorAll('.js-accord-btn');
+
+    allBtns.forEach( btn => {
+      btn.addEventListener('click', event => {
+        let items = document.querySelectorAll('.accordeon__item');
+        for (let item of items) {
+          if (item.classList.contains('active')) {
+              item.classList.remove('active');
+          }
+        }
+      let item = event.target.closest('.accordeon__item');
+      item.classList.add('active');
+      })
+    })
+
 })()

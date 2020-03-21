@@ -170,4 +170,26 @@
       }
     }
   }
+
+  .developer {
+    a {
+      display: flex;
+      transition: 0s;
+
+      &:hover {
+        color: darken($white-color, 25%);
+
+        svg {
+          fill: $green-color;
+        }
+      }
+
+      svg {
+        width: auto;
+        height: 22px;
+        margin-left: 18px;
+        fill: darken($green-color, 8%);
+      }
+    }
+  }
 }
