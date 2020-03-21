@@ -187,8 +187,12 @@
       svg {
         width: auto;
         height: 22px;
-        margin-left: 18px;
+        margin-left: 10px;
         fill: darken($green-color, 8%);
+
+        @include mobile {
+          height: 19px;
+        }
       }
     }
   }
