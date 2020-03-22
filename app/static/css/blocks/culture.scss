@@ -18,12 +18,33 @@
   }
 
   &__item {
+    display: block;
     position: relative;
     width: calc(33.3% - 20px);
     margin: 10px;
 
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(105,175,7,.3);
+      height: 0px;
+      transition: all .3s;
+    }
+
     &:hover {
-      background-color: rgba(105,175,7,.6);
+
+      &:before {
+        height: 100%;
+      }
+
+      .culture__item-name {
+        bottom: 34%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
     }
 
     @include tablet {
@@ -52,6 +73,13 @@
       bottom: 0;
       left: 0;
       background-color: $green-color;
+      border: 2px solid $green-color;
+      text-align: center;
+      transition: .3s;
+
+      &:hover {
+        background-color: rgba(105,175,7,.6);
+      }
 
       span {
         font-size: 20px;
