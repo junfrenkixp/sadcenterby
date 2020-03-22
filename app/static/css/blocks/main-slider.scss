@@ -70,16 +70,18 @@
 
     svg {
       height: 50px;
-      width: auto;
+      width: 30px;
       fill: $black-color;
       transition: .3s;
 
       @include tablet {
         height: 40px;
+        width: 18px;
       }
 
       @include mobile {
         height: 30px;
+        width: 18px;
       }
     }
   }
