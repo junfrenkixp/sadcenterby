@@ -41,9 +41,7 @@
       }
 
       .culture__item-name {
-        bottom: 34%;
-        left: 50%;
-        transform: translate(-50%,-50%);
+        min-width: 100%;
       }
     }
 
@@ -69,13 +67,14 @@
 
     &-name {
       padding: 10px 20px;
+      min-width: 10%;
       position: absolute;
       bottom: 0;
       left: 0;
       background-color: $green-color;
       border: 2px solid $green-color;
       text-align: center;
-      transition: .3s;
+      transition: .4s;
 
       &:hover {
         background-color: rgba(105,175,7,.6);
