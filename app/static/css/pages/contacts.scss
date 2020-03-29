@@ -79,6 +79,7 @@
         @include medium;
         color: $black-color;
         font-size: 15px;
+        cursor: pointer;
 
         @include mobile {
           margin-left: 5px;

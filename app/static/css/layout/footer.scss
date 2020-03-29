@@ -134,6 +134,7 @@
         margin-right: 10px;
         @include medium;
         color: $grey-second-color;
+        cursor: pointer;
 
         @include mobile {
           order: 2;
