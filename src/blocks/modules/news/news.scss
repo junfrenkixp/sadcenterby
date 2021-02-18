@@ -42,6 +42,7 @@
             img {
                 display: block;
                 max-width: 100%;
+                width: 100%;
                 max-height: 245px;
                 margin: 0 auto;
                 object-fit: cover;
@@ -55,14 +56,25 @@
         }
 
         &-date {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             position: absolute;
             bottom: 0;
             left: 0;
+            min-width: 90px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             padding: 10px;
             background-color: $green-color;
+
+            @include tablet-and-phone {
+                bottom: 24px;
+            }
+            @include mobile-m {
+                bottom: 0;
+            }
+            @include mobile-s {
+                bottom: 0;
+            }
 
             &--top {
                 font-weight: 700;
@@ -92,10 +104,30 @@
             border-top-left-radius: 4px;
             background-color: $green-color;
 
+            @include tablet-and-phone {
+                right: auto;
+                left: 0;
+                border-top-left-radius: 0;
+            }
+            @include mobile-m {
+                right: 0;
+                left: auto;
+                border-top-left-radius: 4px;
+            }
+            @include mobile-s {
+                right: 0;
+                left: auto;
+                border-top-left-radius: 4px;
+            }
+
             span {
                 font-weight: 400;
                 font-size: 13px;
                 color: $white-color;
+
+                @include mobile {
+                    font-size: 10px;
+                }
             }
         }
 

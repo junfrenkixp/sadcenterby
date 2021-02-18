@@ -6,7 +6,7 @@ mixin catalog-item(link, imgSrc, name, size)
 
   a(href=link, class=classSize).catalog__item
     picture
-      source(srcset='../img/'+ imgSrc +'.webp' type="image/webp")
-      img(src='../img/'+ imgSrc +'.jpg' alt=name)
+      source(srcset='./img/'+ imgSrc +'.webp' type="image/webp")
+      img(src='./img/'+ imgSrc +'.jpg' alt=name)
     .catalog__item-name
       span= name

@@ -5,8 +5,8 @@ mixin newsCatalog(items)
                 .news__item-img
                     a.news__item-link.news__item-img__link(href=item.link target='_blank')
                         picture
-                            source(srcset='../img/news/' + item.imgPath + '.webp' type="image/webp")
-                            img(src='../img/news/' + item.imgPath + '.jpg' alt=item.title)
+                            source(srcset='./img/news/' + item.imgPath + '.webp' type="image/webp")
+                            img(src='./img/news/' + item.imgPath + '.jpg' alt=item.title)
                         .news__item-date
                             span.news__item-date--top=item.date1
                             span.news__item-date--middle=item.date2
