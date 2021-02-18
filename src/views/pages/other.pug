@@ -1,0 +1,35 @@
+extends ../layouts/default
+
+block variables
+	- const title = "Прочее| Питомник растительных культур семьи Пухальских";
+
+block content
+
+	- let otherTitle = 'Прочее';
+	-
+		let otherCatalogItems = [
+			{
+				'link': 'currant.html',
+				'imgSrc': 'currant/currant-arkadia/currant-arkadia',
+				'name': "Смородина"
+			},
+			{
+				'link': 'gooseberry.html',
+				'imgSrc': 'gooseberry/gooseberry-orfey/gooseberry-orfey',
+				'name': "Крыжовник"
+			},
+		]
+
+	include ../../blocks/components/banner/banner
+	+banner("grapes")
+
+	section.catalog
+		.container
+			.catalog__wrap
+				include ../../blocks/modules/catalog/catalog
+
+				+catalog(otherCatalogItems, otherTitle, 'lg')(class="w-100")
+
+block scripts
+	script(src="js/main.js")
+	script(src="js/vendor.js")

@@ -1,0 +1,47 @@
+-
+  var cultureContent = [
+    {
+      'link': '/grapes.html',
+      'imgPath': 'grapes/grapes-aladdin/grapes-aladdin',
+      'altImg': 'Виноград "Аладдин"',
+      'name': 'Виноград'
+    },
+    {
+      'link': '/blueberry.html',
+      'imgPath': 'blueberry/blueberry-aino/blueberry-aino',
+      'altImg': 'Голубика "Aino"',
+      'name': 'Голубика'
+    },
+    {
+      'link': '/honeysuckle.html',
+      'imgPath': 'honeysuckle/honeysuckle-aurora/honeysuckle-aurora',
+      'altImg': 'Жимолость "Аврора"',
+      'name': 'Жимолость'
+    },
+    {
+      'link': '/currant.html',
+      'imgPath': 'currant/currant-arkadia/currant-arkadia',
+      'altImg': 'Смородина "Аркадия"',
+      'name': 'Смородина'
+    },
+    {
+      'link': '/gooseberry.html',
+      'imgPath': 'gooseberry/gooseberry-orfey/gooseberry-orfey',
+      'altImg': 'Крыжовник "Орфей"',
+      'name': 'Крыжовник'
+    },
+  ];
+- var cultureTitle = 'Наши культуры'
+
+
+section.culture
+  .container
+    h2.heading.main__heading.heading-light=cultureTitle
+    .culture__grid
+      each item in cultureContent
+        a.catalog__item.catalog__item--lg(href=item.link)
+          picture
+            source(srcset='../img/' + item.imgPath + '.webp' type="image/webp")
+            img(src='../img/' + item.imgPath + '.jpg' alt=item.altImg)
+          .catalog__item-name
+            span=item.name

@@ -1,0 +1,15 @@
+.error-section {
+    min-height: 200px;
+    margin: 50px 0;
+
+    &__heading {
+        font-weight: 400;
+        color: $dark-color;
+
+        span {
+            display: inline-block;
+            margin-right: 10px;
+            font-weight: 700;
+        }
+    }
+}

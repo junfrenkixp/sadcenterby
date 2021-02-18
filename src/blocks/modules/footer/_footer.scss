@@ -1,0 +1,202 @@
+.footer {
+    background-color: $dark-bg-color;
+    color: $white-color;
+
+    .copyright {
+        &__wrap {
+            border-top: 1px solid #33373b;
+            padding: 25px 0;
+            color: #929292;
+        }
+
+        &__inner {
+
+            @include mobile {
+                flex-direction: column;
+            }
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__text {
+
+            @include mobile {
+                margin-bottom: 10px;
+            }
+            margin: 0;
+        }
+    }
+
+    .developer {
+        a {
+            display: flex;
+            transition: 0s;
+
+            &:hover {
+                color: darken($white-color, 25%);
+
+                svg {
+                    fill: $green-color;
+                }
+            }
+
+            svg {
+
+                @include mobile {
+                    width: 12px;
+                    height: 19px;
+                }
+                width: 14px;
+                height: 22px;
+                margin-left: 10px;
+                fill: darken($green-color, 8%);
+            }
+        }
+    }
+
+    &__row {
+
+        @include mobile {
+            flex-direction: column;
+        }
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__col {
+
+        @include mobile {
+            width: 100%;
+            padding: 30px 0;
+        }
+        width: 50%;
+        padding: 30px 20px 30px 0;
+
+        &:last-child {
+
+            @include mobile {
+                padding: 30px 0;
+            }
+            padding: 30px 0 30px 20px;
+        }
+
+        &-inner {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &:last-child {
+
+            @include mobile {
+                border: none;
+            }
+            border-left: 1px solid #33373b;
+
+            .footer__col-inner {
+
+                @include mobile {
+                    text-align: left;
+                }
+                text-align: right;
+            }
+        }
+    }
+
+    &__heading {
+        margin: 15px 0 35px;
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+    &__about {
+        &-text {
+            line-height: 22px;
+            font-weight: 500;
+            color: $grey-second-color;
+            margin-bottom: 20px;
+        }
+
+        &-social {
+            display: flex;
+
+            &-icon {
+                display: inline-block;
+                position: relative;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: $green-color;
+                margin-right: 10px;
+                text-indent: -999em;
+
+                &:before {
+                    @include align();
+                    content: "";
+                    width: 25px;
+                    height: 25px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                }
+
+                &--instagram {
+                    &:before {
+                        background-image: url(../img/svg/footer-instagram-lg.svg);
+                    }
+                }
+                &--vk {
+                    &:before {
+                        margin-top: 1px;
+                        background-image: url(../img/svg/footer-vk-lg.svg);
+                    }
+                }
+                &--youtube {
+                    &:before {
+                        background-image: url(../img/svg/footer-youtube-lg.svg);
+                    }
+                }
+            }
+
+            li:last-child .footer__about-social-icon {
+                margin-right: 0;
+            }
+        }
+    }
+
+
+    &__contacts {
+        &-text {
+            line-height: 22px;
+            font-weight: 500;
+            color: $grey-second-color;
+        }
+
+        &-item {
+            @include mobile {
+                justify-content: flex-start !important;
+            }
+
+            a, span {
+
+                @include mobile {
+                    padding-right: 0 !important;
+                    padding-left: 32px;
+                }
+                font-weight: 500;
+                line-height: 17px;
+                color: $grey-second-color;
+
+                &:hover {
+                    color: $green-color;
+                }
+
+                &:before {
+                    @include mobile {
+                        left: 0 !important;
+                    }
+                }
+            }
+        }
+    }
+}
+

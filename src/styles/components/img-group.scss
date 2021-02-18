@@ -1,0 +1,19 @@
+.img-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    img {
+
+        @include tablet {
+            max-width: 300px;
+        }
+        @include mobile {
+            max-width: 140px;
+            margin: 5px;
+        }
+        display: inline-block;
+        max-width: 400px;
+        margin: 10px;
+    }
+}

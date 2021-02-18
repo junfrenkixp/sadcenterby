@@ -1,0 +1,25 @@
+.culture {
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 60px 0;
+
+    &__grid {
+
+        @include mobile {
+            flex-direction: column;
+        }
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -10px;
+        margin-left: -10px;
+    }
+}
+
+.webp .culture {
+    background-image: url(../img/index-page/culture-bg.webp);
+}
+.no-webp .culture {
+    background-image: url(../img/index-page/culture-bg.jpg);
+}

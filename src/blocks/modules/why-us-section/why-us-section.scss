@@ -1,0 +1,107 @@
+.why-us {
+    margin-top: 60px;
+    margin-bottom: 60px;
+
+    &__grid {
+
+        @include mobile {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-right: -10px;
+        margin-left: -10px;
+    }
+
+    &__item {
+
+        @include mobile {
+            text-align: center;
+        }
+
+        @include mobile {
+            width: calc(100% - 20px);
+        }
+        width: calc(50% - 20px);
+        margin: 10px;
+        border: 1px dashed $green-color;
+        padding: 25px 20px 40px;
+        transition: .2s;
+        cursor: pointer;
+
+        &:hover {
+            background: darken($white-color, 2%);
+
+            .why-us__item-heading {
+                color: $green-color;
+            }
+        }
+
+        &-heading {
+
+            @include mobile {
+                padding-left: 0;
+                padding-top: 33px;
+                margin-top: 23px;
+            }
+            position: relative;
+            transition: .2s;
+            padding-left: 78px;
+            margin-top: 18px;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 25px;
+            color: $dark-color;
+
+            &:before {
+
+                @include mobile {
+                    top: 0;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 48px;
+                height: 48px;
+                transform: translate(0, -50%);
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+
+            &-1 {
+                &:before {
+                    background-image: url(../img/svg/why-us-1.svg);
+                }
+            }
+            &-2 {
+                &:before {
+                    background-image: url(../img/svg/why-us-2.svg);
+                }
+            }
+            &-3 {
+                &:before {
+                    background-image: url(../img/svg/why-us-3.svg);
+                }
+            }
+            &-4 {
+                &:before {
+                    background-image: url(../img/svg/why-us-4.svg);
+                }
+            }
+        }
+
+        &-info {
+
+            @include mobile {
+                margin-top: 20px;
+            }
+            margin-top: 30px;
+        }
+    }
+}

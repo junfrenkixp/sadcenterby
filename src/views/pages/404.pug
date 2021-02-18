@@ -1,0 +1,17 @@
+extends ../layouts/404
+block variables
+    - const title = "Error Page"
+
+block content
+
+    include ../../blocks/components/banner/banner
+    +banner("grapes")
+    section.error-section
+        .container
+            h1.heading.error-section__heading
+                span 404
+                | Page not found
+
+block scripts
+    script(src="js/main.js")
+    script(src="js/vendor.js")

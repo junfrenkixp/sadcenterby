@@ -1,0 +1,16 @@
+.last-news {
+    padding: 60px 0;
+    text-align: center;
+
+    &__row {
+
+        @include tablet-and-phone {
+            flex-wrap: wrap;
+        }
+        display: flex;
+    }
+
+    &__btn {
+        margin-top: 10px;
+    }
+}

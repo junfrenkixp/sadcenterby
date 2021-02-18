@@ -1,0 +1,9 @@
+include catalog-item
+
+mixin catalog(items, title, size)
+  - const itemSize = size
+  .catalog__inner&attributes(attributes)
+    h2.heading.page__heading= title
+    .grid__wrap
+      each item in items
+        +catalog-item(item.link, item.imgSrc, item.name, itemSize)

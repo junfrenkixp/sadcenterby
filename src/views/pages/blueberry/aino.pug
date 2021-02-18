@@ -1,0 +1,86 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Голубика 'Aino'";
+    - const banner = "blueberry"
+
+block content
+    - const productTitle = "'Aino'";
+    - const imgPath = "../img/blueberry/";
+    - const addInfo = "Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'blueberry-aino/blueberry-aino',
+                'alt': "Голубика 'Aino'"
+            },
+            {
+                'imgPath': 'blueberry-aino/blueberry-aino-2',
+                'alt': "Голубика 'Aino'"
+            }
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                p.product__info-descr
+                                    | «Aino» - среднерослый сорт, родом из Финляндии.
+                                    | Куст очень густой, коренастый, широко разрастающийся, прочный, не раскидистый, высотой 80-90 см.
+                                    | Срок созревания – 2-3 неделя июля.
+                                    | Плодоношение растягивается до середина августа.
+                                    | Плоды средней величины 10-12мм, некоторые до 16мм, гроздь плотная, синие, сладкие, с лёгким ароматом.
+                                    | Идеально подходят для употребления в свежем виде и замораживания.
+                                    | Данный сорт отлично подойдет для любителей ландшафтного проектирования, очень красивый осенью, зачастую садят для декора.
+                                    | Устойчивость к болезням и вредителям высокая. Морозостойкость до -30ºС.
+                                    | В ходе наблюдений, было отмечено повышенное кпд в паре с сортами «Дюк», «Ханна Чойс».
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

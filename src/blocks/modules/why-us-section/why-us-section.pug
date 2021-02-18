@@ -1,0 +1,33 @@
+- var whyUsTitle = 'Почему нас выбирают'
+-
+  var whyUsItems = [
+    {
+      'title': 'У нас 20+ лет опыта',
+      'index': '1',
+      'text': ''
+    },
+    {
+      'title': 'Свыше 8000 довольных клиентов',
+      'index': '2',
+      'text': ''
+    },
+    {
+      'title': 'Только лучшие сорта растений',
+      'index': '3',
+      'text': ''
+    },
+    {
+      'title': 'Профессиональный подход к работе',
+      'index': '4',
+      'text': ''
+    }
+  ]
+
+section.why-us
+  .container
+    h2.heading.main__heading=whyUsTitle
+    .why-us__grid
+      each item in whyUsItems
+        .why-us__item
+          h3(class="why-us__item-heading-"+item.index).why-us__item-heading= item.title
+          //p.why-us__item-info

@@ -1,0 +1,18 @@
+extends layouts/default
+include helpers/mixins
+
+block variables
+	- const title = "Главная | Питомник растительных культур семьи Пухальских"
+
+block content
+
+	include ../blocks/modules/main-slider/main-slider
+	include ../blocks/modules/about-section/about-section
+	include ../blocks/modules/advantages-section/advantages-section
+	include ../blocks/modules/why-us-section/why-us-section
+	include ../blocks/modules/culture-section/culture-section
+	include ../blocks/modules/last-news-section/last-news-section
+
+block scripts
+	script(src="js/main.js")
+	script(src="js/vendor.js")

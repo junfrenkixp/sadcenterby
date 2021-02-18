@@ -1,0 +1,132 @@
+.news__grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.news {
+    &__wrap {
+
+        @include mobile {
+            flex-direction: column;
+        }
+        display: flex;
+    }
+
+    &__inner {
+        flex: 1;
+        margin-bottom: 50px;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 10px;
+        text-align: left;
+        transition: .3s;
+
+        &:hover {
+            background-color: rgba(105, 175, 7, .7);
+
+            .news__item-heading {
+                border-color: darken($grey-color, 10%);
+            }
+            .news__item-desc__text {
+                color: $white-color;
+            }
+        }
+
+        &-img {
+            position: relative;
+
+            img {
+                display: block;
+                max-width: 100%;
+                max-height: 245px;
+                margin: 0 auto;
+                object-fit: cover;
+            }
+
+            &__link {
+                display: block;
+                margin-top: 0 !important;
+                background-color: rgba(105, 175, 7, 0.3);
+            }
+        }
+
+        &-date {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 10px;
+            background-color: $green-color;
+
+            &--top {
+                font-weight: 700;
+                font-size: 20px;
+                color: $white-color;
+            }
+
+            &--middle {
+                font-weight: 500;
+                font-size: 13px;
+                color: $white-color;
+            }
+
+            &--bot {
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 130%;
+                color: $white-color;
+            }
+        }
+
+        &-author {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            padding: 5px;
+            border-top-left-radius: 4px;
+            background-color: $green-color;
+
+            span {
+                font-weight: 400;
+                font-size: 13px;
+                color: $white-color;
+            }
+        }
+
+        &-heading {
+            margin-bottom: 15px;
+            padding: 0 0 15px;
+            font-weight: 600;
+            font-size: 17px;
+            line-height: 22px;
+            color: $black-color;
+            transition: .3s;
+        }
+
+        &-desc {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            padding: 20px 0 0;
+
+            &__text {
+                margin-bottom: 25px;
+                font-size: 13px;
+                line-height: 20px;
+                color: $dark-second-color;
+                transition: .3s;
+            }
+        }
+
+        &-link {
+            margin-top: 25px;
+        }
+    }
+}

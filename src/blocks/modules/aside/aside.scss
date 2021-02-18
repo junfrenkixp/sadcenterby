@@ -1,0 +1,40 @@
+.aside {
+
+    @include mobile {
+        width: 100%;
+        max-width: 100%;
+
+        & + * {
+            margin-top: 25px;
+        }
+    }
+    width: 30%;
+    max-width: 300px;
+    height: 100%;
+}
+
+.contacts {
+    &__aside {
+        background-color: $black-color;
+        color: $white-color;
+
+        &-wrap {
+            @include mobile {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+
+        &-heading {
+            padding: 12px 15px;
+            font-size: 17px;
+            font-weight: 400;
+            background-color: $green-color;
+        }
+
+        &-info {
+            padding: 12px 15px;
+            font-weight: 500;
+        }
+    }
+}

@@ -1,0 +1,63 @@
+.about {
+    margin: 60px 0;
+
+    &__row {
+
+        @include tablet-and-phone {
+            flex-direction: column;
+        }
+        display: flex;
+    }
+
+    &__photo-col {
+
+        @include tablet-and-phone {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 30px;
+        }
+        display: flex;
+        justify-content: center;
+        width: 45%;
+        margin-right: 70px;
+
+        img {
+
+            @include mobile {
+                max-width: 320px;
+            }
+            width: auto;
+            max-width: 520px;
+        }
+    }
+
+    &__info-col {
+
+        @include tablet-and-phone {
+            width: 100%;
+        }
+        width: 49%;
+        padding: 0;
+    }
+
+    &__heading {
+        margin-bottom: 20px;
+        color: $dark-color;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    &__info {
+
+        @include tablet-and-phone {
+            max-width: 100%;
+        }
+        max-width: 520px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 500;
+        color: $grey-color;
+    }
+}

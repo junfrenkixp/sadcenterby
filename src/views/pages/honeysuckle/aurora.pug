@@ -1,0 +1,125 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Жимолость 'Аврора'";
+    - const banner = "honeysuckle"
+
+block content
+    - const productTitle = "'Аврора'";
+    - const imgPath = "../img/honeysuckle/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'honeysuckle-aurora/honeysuckle-aurora',
+                'alt': "Жимолость 'Аврора'"
+            },
+            {
+                'imgPath': 'honeysuckle-aurora/honeysuckle-aurora-2',
+                'alt': "Жимолость 'Аврора'"
+            },
+            {
+                'imgPath': 'honeysuckle-aurora/honeysuckle-aurora-3',
+                'alt': "Жимолость 'Аврора'"
+            },
+            {
+                'imgPath': 'honeysuckle-aurora/honeysuckle-aurora-4',
+                'alt': "Жимолость 'Аврора'"
+            },
+            {
+                'imgPath': 'honeysuckle-aurora/honeysuckle-aurora-5',
+                'alt': "Жимолость 'Аврора'"
+            },
+            {
+                'imgPath': 'honeysuckle-aurora/honeysuckle-aurora-6',
+                'alt': "Жимолость 'Аврора'"
+            },
+            {
+                'imgPath': 'honeysuckle-aurora/honeysuckle-aurora-7',
+                'alt': "Жимолость 'Аврора'"
+            },
+            {
+                'imgPath': 'honeysuckle-aurora/honeysuckle-aurora-8',
+                'alt': "Жимолость 'Аврора'"
+            },
+            {
+                'imgPath': 'honeysuckle-aurora/honeysuckle-aurora-9',
+                'alt': "Жимолость 'Аврора'"
+            },
+            {
+                'imgPath': 'honeysuckle-aurora/honeysuckle-aurora-10',
+                'alt': "Жимолость 'Аврора'"
+            }
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                p.product__info-descr
+                                    | «Аврора» (Aurora) – раннего срока созревания.
+                                    | Новейший сорт Канадской селекции, полученный в 2012 году в  Университете Саскачевана.
+                                    | Срок созревания – с середины июня и до конца июля.
+                                    | Куст прямостоячий, компактный, высотой 1,6-1,9 м, плотный, быстрорастущий, с прочными и гибкими побегами.
+                                    | Ягода удлиненная, напоминает бочку, темно – фиолетового цвета, с легким восковым налетом.
+                                    | Крупные, длиной до 3см, часто до 1см в диаметре.
+                                    | Средняя масса ягод 2,7 - 3,2г.
+                                    | Нагрузка на куст 5-7 кг.
+                                    | Вкус шикарный, сладкий с приятной кислинкой, абсолютно без горечи. Заметный ягодный аромат.
+                                    | Плоды не осыпаются!
+                                    | Отличается высокой продуктивностью и морозоустойчивостью (-46).
+                                    | Цветет «Аврора» на вторую неделю мая, минуя возвратные заморозки.
+                                    | Один из лучших сортов для употребления в свежем виде.
+                                    | В качестве опылителя, отлично подойдут сорта: «Тундра», « семейство Бореалис», «Хоней-Би», «Индиго Джем».
+                                    | Плотность посадки 1,5-1,6м между кустами.
+                                    | Был признан одним из самых продуктивных сортов в США.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

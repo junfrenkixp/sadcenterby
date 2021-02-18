@@ -1,0 +1,18 @@
+extends ../layouts/default
+
+block variables
+	- const title = "Контакты | Питомник растительных культур семьи Пухальских";
+
+block content
+	.map
+		script(async='' src='https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ab0cee54845debecf5f587f3a2b5647f2385756876e1b79efd9e4b02e70f50d65&width=100%25&height=300&lang=ru_RU&scroll=true')
+
+	section.contacts
+		.container
+			.contacts__inner
+				include ../../blocks/modules/contacts/contacts
+				include ../../blocks/modules/aside/aside
+
+block scripts
+	script(src="js/main.js")
+	script(src="js/vendor.js")

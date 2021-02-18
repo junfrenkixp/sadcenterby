@@ -1,0 +1,23 @@
+mixin newsCatalog(items)
+    each item in items
+        .grid__item.news__item-wrap
+            .news__item
+                .news__item-img
+                    a.news__item-link.news__item-img__link(href=item.link target='_blank')
+                        picture
+                            source(srcset='../img/news/' + item.imgPath + '.webp' type="image/webp")
+                            img(src='../img/news/' + item.imgPath + '.jpg' alt=item.title)
+                        .news__item-date
+                            span.news__item-date--top=item.date1
+                            span.news__item-date--middle=item.date2
+                            span.news__item-date--bot=item.date3
+                        .news__item-author
+                            span=item.author
+                .news__item-desc
+                    div
+                        h3.news__item-heading
+                            a.news__item-link(href=item.link target='_blank')=item.title
+                        p.news__item-desc__text=item.descr
+                    div
+                        a.btn.btn-secondary.news__item-link(href=item.link target='_blank')
+                            | Побдробнее

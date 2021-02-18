@@ -1,0 +1,53 @@
+.banner {
+
+    @include tablet-and-phone {
+        height: 200px;
+    }
+    width: 100%;
+    height: 300px;
+    background-image: -webkit-linear-gradient(45deg, rgb(105, 175, 7), rgb(122, 206, 5));
+    background-image: -moz-linear-gradient(45deg, rgb(105, 175, 7), rgb(122, 206, 5));
+    background-image: linear-gradient(45deg, rgb(105, 175, 7), rgb(122, 206, 5));
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    span {
+        display: inline-block;
+        text-indent: -999em;
+    }
+}
+.webp .banner {
+    &.grapes {
+        background-image: url(../img/banners/grape-banner.webp);
+    }
+    &.blueberry {
+        background-image: url(../img/banners/blueberry-banner.webp);
+    }
+    &.currant {
+        background-image: url(../img/banners/currant-banner.webp);
+    }
+    &.gooseberry {
+        background-image: url(../img/banners/gooseberry-banner.webp);
+    }
+    &.honeysuckle {
+        background-image: url(../img/banners/honeysuckle-banner.webp);
+    }
+}
+.no-webp .banner {
+    &.grapes {
+        background-image: url(../img/banners/grape-banner.jpg);
+    }
+    &.blueberry {
+        background-image: url(../img/banners/blueberry-banner.jpg);
+    }
+    &.currant {
+        background-image: url(../img/banners/currant-banner.jpg);
+    }
+    &.gooseberry {
+        background-image: url(../img/banners/gooseberry-banner.jpg);
+    }
+    &.honeysuckle {
+        background-image: url(../img/banners/honeysuckle-banner.jpg);
+    }
+}

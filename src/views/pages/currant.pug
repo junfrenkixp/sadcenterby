@@ -1,0 +1,31 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Смородина | Питомник растительных культур семьи Пухальских";
+
+block content
+
+    - let catalogTitle = 'Смородина';
+    -
+        let catalogItems = [
+            {
+                'link': '/currant/arkadia.html',
+                'imgSrc': 'currant/currant-arkadia/currant-arkadia-md',
+                'name': "Смородина 'Аркадия'"
+            },
+        ]
+
+    include ../../blocks/components/banner/banner
+    +banner("currant")
+
+    section.catalog
+        .container
+            .catalog__wrap
+                include ../../blocks/modules/aside/aside
+                include ../../blocks/modules/catalog/catalog
+
+                +catalog(catalogItems, catalogTitle)
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

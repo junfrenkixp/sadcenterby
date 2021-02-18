@@ -1,0 +1,89 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Смородина 'Аркадия'";
+    - const banner = "currant"
+
+block content
+    - const productTitle = "'Аркадия'";
+    - const imgPath = "../img/currant/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'currant-arkadia/currant-arkadia',
+                'alt': "Смородина 'Аркадия'"
+            }
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                p.product__info-descr
+                                    | Смородина черная «Аркадия».
+                                    | Сорт среднего срока созревания, получен в Зональном НИИСХ Северо-Востока им. Н.В. Рудницкого от скрещивания сортов «Грация» х «Сластена».
+                                    | Куст среднерослый, среднераскидистый.
+                                    | Побеги толстые, прямые неопушенные, матовые.
+                                    | Созревание плодов происходит в конце июля — начале августа.
+                                    | Ягоды очень крупные, средняя масса 2,7-3,5 (до 5,5 г).
+                                    | Округлые, буровато-черные, освежающего вкуса.
+                                    | Ягоды в кисти располагаются средне и редко. Ось кисти средняя, прямая.
+                                    | Использование ягод универсальное — употребляют как в свежем виде, так и в домашних заготовках. Отлично подходит глубокой заморозки.
+                                    | Нагрузка на куст – 2,5-3,7 кг.
+                    .product__row
+                        .product__info
+                            .product__info-wrap
+                                h3.page__sub-heading Дополнительно к сорту
+                                p.product__info-descr
+                                    | Устойчив к мучнистой росе, отмечена  высокая степень устойчивости к почковому клещу.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

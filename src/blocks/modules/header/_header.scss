@@ -1,0 +1,207 @@
+.header {
+    &__row-top {
+
+        @include mobile {
+            flex-direction: column;
+        }
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px 0;
+        border-bottom: 1px solid #ebe9e5;
+    }
+
+    &__inner {
+
+        @include mobile {
+            flex-direction: column;
+        }
+        display: flex;
+        align-items: center;
+
+        &-mail {
+            a {
+                position: relative;
+                padding-left: 23px;
+                line-height: 36px;
+                font-weight: 500;
+                color: $green-color;
+                transition: 0s;
+
+                &:hover {
+                    color: $black-color;
+                }
+                &:before {
+                    @include align(false, true);
+                    content: "";
+                    left: 0;
+                    width: 13px;
+                    height: 13px;
+                    background-image: url(../img/svg/mail-grey-1.svg);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+
+        &-social {
+
+            @include mobile {
+                padding: 0;
+            }
+            display: flex;
+            align-items: center;
+            min-height: 19px;
+            padding-right: 15px;
+
+            &:last-child {
+
+                @include mobile {
+                    border: none;
+                    padding: 0;
+                }
+                padding-left: 15px;
+                padding-right: 0;
+                border-left: 1px solid $black-color;
+            }
+
+            &-list {
+                display: flex;
+                align-items: center;
+            }
+
+            &-item {
+
+                &--instagram {
+                    a {
+                        &:before {
+                            background-image: url(../img/svg/header-instagram-green.svg);
+                        }
+                        &:hover {
+                            &:before {
+                                background-image: url(../img/svg/header-instagram-black.svg);
+                            }
+                        }
+                    }
+                }
+                &--vk {
+                    a {
+                        &:before {
+                            background-image: url(../img/svg/header-vk-green.svg);
+                            background-position: center 5px;
+                        }
+                        &:hover {
+                            &:before {
+                                background-image: url(../img/svg/header-vk-black.svg);
+                            }
+                        }
+                    }
+                }
+                &--youtube {
+                    a {
+                        &:before {
+                            background-image: url(../img/svg/header-youtube-green.svg);
+                        }
+                        &:hover {
+                            &:before {
+                                background-image: url(../img/svg/header-youtube-black.svg);
+                            }
+                        }
+                    }
+                }
+                a {
+
+                    @include mobile {
+                        width: 45px;
+                        height: 45px;
+                    }
+                    display: inline-block;
+                    position: relative;
+                    width: 35px;
+                    height: 35px;
+                    text-indent: -999em;
+
+                    &:before {
+                        @include align();
+
+                        @include mobile {
+                            width: 25px;
+                            height: 25px;
+                        }
+                        content: "";
+                        width: 20px;
+                        height: 20px;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                    }
+                }
+            }
+
+            &-phone {
+                @include mobile {
+                    line-height: 36px;
+                }
+
+                a {
+                    position: relative;
+                    padding-left: 26px;
+                    font-size: 15px;
+                    font-weight: 500;
+                    transition: 0s;
+
+                    &:hover {
+                        color: $green-color;
+                    }
+
+                    &:before {
+                        @include align(false, true);
+                        content: "";
+                        left: 0;
+                        width: 16px;
+                        height: 16px;
+                        background-image: url(../img/svg/phone-black.svg);
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                    }
+                }
+            }
+        }
+    }
+
+    &__row-bot {
+
+        @include laptop {
+            flex-direction: column;
+        }
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__logo {
+
+        @include laptop {
+            margin-right: 0;
+            padding: 20px 0 0;
+        }
+        @include tablet {
+            padding: 10px 0;
+        }
+        @include mobile {
+            margin-right: 0;
+            padding: 15px 0;
+        }
+        padding: 20px 0;
+        margin-right: 50px;
+
+        a, span {
+            display: inline-block;
+
+            svg {
+                width: 160px;
+                height: 38px;
+            }
+        }
+    }
+}

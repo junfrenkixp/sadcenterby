@@ -1,0 +1,111 @@
+.advantages {
+
+    @include tablet {
+        height: 350px;
+    }
+    @include mobile {
+        flex-direction: column;
+        height: auto;
+    }
+    display: flex;
+    height: 400px;
+    color: $white-color;
+
+    &__col {
+
+        @include mobile {
+            width: 100%;
+            height: 300px;
+        }
+        @include mobile-s {
+            height: 320px;
+        }
+        position: relative;
+        width: 33.3%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        &:last-child {
+
+            @include mobile {
+                width: 100%;
+            }
+            width: 33.4%;
+        }
+
+        &:nth-child(even) {
+            .advantages__descr {
+                background-color: rgba(72, 59, 51, .7);
+            }
+        }
+    }
+
+    &__descr {
+        position: absolute;
+        z-index: 20;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(105, 175, 7, .7);
+
+        &-content {
+
+            @include mobile {
+                padding: 0 15px;
+            }
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            padding: 0 35px;
+            transform: translateY(-50%);
+        }
+
+        &-text {
+            text-align: center;
+        }
+    }
+
+    &__title {
+
+        @include tablet {
+            font-size: 26px;
+        }
+        margin: 0;
+        font-size: 30px;
+        font-weight: 700;
+        text-align: center;
+
+        & + * {
+            margin-top: 20px;
+        }
+    }
+}
+
+.webp .advantages {
+    &__col {
+        &--1 {
+            background-image: url(../img/index-page/advantages-1.webp);
+        }
+        &--2 {
+            background-image: url(../img/index-page/advantages-2.webp);
+        }
+        &--3 {
+            background-image: url(../img/index-page/advantages-3.webp);
+        }
+    }
+}
+.no-webp .advantages {
+    &__col {
+        &--1 {
+            background-image: url(../img/index-page/advantages-1.jpg);
+        }
+        &--2 {
+            background-image: url(../img/index-page/advantages-2.jpg);
+        }
+        &--3 {
+            background-image: url(../img/index-page/advantages-3.jpg);
+        }
+    }
+}

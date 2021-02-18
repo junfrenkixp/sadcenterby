@@ -1,0 +1,62 @@
+- var lastNewsTitle = 'Последние новости'
+-
+  var lastNewsNews = [
+    {
+      'link': 'https://www.mazyr.by/2020/09/za-kartoshkoj-v-mozyre-startoval-sezon-osennix-yarmarok-selxozprodukcii/',
+      'author': 'Жыццё Палесся',
+      'date1': '12',
+      'date2': 'Сентября',
+      'date3': '2020',
+      'title': 'За картошкой! В Мозыре стартовал сезон осенних ярмарок сельхозпродукции',
+      'descr': 'В субботу, 12 сентября, в Мозыре начался сезон осенних сельскохозяйственных ярмарок. Основной площадкой для покупки свежих овощей и фруктов стала площадь Ленина.',
+      'imgPath': 'news-for-potatoes-12-09-2020/news-for-potatoes-12-09-2020'
+    },
+    {
+      'link': 'https://www.mazyr.by/2019/10/mozyrskaya-ekzotika-segodnya-u-nas-136-sortov-vinograda/',
+      'author': 'Жыццё Палесся',
+      'date1': '19',
+      'date2': 'Октября',
+      'date3': '2019',
+      'title': 'Семья Пухальских из Мозыря о том, как на 10 сотках вырастить элитные сорта винограда, голубики, жимолости и крыжовника',
+      'descr': 'Владиславу Васильевичу Пухальскому немногим больше 20. Однако несмотря на достаточно молодой возраст, в его жизненной «копилке» собран довольно внушительный капитал: целеустремленность, уверенность в своих силах, умение организовать работу, любовь к своему делу, упорство, желание развиваться и идти в ногу со временем.',
+      'imgPath': 'pooh-family-19-10-2019/pooh-family-19-10-2019'
+    },
+    {
+      'link': 'https://www.sb.by/articles/gde-loze-vitsya.html',
+      'author': 'СБ БЕЛАРУСЬ СЕГОДНЯ',
+      'date1': '28',
+      'date2': 'Сентября',
+      'date3': '2019',
+      'title': 'Где лозе виться?',
+      'descr': 'Несмотря на то что Беларусь отнесена к зоне рискованного земледелия, у нас прекрасно растут не только картофель и яблоки, но и виноград. Самое же первое упоминание о белорусских виноградниках относится к XI веку. Киевский князь Владимир образовал тогда новый епископат в Турове, к которому отошли Пинск, Волковыск, Городень (Гродно) и вместе с ними «села, винограды, земли бортные, волости со всеми придатками». Настоятели монастырей получали княжеские наставления, как правильно выращивать виноград и укрывать лозы на зиму.',
+      'imgPath': 'gde-loze-vitsya-28-09-2019/gde-loze-vitsya-28-09-2019'
+    },
+  ]
+
+section.last-news
+  .container
+    h2.heading.main__heading= lastNewsTitle
+    .last-news__row
+      each item in lastNewsNews
+        .grid__item.news__item-wrap
+          .news__item
+            .news__item-img
+              a.news__item-link.news__item-img__link(href=item.link target='_blank')
+                picture
+                  source(srcset='../img/news/'+item.imgPath+'.webp' type="image/webp")
+                  img(src='../img/news/'+item.imgPath+'.jpg' alt=item.title)
+                .news__item-date
+                  span.news__item-date--top=item.date1
+                  span.news__item-date--middle=item.date2
+                  span.news__item-date--bot=item.date3
+                .news__item-author
+                  span=item.author
+            .news__item-desc
+              div
+                h3.news__item-heading
+                  a.news__item-link(href=item.link target='_blank')=item.title
+                p.news__item-desc__text=item.descr
+              div
+                a.btn.btn-secondary.news__item-link(href=item.link target='_blank')
+                  | Побдробнее
+    a(href="/news.html").btn.btn-primary Больше новостей

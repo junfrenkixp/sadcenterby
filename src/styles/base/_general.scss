@@ -1,0 +1,88 @@
+body {
+    min-width: 320px;
+    margin: 0;
+    font-family: "Montserrat", "Arial", "Helvetica", "Tahoma", sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: .03em;
+    background-color: #fbfbfb;
+
+    &.hidden {
+        overflow: hidden;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 0!important;
+}
+
+h1, h2, h3, h4, h5, h6, ul {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $gutter-mobile;
+    padding-left: $gutter-mobile;
+    width: 100%;
+
+    @media (min-width: $mobileMedia + 1) {
+        max-width: 100%;
+        padding-right: $gutter;
+        padding-left: $gutter;
+    }
+    @media (min-width: $tabletMedia + 1) {
+        max-width: 100%;
+    }
+    @media (min-width: $laptopMedia + 1) {
+        max-width: $desktopWidth;
+    }
+}
+
+.container-md {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $gutter-mobile;
+    padding-left: $gutter-mobile;
+    width: 100%;
+
+    @media (min-width: $mobileMedia + 1) {
+        max-width: $tabletWidth;
+        padding-right: $gutter;
+        padding-left: $gutter;
+    }
+    @media (min-width: $tabletMedia + 1) {
+        max-width: $laptopMDWidth;
+    }
+    @media (min-width: $laptopMedia + 1) {
+        max-width: $laptopWidth;
+    }
+}
+
+.container-fluid {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $gutter;
+    padding-left: $gutter;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden;
+    border: 0 !important;
+    padding: 0 !important;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+}

@@ -1,0 +1,32 @@
+nav.header__nav
+  .header__nav-mob
+    button.header__nav-mob__toggle
+      | Меню
+      span.header__nav-mob__btn
+        span
+  ul.header__nav-list
+    li.header__nav-item(class=filename == 'index' ? 'active' : '')
+      a(href='/') Главная
+    li.header__nav-item(class=filename == 'grapes' ? 'active' : '')
+      a(href='/grapes.html') Виноград
+    li.header__nav-item(class=filename == 'blueberry' ? 'active' : '')
+      a(href='/blueberry.html') Голубика
+    li.header__nav-item(class=filename == 'honeysuckle' ? 'active' : '')
+      a(href='/honeysuckle.html') Жимолость
+    li.header__nav-item(class=((filename == 'other' || filename == 'currant' || filename == 'gooseberry') ? 'active' : ''))
+      a(href='/other.html') Прочее
+      ul.header__nav-item__sublist
+        li.header__nav-item__subitem(class=filename == 'currant' ? 'active' : '')
+          a(href='/currant.html') Смородина
+        li.header__nav-item__subitem(class=filename == 'gooseberry' ? 'active' : '')
+          a(href='/gooseberry.html') Крыжовник
+        //li.header__nav-item__subitem(class=filename == 'decor' ? 'active' : '')
+          a(href='/decor.html') Декор
+    //li.header__nav-item
+      a(href='#') О нас
+    //li.header__nav-item
+      a(href='#') Блог
+    //li.header__nav-item
+      a(href='#') Новости
+    li.header__nav-item(class=filename == 'contacts' ? 'active' : '')
+      a(href='/contacts.html') Контакты

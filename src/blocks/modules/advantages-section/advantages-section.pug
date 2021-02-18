@@ -1,0 +1,26 @@
+-
+  var adventagesContent = [
+    {
+      'img': '1',
+      'title': 'Качественный посадочный материал',
+      'text': ''
+    },
+    {
+      'img': '2',
+      'title': 'Лучшие сорта для климата РБ',
+      'text': ''
+    },
+    {
+      'img': '3',
+      'title': 'Tехническая поддержка',
+      'text': ''
+    },
+  ];
+
+section.advantages
+  each item in adventagesContent
+    .advantages__col(class="advantages__col--" + item.img)
+      .advantages__descr
+        .advantages__descr-content
+          h2.advantages__title=item.title
+          p.advantages__descr-text=item.text
