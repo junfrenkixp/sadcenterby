@@ -1,0 +1,100 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Голубика 'Дюк'";
+    - const banner = "blueberry"
+
+block content
+    - const productTitle = "'Дюк'";
+    - const imgPath = "../img/blueberry/";
+    - const addInfo = "Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'duke/duke',
+                'alt': "Голубика 'Дюк'"
+            },
+            {
+                'imgPath': 'duke/duke-2',
+                'alt': "Голубика 'Дюк'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | «Дюк» (Duke) раннего срока созревания.
+                                    p
+                                        strong Входит в тройку лучших сортов нашего питомника.
+                                    p
+                                        | В сезоне 2019 первая ягода была 20 июня, в сезоне 2020 19-21 июля.
+                                        | Куст прямостоячий, раскидистый первые 3-4 года.
+                                        | Высота 1,5-1,9м, среднее побегообразование, что является плюсом.
+                                        | Куст хорошо освещается, нетребователен в обрезке.
+                                        | Урожай регулярный, 6-8-10 кг с куста.
+                                        | Ягода крупная и очень крупная 17-21мм, плотная, светло-голубая.
+                                        | Хороший вкус, не теряется при заморозке.
+                                        | Рекомендуем ягоду употреблять в свежем виде прямо с куста.
+                                        | Дюк устойчив к возвратным заморозкам весной.
+                                        | Устойчив к грибковым заболеваниям.
+                                    p
+                                        | Подмерзаний в аг.Прудок, аг.Малые Зимовищи, аг. Каменка не наблюдалось (территории возвратных заморозков, Мозырский р-н).
+                    .product__row
+                        .product__info
+                            .product__info-wrap
+                                h3.page__sub-heading Дополнительно к сорту
+                                .product__info-descr
+                                    p В связи с своей популярностью, остерегайтесь подделок. Данный сорт очень любят ставить на картинку, а продавать несоответствие.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

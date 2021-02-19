@@ -1,0 +1,86 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Голубика 'Спартан'";
+    - const banner = "blueberry"
+
+block content
+    - const productTitle = "'Спартан'";
+    - const imgPath = "../img/blueberry/";
+    - const addInfo = "Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'spartan/spartan',
+                'alt': "Голубика 'Спартан'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | «Спартан» (Spartan) – раннего срока созревания.
+                                        | Срок созревания – 20-25 июля.
+                                        | Куст прямостоячий, сильнорослый, вертикально растущий.
+                                        | Высота куста – 1,5-2 метра.
+                                        | Средний урожай с куста – 4,5 - 6 килограммов.
+                                        | Масса ягоды 1,8-2,2 г, 16 - 18 мм в диаметре, некоторые 20+ мм.
+                                        | Светло-голубые, большие, плотные, очень вкусные.
+                                        | Сорт десертный, подходит под заморозку, либо к употреблению в свежем виде.
+                                        | Примечателен «Спартан» тем фактом, что цветет  поздно.
+                                        | Благодаря этому уменьшается опасность повреждения цветков поздними заморозками.
+                                        | Подмерзаний в аг. Загорины не наблюдалось.
+                                        | Сорт устойчив к монилиозу, мумификации ягод.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

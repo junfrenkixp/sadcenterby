@@ -1,0 +1,105 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Голубика 'Чандлер'";
+    - const banner = "blueberry"
+
+block content
+    - const productTitle = "'Чандлер'";
+    - const imgPath = "../img/blueberry/";
+    - const addInfo = "Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'chandler/chandler',
+                'alt': "Голубика 'Чандлер'"
+            },
+            {
+                'imgPath': 'chandler/chandler-2',
+                'alt': "Голубика 'Чандлер'"
+            },
+            {
+                'imgPath': 'chandler/chandler-3',
+                'alt': "Голубика 'Чандлер'"
+            },
+            {
+                'imgPath': 'chandler/chandler-4',
+                'alt': "Голубика 'Чандлер'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | «Чандлер» (Chandler) – среднего срока созревания.
+                                    p
+                                        strong Входит в тройку лучших сортов нашего питомника.
+                                    p
+                                        | Срок созревания – с 15-х числа августа.
+                                        | Высота куста 1,5-1,7м, прямостоячий, быстрорастущий, сильно разветвленный.
+                                        | Урожайность высокая,  регулярная, 8-12 кг с куста.
+                                        | Ягоды очень крупные, более 22-25 миллиметров в диаметре, весом около 2-2,4г.
+                                        | Голубые, вкусные, плотные, с маленьким рубчиком.
+                                        | Отличительная черта «Чандлера» - очень долгий период созревания, растягивается на 4-6 недель, поэтапный ягодосбор.
+                                        | Десертный вкус, высокая урожайность, устойчивость к заболеваниям, возможность заморозки, делают этот сорт лучшим, в коллекции более 15 лет.
+                                        | Устойчив к заморозкам.
+                                        | Подмерзаний в аг.Прудок, аг.Малые Зимовищи, аг. Каменка не наблюдалось (территории возвратных заморозков, Мозырский р-н).
+                    .product__row
+                        .product__info
+                            .product__info-wrap
+                                h3.page__sub-heading Дополнительно к сорту
+                                .product__info-descr
+                                    p В связи с своей популярностью, остерегайтесь подделок. Данный сорт очень любят ставить на картинку, а продавать несоответствие.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

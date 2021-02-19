@@ -1,0 +1,105 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Голубика 'Ханнас Чойс'";
+    - const banner = "blueberry"
+
+block content
+    - const productTitle = "'Ханнас Чойс'";
+    - const imgPath = "../img/blueberry/";
+    - const addInfo = "Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'hanna-s-choice/hanna-s-choice',
+                'alt': "Голубика 'Ханнас Чойс'"
+            },
+            {
+                'imgPath': 'hanna-s-choice/hanna-s-choice-2',
+                'alt': "Голубика 'Ханнас Чойс'"
+            },
+            {
+                'imgPath': 'hanna-s-choice/hanna-s-choice-3',
+                'alt': "Голубика 'Ханнас Чойс'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | «Ханнас  Чойс» (Hanna’s Choice) – раннего срока созревания.
+                                    p
+                                        strong Входит в тройку лучших сортов нашего питомника.
+                                    p
+                                        | Срок созревания – 20-25 июля.
+                                        | Высота куста 2-2,2 м, приподнятый, прямостоячий.
+                                        | Средний урожай с куста – 8,5-10 кг, регулярный.
+                                        | Масса ягоды 1,7-1,9г, до 20 мм в диаметре.
+                                        | Ягоды крупного или среднего размера, плотные, очень сладкие.
+                                        | Рубчик маленький, кожица синего цвета.
+                                        | Хороший вкус, не теряется при заморозке.
+                                        | Рекомендуем ягоду употреблять в свежем виде прямо с куста.
+                                        | Устойчив к возвратным заморозкам. Морозоустойчивость -30.
+                                        | Устойчив к грибковым заболеваниям.
+                                        | Отличительная черта: остроконечный темно-зеленый лист.
+                                        | Подмерзаний в аг.Прудок, аг.Малые Зимовищи, аг. Каменка не наблюдалось (территории возвратных заморозков, Мозырский р-н).
+
+                    .product__row
+                        .product__info
+                            .product__info-wrap
+                                h3.page__sub-heading Дополнительно к сорту
+                                .product__info-descr
+                                    p В связи с своей популярностью, остерегайтесь подделок. Данный сорт очень любят ставить на картинку, а продавать несоответствие.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")
