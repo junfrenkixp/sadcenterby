@@ -1,0 +1,92 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Виноград 'Кишмиш Юпитер'";
+    - const banner = "grapes"
+
+block content
+    - const productTitle = "'Кишмиш Юпитер'";
+    - const imgPath = "../img/grapes/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'kishmish-yupiter/kishmish-yupiter',
+                'alt': "Виноград 'Кишмиш Юпитер'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Юпитер (Jupiter) – бессемянный сорт винограда, получен в Арканзасском университете(США).
+                                    p
+                                        | Среднего срока созревания. В условиях г. Мозырь созревает в конце августа, середине сентября. Урожай может долго находиться на кустах без потери вкусовых качеств. Ягоды крупные, массой 4-5 г, продолговатые, темно-фиолетового цвета с синеватым отливом. Ягоды устойчивы к растрескиванию. На вкус сильно выражена нота муската
+                                        | Кожица плотная, прочная,  мякоть мясисто-сочная.
+                                    p
+                                        | Грозди средней массы 300-500г. Цветок обоеполый.
+                                    p
+                                        | Устойчивость к заболеваниям на уровне большинства комплексно-устойчивых сортов, не лучше, но и не хуже. Может поражаться аидиумом мелидьо, требует стандартных обработок.
+                                    p
+                                        | При комплексе обработок на винограднике лоза всегда чистая.
+                                    p
+                                        | Морозоустойчивость до -28 градусов, не нуждается в укрытии на зиму.
+                    .product__row
+                        .product__info
+                            .product__info-wrap
+                                h3.page__sub-heading Дополнительно к сорту
+                                .product__info-descr
+                                    p После 3-х лет можно не укрывать, но лучше не рисковать. В первые 3 года наблюдалась задержка в росте кусте и снижен размер ягод.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

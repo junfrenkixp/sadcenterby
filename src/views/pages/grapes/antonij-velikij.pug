@@ -1,0 +1,83 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Виноград 'Антоний Великий'";
+    - const banner = "grapes"
+
+block content
+    - const productTitle = "'Антоний Великий'";
+    - const imgPath = "../img/grapes/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'antonij-velikij/antonij-velikij',
+                'alt': "Виноград 'Антоний Великий'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Антоний Великий – сложный межвидовой гибрид Крайнова В.В.
+                                        | Столовая форма винограда с крупной, округлой ягодой (до 20 г) гармоничного вкуса и гроздями до 2,5 кг. Виноград Антоний Великий успел зарекомендовать себя как перспективный сорт и ежегодно доказывает своей производительностью. Хорошая урожайность, товарность и транспортабельность делает этот сорт рыночным и актуальным.
+                                        | Срок созревания с середины августа (120 дней), цветок обоеполый, масса грозди 1200-2500г. Вкус гармоничный, морозоустойчивость -25, очень устойчив к болезням.
+                    .product__row
+                        .product__info
+                            .product__info-wrap
+                                h3.page__sub-heading Дополнительно к сорту
+                                .product__info-descr
+                                    p Не растрескивается, не поражается осами. В течении 16 лет выращивания в условиях г. Мозыря, по урожайности, вкусу, устойчивости к заболеваниям, показал себя великолепно ( рабочая лошка), хорошо справляется с нагрузкой.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

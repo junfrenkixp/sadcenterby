@@ -1,0 +1,97 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Виноград 'Кеша'";
+    - const banner = "grapes"
+
+block content
+    - const productTitle = "'Кеша'";
+    - const imgPath = "../img/grapes/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'kesha/kesha',
+                'alt': "Виноград 'Кеша'"
+            },
+            {
+                'imgPath': 'kesha/kesha-2',
+                'alt': "Виноград 'Кеша'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | (Фрумоаса Албэ x Восторг)
+                                        br
+                                        | [ВНИИВиВ им. Я.И. Потапенко, Россия]
+                                        br
+                                        | Синоним: FV-6-5, Восторг улучшенный
+                                    p
+                                        | Столовый сорт винограда, один из самых поздних в г. Мозыре (125+ дней). За 26 лет выращивания все годы вызревал конец сентября, середина октября. Требует опылителя (К-ш 342, Ханка, Аладдин).
+                                    p
+                                        | Супер урожайный, сильнорослый. Грозди цилиндро-конические или конические, иногда бесформенные, умеренно- плотные, массой от  800-1500г. Ягоды очень крупные, 32x25 мм, средним весом до 15-20 г (в 2007 году был рекорд в 32г!) , овальные, белые, с плотной мякотью, гармоничного вкуса, с хорошим сахаронакоплением. Сахаристость до 22%.
+                                    p
+                                        | Транспортабельность высокая, не течет. Побеги вызревают рано и очень хорошо. Морозоустойчивость сорта до -24-28, повышенно устойчив к милдью, один из самых устойчивых сортов.
+                                    p
+                                        | Нагрузка 30-35 глазков при длине обрезки лоз плодоношения на 8-12 глазков.
+                    .product__row
+                        .product__info
+                            .product__info-wrap
+                                h3.page__sub-heading Дополнительно к сорту
+                                .product__info-descr
+                                    p Один из самых крупноплодных сортов на винограднике, огромадная урожайность, не поражается осами, не трещит, очень радует урожаем когда на винограднике почти все съедено. Лучший поздний сорт для условий г.Мозыря.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

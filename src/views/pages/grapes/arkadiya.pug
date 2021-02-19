@@ -1,0 +1,104 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Виноград 'Аркадия'";
+    - const banner = "grapes"
+
+block content
+    - const productTitle = "'Аркадия'";
+    - const imgPath = "../img/grapes/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'arkadiya/arkadiya',
+                'alt': "Виноград 'Аркадия'"
+            },
+            {
+                'imgPath': 'arkadiya/arkadiya-2',
+                'alt': "Виноград 'Аркадия'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p Срок созревания ранний. Вегетационный период составляет 115-125 дней с момента распускания почек. Полное созревание ягод приходиться на вторую декаду августа.
+                                    p
+                                        b Грозди&nbsp;
+                                        | очень крупные, конической формы, чаще с ответвлениями, средней плотности или плотные. Средний вес гроздей в районе 800-1200 грамм, отдельные экземпляры могут достигать до 2,5 кг и более. Урожайность одна из лучших показателей среди столовых сортов.
+                                    p
+                                        b Ягода&nbsp;
+                                        | сердцевидной формы, при полном созревании желтого цвета, очень крупная, весом 7-12 грамм. Ненавязчивый гармоничный вкус обусловлен не высокой сахаристостью и кислотностью. Присутствует легкий мускатный аромат. Мякоть мясисто-сочная, покрыта не толстой кожицей. В жаркие годы незначительное поражение осами, шершнями.
+                                    p
+                                        b Устойчивость&nbsp;
+                                        | к заболеваниям следующая:
+                                    ul
+                                        li
+                                            i милдью&nbsp;
+                                            | – 3,5 балла (необходимо минимум 2 обработки);
+                                        li
+                                            i оидиум&nbsp;
+                                            | – 2,5-3 балла (не менее одной обработки).
+                                    p
+                                        | Морозостойкость в условиях г. Мозырь  до -26°С, желательно укрывать на зиму. По совокупности характеристик можно отнести к комплексно-устойчивому сорту.
+                                    p
+                                        | (необходимы стандартные 2-3 обработки в период вегитации).
+                    .product__row
+                        .product__info
+                            .product__info-wrap
+                                h3.page__sub-heading Дополнительно к сорту
+                                .product__info-descr
+                                    p Не терпит перегрузки. При перегрузке, не полностью вызревает лоза. Что бы избежать, в первые 3-4 не перегружать (1 гроздь на плодоносящий побег). После 5-6 легко справляется с любой нагрузкой. Признан лучшим сортом в Украине. На создание сорта ушло 25 лет. За 18 лет в условиях г. Мозыря особых проблем не вызывал, является одним из самых вкусных сортов на нашем винограднике.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

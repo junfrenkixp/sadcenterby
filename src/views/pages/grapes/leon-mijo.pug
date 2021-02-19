@@ -1,0 +1,92 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Виноград 'Леон Мийо'";
+    - const banner = "grapes"
+
+block content
+    - const productTitle = "'Леон Мийо'";
+    - const imgPath = "../img/grapes/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'leon-mijo/leon-mijo',
+                'alt': "Виноград 'Леон Мийо'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Леон Мийо (Leon Millot) - франко-американский гибридный сорт винограда, винный,  раннего срока созревания. Сильнорослый и урожайный. Грозди средние, плотные.. Ягоды мелкие, округлые, фиолетовые, кожица тонкая. Устойчив к грибным болезням.
+                                    p
+                                        | Вино из Леон Мийо высокого качества, бархатистые с хорошей структурой и приятным ароматом. На слепых дегустациях в Германии вина из Леон Мийо не уступали винам из европейских сортов винограда. Во Франции часто используется для усиления окраски в купажах (в т.ч. с Пино нуар). Белорусским дачникам рекомендуем смешивать с любыми оставшимися столовыми сортами, получите очень красивое и вкусное вино.
+                                    p
+                                        | Морозоустойчивость -28, не требует укрытия, 25% сахар, средний вес ягоды до 5-6гр, масса грозди до 300гр, вкус гармоничный, идеальный сорт для виноделия.
+                                    p
+                                        | Цвет ягод после вызревания – темный, практически фиолетовый.
+                                    p
+                                        | Товарные качества Леона Мийо на высоте, так как он имеет высокую транспортабельность.
+                                    p
+                                        | Леон Мийо отличается великолепными дегустационными качествами. Вина из этого сорта бархатистые и высококачественные, имеют хорошую структуру и приятный аромат.
+
+                    .product__row
+                        .product__info
+                            .product__info-wrap
+                                h3.page__sub-heading Дополнительно к сорту
+                                .product__info-descr
+                                    p Для надежности рекомендуем применять 2 стандартные обработки, до и после цветения. Данный сорт не требует специальной агротехники.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

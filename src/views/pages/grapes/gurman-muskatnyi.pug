@@ -1,0 +1,85 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Виноград 'Гурман Мускатный'";
+    - const banner = "grapes"
+
+block content
+    - const productTitle = "'Гурман Мускатный'";
+    - const imgPath = "../img/grapes/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'gurman-muskatnyi/gurman-muskatnyi',
+                'alt': "Виноград 'Гурман Мускатный'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Гурман Мускатный  – это великолепный гибридный сорт винограда, обладающий насыщенным мускатным вкусом и хорошо подходящий для выращивания на собственном садовом участке.
+                                    p
+                                        | Срок созревания 110-115 дней, мускатный, гроздь плотная, вытянутая, очень крупная, может достигать массы 800-1600г. Ягоды овальные, достаточно большие, около 8-10 гр.
+                                        | В открытом грунте, условий г. Мозырь, морозоустойчивость до -23 градусов. Гурман устойчив к большинству болезней и вредителей винограда. Не любит переливов воды. Цвет у вызревших ягод ярко-розовый, почти сиреневый.
+
+                    .product__row
+                        .product__info
+                            .product__info-wrap
+                                h3.page__sub-heading Дополнительно к сорту
+                                .product__info-descr
+                                    p Урожайность резко увеличивается после 5 лет плодоношения, приятно удивил в сезоне 2020.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

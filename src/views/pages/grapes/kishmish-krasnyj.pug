@@ -1,0 +1,79 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Виноград 'Кишмиш Красный'";
+    - const banner = "grapes"
+
+block content
+    - const productTitle = "'Кишмиш Красный'";
+    - const imgPath = "../img/grapes/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'kishmish-krasnyj/kishmish-krasnyj',
+                'alt': "Виноград 'Кишмиш Красный'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | (Талисман х Кишмиш лучистый)
+                                        br
+                                        | [Крайнов В.Н.]
+                                    p
+                                        | Кишмиш Красный– 4-го класса бессемянности сложный межвидовой гибрид раннего срока созревания, 110 – 115  дней. В корнесобственной и привитой культуре сильно-рослый.Побеги большой силы роста. Черенки укореняются хорошо. Цветок обоеполый. Цветение, в обычные годы,в первых числах июня. Гроздь цилиндроконическая, очень крупная, средней плотности, массой до 400-600гр. Ягоды одномерные, овальные, крупные, массой до 4-5г, размером до 22-23х18-19мм, красные. Мякоть средне плотная, приятного мускатного вкуса. Кожица ягод средней толщины, при еде не ощущается. Урожайность ягод высокая, стабильная, более 6кг с растения. Нагрузка растения глазками 30-35. Нагрузка растения побегами 22-24 при площади питания 4-6м2. Вызревание лозы высокое, более 2/3 длины.Обрезка лоз плодоношения длинная, 6-8 глазков. Товарность высокая.  Устойчивость к грибковым заболеваниям 3 – 3,5 балла. Осами не повреждается. Морозостойкость до -23С.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")
