@@ -97,9 +97,39 @@
 
     &__info {
         &-descr {
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 30px;
+            p {
+                margin-bottom: 8px;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 30px;
+            }
+
+            ul {
+                margin-bottom: 8px;
+
+                li {
+                    position: relative;
+                    padding-left: 20px;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 30px;
+
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        top: 12px;
+                        left: 5px;
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 50%;
+                        background-color: $green-color;
+                    }
+                }
+            }
+
+            *:last-of-type {
+                margin-bottom: 0;
+            }
         }
     }
 
