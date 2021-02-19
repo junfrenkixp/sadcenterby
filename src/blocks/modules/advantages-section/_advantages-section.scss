@@ -1,4 +1,7 @@
 .advantages {
+    display: flex;
+    height: 400px;
+    color: $white-color;
 
     @include tablet {
         height: 350px;
@@ -7,11 +10,13 @@
         flex-direction: column;
         height: auto;
     }
-    display: flex;
-    height: 400px;
-    color: $white-color;
 
     &__col {
+        position: relative;
+        width: 33.3%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
 
         @include mobile {
             width: 100%;
@@ -20,18 +25,13 @@
         @include mobile-s {
             height: 320px;
         }
-        position: relative;
-        width: 33.3%;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
 
         &:last-child {
+            width: 33.4%;
 
             @include mobile {
                 width: 100%;
             }
-            width: 33.4%;
         }
 
         &:nth-child(even) {
@@ -51,15 +51,15 @@
         background-color: rgba(105, 175, 7, .7);
 
         &-content {
-
-            @include mobile {
-                padding: 0 15px;
-            }
             position: absolute;
             top: 50%;
             width: 100%;
             padding: 0 35px;
             transform: translateY(-50%);
+
+            @include mobile {
+                padding: 0 15px;
+            }
         }
 
         &-text {
@@ -68,14 +68,14 @@
     }
 
     &__title {
-
-        @include tablet {
-            font-size: 26px;
-        }
         margin: 0;
         font-size: 30px;
         font-weight: 700;
         text-align: center;
+
+        @include tablet {
+            font-size: 26px;
+        }
 
         & + * {
             margin-top: 20px;

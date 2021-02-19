@@ -1,10 +1,10 @@
 .header__nav {
+    position: relative;
 
     @include mobile {
         flex: 1;
         margin-left: 10px;
     }
-    position: relative;
 
     &._open {
         position: fixed;
@@ -22,6 +22,10 @@
 
         .header__nav-mob__btn {
             border-left: 1px solid rgba(72, 59, 51, 0.85);
+
+            &:before, &:after {
+                top: 45%;
+            }
             &:before {
                 transform: rotate(45deg);
             }
@@ -32,13 +36,14 @@
             span {
                 opacity: 0;
             }
-            &:before, &:after {
-                top: 45%;
-            }
         }
     }
 
     &-list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 83px;
 
         @include tablet {
             height: 60px;
@@ -53,13 +58,10 @@
             height: 100%;
             background-color: rgba(72, 59, 51, 0.7);
         }
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 83px;
     }
 
     &-item {
+        position: relative;
 
         @include tablet {
             height: 100%;
@@ -67,21 +69,20 @@
         @include mobile {
             width: 100%;
         }
-        position: relative;
 
         &__sublist {
-
-            @include mobile {
-                display: block;
-                position: static;
-                background-color: transparent;
-            }
             display: none;
             position: absolute;
             z-index: 100000;
             top: 47px;
             left: 0;
             background-color: $white-color;
+
+            @include mobile {
+                display: block;
+                position: static;
+                background-color: transparent;
+            }
         }
 
         &__subitem {
@@ -92,12 +93,6 @@
             }
 
             & > a {
-
-                @include mobile {
-                    color: $white-color;
-                    font-weight: 400;
-                    padding-left: 25px;
-                }
                 display: inline-block;
                 width: 100%;
                 padding: 7px 15px;
@@ -105,6 +100,12 @@
                 text-transform: uppercase;
                 font-size: 12px;
                 font-weight: 700;
+
+                @include mobile {
+                    color: $white-color;
+                    font-weight: 400;
+                    padding-left: 25px;
+                }
 
                 &:hover {
                     color: $green-color;
@@ -121,6 +122,12 @@
         }
 
         & > a {
+            padding: 34px 15px;
+            cursor: pointer;
+            color: $dark-bg-color;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 12px;
 
             @include tablet {
                 display: inline-block;
@@ -139,12 +146,6 @@
                 line-height: 22px;
                 border-bottom: 1px solid $black-color;
             }
-            padding: 34px 15px;
-            cursor: pointer;
-            color: $dark-bg-color;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 12px;
 
             &:hover {
                 color: $green-color;

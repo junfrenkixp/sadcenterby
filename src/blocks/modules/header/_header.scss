@@ -1,23 +1,23 @@
 .header {
     &__row-top {
-
-        @include mobile {
-            flex-direction: column;
-        }
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 5px 0;
         border-bottom: 1px solid #ebe9e5;
-    }
-
-    &__inner {
 
         @include mobile {
             flex-direction: column;
         }
+    }
+
+    &__inner {
         display: flex;
         align-items: center;
+
+        @include mobile {
+            flex-direction: column;
+        }
 
         &-mail {
             a {
@@ -45,24 +45,24 @@
         }
 
         &-social {
-
-            @include mobile {
-                padding: 0;
-            }
             display: flex;
             align-items: center;
             min-height: 19px;
             padding-right: 15px;
 
+            @include mobile {
+                padding: 0;
+            }
+
             &:last-child {
+                padding-left: 15px;
+                padding-right: 0;
+                border-left: 1px solid $black-color;
 
                 @include mobile {
                     border: none;
                     padding: 0;
                 }
-                padding-left: 15px;
-                padding-right: 0;
-                border-left: 1px solid $black-color;
             }
 
             &-list {
@@ -110,30 +110,30 @@
                     }
                 }
                 a {
-
-                    @include mobile {
-                        width: 45px;
-                        height: 45px;
-                    }
                     display: inline-block;
                     position: relative;
                     width: 35px;
                     height: 35px;
                     text-indent: -999em;
 
-                    &:before {
-                        @include align();
+                    @include mobile {
+                        width: 45px;
+                        height: 45px;
+                    }
 
-                        @include mobile {
-                            width: 25px;
-                            height: 25px;
-                        }
+                    &:before {
                         content: "";
+                        @include align();
                         width: 20px;
                         height: 20px;
                         background-size: contain;
                         background-repeat: no-repeat;
                         background-position: center center;
+
+                        @include mobile {
+                            width: 25px;
+                            height: 25px;
+                        }
                     }
                 }
             }
@@ -170,16 +170,18 @@
     }
 
     &__row-bot {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
         @include laptop {
             flex-direction: column;
         }
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
     }
 
     &__logo {
+        padding: 20px 0;
+        margin-right: 50px;
 
         @include laptop {
             margin-right: 0;
@@ -192,8 +194,6 @@
             margin-right: 0;
             padding: 15px 0;
         }
-        padding: 20px 0;
-        margin-right: 50px;
 
         a, span {
             display: inline-block;

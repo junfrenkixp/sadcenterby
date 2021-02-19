@@ -4,6 +4,9 @@
     align-items: flex-start;
 
     img {
+        display: inline-block;
+        max-width: 400px;
+        margin: 10px;
 
         @include tablet {
             max-width: 300px;
@@ -12,8 +15,5 @@
             max-width: 140px;
             margin: 5px;
         }
-        display: inline-block;
-        max-width: 400px;
-        margin: 10px;
     }
 }

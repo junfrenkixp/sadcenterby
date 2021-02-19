@@ -3,21 +3,21 @@
     margin: 50px 0;
 
     &__inner {
+        display: flex;
 
         @include mobile {
             flex-direction: column;
         }
-        display: flex;
     }
 
     &__body {
+        flex: 1;
+        margin-right: 50px;
 
         @include mobile {
             margin-right: 0;
             margin-bottom: 25px;
         }
-        flex: 1;
-        margin-right: 50px;
     }
 
     &__info {

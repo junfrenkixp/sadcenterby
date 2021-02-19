@@ -1,4 +1,7 @@
 .aside {
+    width: 30%;
+    max-width: 300px;
+    height: 100%;
 
     @include mobile {
         width: 100%;
@@ -8,9 +11,6 @@
             margin-top: 25px;
         }
     }
-    width: 30%;
-    max-width: 300px;
-    height: 100%;
 }
 
 .contacts {

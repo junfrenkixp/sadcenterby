@@ -1,24 +1,11 @@
 .main-slider {
 
     &-wrap {
-
-        @include tablet {
-            height: 400px;
-        }
-        @include mobile {
-            height: 300px;
-        }
-        @include mobile-m {
-            height: 250px;
-        }
         position: relative;
         height: 600px;
         background-image: -webkit-linear-gradient(45deg, rgb(105, 175, 7), rgb(122, 206, 5));
         background-image: -moz-linear-gradient(45deg, rgb(105, 175, 7), rgb(122, 206, 5));
         background-image: linear-gradient(45deg, rgb(105, 175, 7), rgb(122, 206, 5));
-    }
-
-    .slider__item {
 
         @include tablet {
             height: 400px;
@@ -29,9 +16,22 @@
         @include mobile-m {
             height: 250px;
         }
+    }
+
+    .slider__item {
         position: relative;
         height: 600px;
         overflow: hidden;
+
+        @include tablet {
+            height: 400px;
+        }
+        @include mobile {
+            height: 300px;
+        }
+        @include mobile-m {
+            height: 250px;
+        }
 
         img {
             position: absolute;
@@ -45,10 +45,6 @@
     }
 
     &__left-wrap, &__right-wrap {
-
-        @include mobile {
-            width: 60px;
-        }
         display: flex;
         align-items: center;
         justify-content: center;
@@ -59,6 +55,10 @@
         width: 100px;
         cursor: pointer;
 
+        @include mobile {
+            width: 60px;
+        }
+
         &:hover {
             svg {
                 fill: lighten($black-color, 5%);
@@ -66,6 +66,10 @@
         }
 
         svg {
+            width: 30px;
+            height: 50px;
+            transition: .3s;
+            fill: $black-color;
 
             @include tablet {
                 width: 18px;
@@ -76,10 +80,6 @@
                 width: 18px;
                 height: 30px;
             }
-            width: 30px;
-            height: 50px;
-            transition: .3s;
-            fill: $black-color;
         }
     }
 

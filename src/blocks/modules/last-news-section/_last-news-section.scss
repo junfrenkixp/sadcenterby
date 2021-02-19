@@ -3,11 +3,11 @@
     text-align: center;
 
     &__row {
+        display: flex;
 
         @include tablet-and-phone {
             flex-wrap: wrap;
         }
-        display: flex;
     }
 
     &__btn {
