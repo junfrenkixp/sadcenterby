@@ -1,0 +1,110 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Жимолость 'Югана'";
+    - const banner = "honeysuckle"
+
+block content
+    - const productTitle = "'Югана'";
+    - const imgPath = "../img/honeysuckle/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'yugana/yugana',
+                'alt': "Жимолость 'Югана'"
+            },
+            {
+                'imgPath': 'yugana/yugana-2',
+                'alt': "Жимолость 'Югана'"
+            },
+            {
+                'imgPath': 'yugana/yugana-3',
+                'alt': "Жимолость 'Югана'"
+            },
+            {
+                'imgPath': 'yugana/yugana-4',
+                'alt': "Жимолость 'Югана'"
+            },
+            {
+                'imgPath': 'yugana/yugana-5',
+                'alt': "Жимолость 'Югана'"
+            },
+            {
+                'imgPath': 'yugana/yugana-6',
+                'alt': "Жимолость 'Югана'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | «Югана» (Jugana) – среднего срока созревания.
+                                        | Сорт бакчарской селекции.
+                                        | Начало созревания с середины июня.
+                                        | Куст среднерослый, среднеплотный, высотой 150-165, шириной 190см..
+                                        | Средняя масса ягоды 1,4г-1,8г, одномерные, кувшиновидные с тупой верхушкой, темно-фиолетовые с сильным восковым налетом, твердые.
+                                        | Вкус десертный, кисло-сладкий. Кожица среднеплотная, транспортабельность средняя.
+                                        | Осыпаемость слабая, при сборе плоды легко отделяются от плодоножки.
+                                        | Созревание дружное.
+                                        | Первые 2 года, куст полноценно укореняется, ежегодно урожайность будет повышаться.
+                                        | Средняя урожайность с куста: 3,5-6,5 кг с куста.
+                    .product__row
+                        .product__info
+                            .product__info-wrap
+                                h3.page__sub-heading Дополнительно к сорту
+                                .product__info-descr
+                                    p В качестве опылителя рекомендуем: «Восторг».
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

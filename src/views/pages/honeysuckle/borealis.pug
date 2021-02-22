@@ -1,0 +1,99 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Жимолость 'Бореалис'";
+    - const banner = "honeysuckle"
+
+block content
+    - const productTitle = "'Бореалис'";
+    - const imgPath = "../img/honeysuckle/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'borealis/borealis',
+                'alt': "Жимолость 'Бореалис'"
+            },
+            {
+                'imgPath': 'borealis/borealis-2',
+                'alt': "Жимолость 'Бореалис'"
+            },
+            {
+                'imgPath': 'borealis/borealis-3',
+                'alt': "Жимолость 'Бореалис'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | «Бореалис» (Borealis) – раннего срока созревания.
+                                        | Канадская селекция.
+                                        | Срок созревания – с  20х чисел мая.
+                                        | Куст невысокий, раскидистый, высота 1,2 - 1,4м и ширина до 1,2м,густой
+                                        | Ягоды овальные, коробчатые, массой 1,4-1,6г,  прочно прикреплены к плодоножке,
+                                        | не осыпаются.
+                                        | Урожайность кустов  3,5 - 6 кг.
+                                        | Устойчивость к грибковым заболеваниям очень высокая.
+                                        | Еще одно ее преимущество – куст радует первыми ягодами уже на второй год посадки, а к 5-6 году дает максимальную отдачу.
+                                        | «Бореалы» значительно быстрее других сортов наращивают урожаи. Уже в трех-четырех-летнем возрасте урожай с одного куста может доходить до 2,5 кг ягод. Обычно такой урожайности кусты жимолости достигают к 5 - 7 годам, Бореалы в этом возрасте могут дать до 6 кг с куста.
+                                        | С 6-7-летнего возраста кусты прореживают, выполняя осенью детальную обрезку.
+                    .product__row
+                        .product__info
+                            .product__info-wrap
+                                h3.page__sub-heading Дополнительно к сорту
+                                .product__info-descr
+                                    p Опылители для Бореалиса сорта: «Хоней Би», «Аврора».
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

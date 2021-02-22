@@ -1,0 +1,90 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Жимолость 'Тундра'";
+    - const banner = "honeysuckle"
+
+block content
+    - const productTitle = "'Тундра'";
+    - const imgPath = "../img/honeysuckle/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'tundra/tundra',
+                'alt': "Жимолость 'Тундра'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | «Тундра» (Tundra) -  среднего срока созревания.
+                                        | Канадская селекция, 2007 года.
+                                        | Срок созревания – с  начала июня и до начала августа.
+                                        | Куст прямостоячий, сдержанный, высотой 1,2-1,3 м, шириной 1,0-1,2 м густой.
+                                        | Молодые побеги тонкие с зелёным, местами с фиолетовым оттенком. Старые у основания достигают толщины 3 см
+                                    p
+                                        | Ягода удлиненно округло-овальной формы, в виде бочонка, вкус от кисло-сладкого до сладкого ( по мере созревания), поэтапный сбор ягод.
+                                        | Ягоды твёрдые, покрыты плотной кожицей, однако хрупкие, рубчик сухой.
+                                    p
+                                        | Средняя масса ягод 1,4-1,6г.
+                                        | Осыпаемость средняя (зависит от полива) .
+                                        | Нагрузка на куст 4-4,5 кг.
+                                        | Имеет высокую устойчивость к вредителям и разного рода заболеваниям.
+                                        | Высокая продуктивность с сортом «Индиго Джем».
+                                        | Относительно молодой сорт который уже успел занять свое почётное место.
+                                        | Рекомендуем контролировать полив, так как он напрямую связан с осыпанием ягод на данном сорте.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")
