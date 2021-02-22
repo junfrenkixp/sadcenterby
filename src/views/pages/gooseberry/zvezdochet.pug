@@ -1,0 +1,83 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Крыжовник 'Звездочет'";
+    - const banner = "gooseberry"
+
+block content
+    - const productTitle = "'Звездочет'";
+    - const imgPath = "../img/gooseberry/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'zvezdochet/zvezdochet',
+                'alt': "Крыжовник 'Звездочет'"
+            },
+        ]
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Крыжовник темно-красный  «Звездочет» РФ – раннего срока созревания.
+                                        | Срок созревания – середина июня.
+                                        | Куст среднерастидистый, среднерослый, прямостоячий, высотой 120-140 см, густой.
+                                        | Шипы одинарные, расположены в нижней части побега.
+                                        | Ягода округлой формы, при полном созревании темнеет, ароматные, семян мало, кисло-сладкого десертного вкуса.
+                                        | Средней массой  5,6-8,5 г.
+                                        | Урожайность стабильная 3,5-4,8 кг с куста.
+                                        | Морозоустойчив, засухоустойчив, не поражается мучнистой росой, скороплодный.
+                                        | Отличный выбор для ценителей крыжовника!
+                                        | Он перспективен и для промышленных посадок, и для любительского садоводства.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img + '.webp' type="image/webp")
+                                    img(src=post.img + '.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

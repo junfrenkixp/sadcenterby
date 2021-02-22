@@ -1,0 +1,88 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Крыжовник 'Нежный'";
+    - const banner = "gooseberry"
+
+block content
+    - const productTitle = "'Нежный'";
+    - const imgPath = "../img/gooseberry/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'nezhnyj/nezhnyj',
+                'alt': "Крыжовник 'Нежный'"
+            },
+            {
+                'imgPath': 'nezhnyj/nezhnyj-2',
+                'alt': "Крыжовник 'Нежный'"
+            },
+        ]
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Крыжовник розовый «Нежный» РФ - среднепозднего срока созревания.
+                                        | Срок созревания – середина/конец июля.
+                                        | Прямостоячий, среднерослый, густой,  высотой 150-170 см. Ветви раскидываются и принимают форму круга, листья достаточно плотно лежат друг к другу.
+                                        | Ягоды имеют округло-удлиненные форму, светло-розового оттенка, плотные, массой 5 - 6,5г.
+                                        | Оболочка зеленоватого цвета, мякоть мягкая и сладкая.
+                                        | На побегах имеются маленькие шипы, которые не могут навредить, так как они слишком малы. Следовательно, сбор урожая будет прост и удобен.
+                                        | Нагрузка 5,0 – 7,0 кг с куста, долго сохраняются на кусте.
+                                        | Устойчив к мучнистой росе, средняя устойчивость к септориозу.
+                                        | Морозоустойчив (-30), засухоустойчив, выдерживает +38 без длительного полива (если отлучились в отпуск).
+                                        | Прост в уходе, нетребователен к почве, интересен по вкусовым качествам.
+                                        | Отличный выбор для начинающего садовода.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img + '.webp' type="image/webp")
+                                    img(src=post.img + '.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

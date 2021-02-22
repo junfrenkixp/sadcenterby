@@ -1,0 +1,95 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Крыжовник 'Панский'";
+    - const banner = "gooseberry"
+
+block content
+    - const productTitle = "'Панский'";
+    - const imgPath = "../img/gooseberry/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'panskij/panskij',
+                'alt': "Крыжовник 'Панский'"
+            },
+        ]
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Крыжовник зеленый «ГФ Панский» РБ – раннего срока созревания.
+                                        | Срок созревания – конец июня.
+                                        | Куст прямостоячий, средне раскидистый, побеги мощные, средней густоты, высотой 110-130 см.
+                                        | Ветви раскидываются, при максимальных нагрузках частично требует опоры, либо подвязки.
+                                        | Шиповатость средняя, шип небольшой, в большей части сформирован в нижней части куста, дискомфорта при ягодосборе не приносит.
+                                        | Округло-овальные, зеленые, по мере созревания становятся янтарно-зелеными, плотные, массой 6,5 – 9,0г.
+                                        | Мякоть десертного, нектарного вкуса с небольшой кислинкой, очень сочная, семян мало.
+                                    p
+                                        | Осыпаемости нет, отрыв сухой.
+                                        | Сорт устойчив к мучнистой росе и другим грибковым заболеваниям, в обработках не нуждается.
+                                        | Прост в уходе, нетребователен к почве, интересен по вкусовым качествам
+                                        | Полностью морозоустойчив во всех регионах РБ.
+                                        | Данная форма является личной гибридной работой, с богатой историей.
+                                        | Неизвестный старинный сорт берет своё начало из панского сада, аг. Кривичи, Мядельский р-н (Минская обл.).
+                                        | В 2000м году, семена этого сорта были высажены на зиму, в результате чего получились гибриды, в кол-ве 15шт.
+                                        | В течение пяти лет наблюдений и анализа, был выделен один образец с отличными показателями и характеристиками.
+                                        | Гибрид был полностью устойчив к заболеваниям разной этиологии, отличился зимовкой в открытом грунте, получил огромную ягоду, прекрасный урожай, но оставил право на шип.
+                                        | Пожалуй, это единственный минус данного сорта.
+                                        | Урожайность отличительная. Нагрузка на пятилетний куст 9-10 кг (ведро).
+                                        | Сорт проверен годами, в обработках не нуждается.
+                                    p
+                                        | Было принято решение назвать «Панский», в дань уважения Пана проживающего в то время, и истории
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img + '.webp' type="image/webp")
+                                    img(src=post.img + '.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

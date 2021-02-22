@@ -1,0 +1,84 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Крыжовник 'Уральский изумруд'";
+    - const banner = "gooseberry"
+
+block content
+    - const productTitle = "'Уральский изумруд'";
+    - const imgPath = "../img/gooseberry/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'uralskij-izumrud/uralskij-izumrud',
+                'alt': "Крыжовник 'Уральский изумруд'"
+            },
+        ]
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Крыжовник зеленый «Уральский изумруд» РФ – раннего срока созревания.
+                                        | Срок созревания – конец июня.
+                                        | Куст аккуратный, среднерослый, формирует слабораскидистую крону, загущение среднее.
+                                        | Высота кустарника 90-120 см.
+                                        | Шипы среднего размера, коричневого окраса, тонкие и редкие, по всей длине побега.
+                                        | Ягоды округло-овальные, зеленые, без опушения,  средней массой 6,5 – 7,5г (крупные, характеризуются одномерностью), кожица тонкая, осыпания нет.
+                                        | Дегустационная оценка максимальная: вкус сладкий или с небольшой кислинкой, тонкая кожица, неощутимые на привкус семена (сах. 9.3%).
+                                        | Урожайность 4,5-6,5 кг.
+                                        | Светолюбив, теневынослив.
+                                        | Неприхотлив к условиям выращивания, устойчив к большинству болезней ягодных культур (мучнистой росе и антракнозу), так же не подвержен поражению пильщиками и огневками.
+                                        | Уральский изумруд легко переносет морозы даже в северных регионах РБ (-30).
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img + '.webp' type="image/webp")
+                                    img(src=post.img + '.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

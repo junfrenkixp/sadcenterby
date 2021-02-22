@@ -1,0 +1,86 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Крыжовник 'Берилл'";
+    - const banner = "gooseberry"
+
+block content
+    - const productTitle = "'Берилл'";
+    - const imgPath = "../img/gooseberry/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'berill/berill',
+                'alt': "Крыжовник 'Берилл'"
+            },
+        ]
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Крыжовник зеленый «Берилл» РФ – среднего срока созревания.
+                                        | Срок созревания – середина июля.
+                                        | Куст прямостоячий, средней высоты, слабораскидистый, густой. Ветки не очень толстые, загнутые дугой. Побеги слабошиповатые. Шипы расположены в нижней части куста, удобный ягодосбор.
+                                        | В плодоношение куст вступает через 6-10 месяцев после посадки.
+                                        | Ягоды крупные, светло-зеленые, шарообразные, кожура тонкая.
+                                        | Средней массой 9-12г.
+                                        | Мякоть кисло-сладкая, десертного вкуса, очень сочная, семян мало.
+                                        | Урожайность стабильная 6-8 кг с куста.
+                                        | При правильной агротехнике, своевременном внесении органики, можно достичь результата в 10кг.
+                                        | Легко переносит непродолжительную засуху и не требует частых поливов. Но в жару, всё же, не рекомендуют надолго оставлять его без воды.
+                                        | Морозоустойчивость высокая, не боится возвратных заморозков на территории Гомельской области.
+                                        | Средняя устойчивость к септориозу. Рекомендуем делать периодические обработки, для профилактики.
+                                        | Результат превзошёл все ожидания, поскольку «Берилл» собрал в себе все лучшие качества родителей.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img + '.webp' type="image/webp")
+                                    img(src=post.img + '.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

@@ -1,0 +1,92 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Крыжовник 'Конфетный'";
+    - const banner = "gooseberry"
+
+block content
+    - const productTitle = "'Конфетный'";
+    - const imgPath = "../img/gooseberry/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'konfetnyj/konfetnyj',
+                'alt': "Крыжовник 'Конфетный'"
+            },
+            {
+                'imgPath': 'konfetnyj/konfetnyj-2',
+                'alt': "Крыжовник 'Конфетный'"
+            },
+        ]
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Крыжовник розовый «Конфетный» РФ – среднего срока созревания.
+                                        | Срок созревания – середина июля.
+                                        | Куст аккуратный, не объемный, прямые мощные побеги высотой 80-120см. Не требует опоры и подвязки. Побеги без опушения, растут вертикально, создавая компактную форму.
+                                        | Шипы средней длины, коричневого окраса, тонкие и редкие.
+                                        | Удобен в работе и ягодосборе.
+                                        | Ягоды округло-овальные, розово-карамельные, слегка опушены.
+                                        | Мякоть десертного, нектарного вкуса с небольшой кислинкой.
+                                        | Дегустационная оценка максимальная.
+                                        | Средняя масса ягод 5,0-6,5г.
+                                        | Нагрузка 4,5-6,0 кг с куста.
+                                        | Светолюбив, теневынослив.
+                                        | Высокая устойчивость к антракнозу и мучнистой росе
+                                    p
+                                        | В условиях холодной зимы, засушливого или дождливого лета, при резких температурных перепадах, зарекомендовал себя как устойчивый сорт.
+                                        | На территории Гомельской области, подмерзаний не наблюдалось.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img + '.webp' type="image/webp")
+                                    img(src=post.img + '.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

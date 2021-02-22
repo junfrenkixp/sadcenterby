@@ -1,0 +1,93 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Крыжовник 'Пакс'";
+    - const banner = "gooseberry"
+
+block content
+    - const productTitle = "'Пакс'";
+    - const imgPath = "../img/gooseberry/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'pax/pax',
+                'alt': "Крыжовник 'Пакс'"
+            },
+        ]
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Крыжовник розовый «Пакс» (Pax) Канада/Великобритания – раннего срока созревания.
+                                        | Срок созревания – начало июля.
+                                        | Куст пряморослый, слабораскидистый, не склонен к загущению, высотой 100-120см.
+                                        | Побеги полностью лишены шипов, что делает сбор урожая легким и комфортным.
+                                        | Шипы на ветвях, начиная со второго года жизни кустарника, начинают отпадать (!).
+                                        | Засухоустойчивый, отличные показатели морозоустойчивости в северных регионах РБ (Витебская обл.).
+                                        | Ягоды красивые, с опушкой, розовым отливом, массой 8-12г.
+                                        | Округло-овальные, розовые, по мере созревания становятся бордово-красными.
+                                        | Кожица плотная, не склонная к растрескиванию, но тонкая.
+                                        | Мякоть нежная, сочная, изумительно сладкая.
+                                        | Осыпаемости нет, отрыв сухой.
+                                        | Нагрузка на куст 4,5-5,5кг, пятилетние 12,5-15,0+кг.
+                                        | Устойчив к большинству болезней ягодников, а так же к американской мучнистой росе.
+
+                    .product__row
+                        .product__info
+                            .product__info-wrap
+                                h3.page__sub-heading Дополнительно к сорту
+                                .product__info-descr
+                                    p При недостатке атмосферных осадков, в период цветения и завязи ягод, необходимо обеспечить контроль полива.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img + '.webp' type="image/webp")
+                                    img(src=post.img + '.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

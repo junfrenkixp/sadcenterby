@@ -1,0 +1,96 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Крыжовник 'Уральский бесшипый'";
+    - const banner = "gooseberry"
+
+block content
+    - const productTitle = "'Уральский бесшипый'";
+    - const imgPath = "../img/gooseberry/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'uralskij-besshipyj/uralskij-besshipyj',
+                'alt': "Крыжовник 'Уральский бесшипый'"
+            },
+            {
+                'imgPath': 'uralskij-besshipyj/uralskij-besshipyj-2',
+                'alt': "Крыжовник 'Уральский бесшипый'"
+            },
+        ]
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Крыжовник зеленый «Уральский бесшипый» РФ – среднего срока созревания.
+                                        | Срок созревания – середина июля.
+                                        | Высокими среднераскидистыми кустарник, обладающий вертикальными побегами
+                                        | средней толщины.
+                                        | Боковые ответвления могут иметь небольшой угол наклона
+                                        | Высота взрослого куста 90-130 см.
+                                        | Несмотря на своё название, культура всё же имеет незначительную шиповатость, но она
+                                        | очень мала.
+                                        | Ягода овальной формы, изумрудно-зелёного окраса, массой 6,5-7,5 (8,5)г.
+                                        | Кожица плодов довольно плотная, а мякоть — сочная, имеет приятный десертный вкус с
+                                        | незначительной кислинкой.
+                                        | Осыпаемость средняя, отрыв сухой.
+                                        | Нагрузка на куст 5,5 - 6,0 кг, пятилетние 7-9+кг.
+                                        | Крыжовник отличается хорошей морозостойкостью, выдерживая температуры до -30.°С,
+                                        | что допускает его выращивание в северных регионах.
+                                        | Хорошо переносит и засуху, но не продолжительную. Отсутствие поливов в жаркий
+                                        | период может негативно повлиять на качество плодов.
+                                        | Хотя крыжовник имеет хорошую стойкость к заболеваниям, рекомендуем
+                                        | профилактическую обработку до цветения и после сбора урожая.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img + '.webp' type="image/webp")
+                                    img(src=post.img + '.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")
