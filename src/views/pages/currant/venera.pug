@@ -1,0 +1,90 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Смородина 'Венера'";
+    - const banner = "currant"
+
+block content
+    - const productTitle = "'Венера'";
+    - const imgPath = "../img/currant/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'venera/venera',
+                'alt': "Смородина 'Венера'"
+            }
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Смородина черная «Вернера».
+                                        | Сорт выведен А.С.Ильиным в Южно-Уральском НИИ плодоовощеводства и картофелеводства. «Бредторп» х «Сеянец Голубки».
+                                        | Кусты не очень высокие, степени ветвления и густоты средние.
+                                        | Высота 80-120 см (обходится без подвязки).
+                                        | Среднераскидистая и среднерослая компоновка куста.
+                                        | Кисти средней длины 4,5-7 см, 7-11 цветков, одиночные, ось средняя или толстая, светло-зеленая или розоватая, изогнутая, неопушенная.
+                                        | Ягоды крупные, средней массой 5,0-5,0г
+                                        | Округлой формы, кожура тонкая, ягоды почти черного цвета.
+                                        | Вкус у ягод отличный, очень сладкий.
+                                        | Теневынослив, светолюбив.
+                                        | Урожайность стабильная, высокая 4,0-4,5 кг с куста.
+                                        | Урожайность может быть очень высокой, при соблюдении минимальной агротехники.
+                                        | Ягоды употребляют в свежем виде, пригодны для сиропов, вареньев, джемов.
+                                        | Устойчивость к мучнистой росе и почковому клещу высокая.
+                                        | Достоинства сорта: высокая зимостойкость и урожайность, очень крупный размер ягод, десертный вкус, слабая восприимчивость к мучнистой росе и антракнозу.
+                                        | Высокая морозоустойчивость, в условиях аг «Прудок», аг «Зимовищи», аг «Загорины».
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

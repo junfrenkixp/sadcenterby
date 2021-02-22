@@ -1,0 +1,85 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Смородина 'Ладушка'";
+    - const banner = "currant"
+
+block content
+    - const productTitle = "'Ладушка'";
+    - const imgPath = "../img/currant/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'ladushka/ladushka',
+                'alt': "Смородина 'Ладушка'"
+            }
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Смородина черная «Ладушка» - раннего срока созревания.
+                                        | Селекция ВНИИСПК.
+                                        | Куст мощный, побеги вертикально направлены, достаточно компактный и не раскидистый.
+                                        | Растет высотой 80-130 см.
+                                        | Ягоды крупные, одномерные, округлые, почти черные, сладкого, десертного вкуса, до 14-16 мм в диаметре.
+                                        | Средняя масса  4,6-5,0 г.
+                                        | Приятный десертный вкус, ароматные.
+                                        | Теневынослив, не требует контроля полива.
+                                        | Нагрузка регулярная, стабильная, высокая, 3,6-4,0 кг с куста.
+                                        | Отличительная черта сорта «Ладушка»  высокая устойчивость к мучнистой росе, высокая иммунность к листовым пятнистостям и почковому клещу.
+                                        | Назначение универсальное. Ягода пригодна к заморозке.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

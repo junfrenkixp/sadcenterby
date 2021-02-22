@@ -1,0 +1,86 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Смородина 'Дар Смоляниновой'";
+    - const banner = "currant"
+
+block content
+    - const productTitle = "'Дар Смоляниновой'";
+    - const imgPath = "../img/currant/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'dar-smolyaninovoj/dar-smolyaninovoj',
+                'alt': "Смородина 'Дар Смоляниновой'"
+            }
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Смородина черная «Дар Смоляниновой» .
+                                        | Сорт раннего срока созревания селекции ВНИИ люпина от скрещивания сортолинейных гибридов 4-15-90 и 42-7.
+                                        | Куст среднерослый, слабораскидистый, густой.
+                                        | Побеги средней толщины, оливково-зеленые, мелкоопушенные, матовые.
+                                        | Ягоды средние и крупные, массой 2,8-4,5г (самые крупные до 5,5 г).
+                                        | Округлые, черные, с сухим отрывом, освежающего вкуса.
+                                        | Плодоножка средней длины, ось кисти средняя, прямая.
+                                        | Нагрузка на куст – 2,5-3,5кг.
+                                        | Сорт самоплоден.
+                                        | Устойчив мучнистой росе, антракнозу, септориозу и почковому клещу.
+                                        | Достоинства сорта: раннее созревание, устойчивость к болезням, высокие вкусовые качества ягод, простота в уходе.
+                                        | Классический сорт, в коллекции более 15 лет.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

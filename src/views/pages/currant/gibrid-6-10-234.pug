@@ -1,0 +1,87 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Смородина 'Гибрид 6-10-234'";
+    - const banner = "currant"
+
+block content
+    - const productTitle = "'Гибрид 6-10-234'";
+    - const imgPath = "../img/currant/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'gibrid-6-10-234/gibrid-6-10-234',
+                'alt': "Смородина 'Гибрид 6-10-234'"
+            }
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Смородина черная гибридная форма «ГФ 6-10-234»
+                                        | Новейший гибрид черной смородины среднего срока созревания селекции ВНИИ люпина ( Брянск) Автор Астахов А.И
+                                        | Куст среднерослый, раскидистый, достаточно мощный.
+                                        | Приподнятый куст высотой 80-120 см (обходится без подвязки).
+                                        | Ягоды крупные и очень крупные, прямой конкурент сорта «Блэк Меджик».
+                                        | Средняя масса ягод 4,6-5,5г, некоторые до 6,8-7,0г.
+                                        | Округлые, сухой отрыв.
+                                        | Теневынослив, светолюбив, требует контроля полива.
+                                        | Урожайность стабильно-высокая, до 4,5 кг с куста.
+                                        | Десертный сорт, универсального направления.
+                                        | Устойчивость к мучнистой росе высокая, средняя устойчивость к почковому клещу.
+                                        | Сорт новинка, зарекомендовал себя отлично, описание будет дополняться.
+                                        | Высокая морозоустойчивость, в условиях аг «Прудок», аг «Зимовищи», аг «Загорины», «Пхов» (Мозырский р-н).
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

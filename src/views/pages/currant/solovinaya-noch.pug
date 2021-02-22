@@ -1,0 +1,87 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Смородина 'Соловьиная ночь'";
+    - const banner = "currant"
+
+block content
+    - const productTitle = "'Соловьиная ночь'";
+    - const imgPath = "../img/currant/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'solovinaya-noch/solovinaya-noch',
+                'alt': "Смородина 'Соловьиная ночь'"
+            }
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Сорт раннего срока созревания, получен во ВНИИ люпина от скрещивания сортов «Селеченская 2» и «Сокровище»
+                                        | Куст среднерослый, среднераскидистый, прямой высотой 100-130 см.
+                                        | Побеги достаточно толстые, подвязка не требуется.
+                                        | Кисть средняя, 7-12 цветков.
+                                        | Ягоды очень крупные, средняя масса 3,8-6,5г (некоторые 7,5-8,2г).
+                                        | Круглые, блестящие, плотные, кожица тонкая, отрыв сухой, легкий.
+                                        | Созревание дружное. Гроздь плотная.
+                                        | Вкус десертный, насыщенно-смородиновый, яркий густой аромат.
+                                        | Теневынослив, светолюбив, не требует контроля полива.
+                                        | Устойчив к засухе, жаре.
+                                        | Высокая устойчивость к грибковым болезням, а так же к почковому клещу.
+                                        | В сезоне 2020 зарекомендовал себя как весьма перспективный сорт.
+                                        | Описание будет дополняться.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")
