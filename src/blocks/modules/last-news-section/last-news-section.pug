@@ -41,7 +41,7 @@ section.last-news
         .grid__item.news__item-wrap
           .news__item
             .news__item-img
-              a.news__item-link.news__item-img__link(href=item.link target='_blank')
+              a.news__item-link.news__item-img__link(href=item.link target='_blank' rel="nofollow noopener noreferrer")
                 picture
                   source(srcset='./img/news/'+item.imgPath+'.webp' type="image/webp")
                   img(src='./img/news/'+item.imgPath+'.jpg' alt=item.title)
@@ -54,9 +54,9 @@ section.last-news
             .news__item-desc
               div
                 h3.news__item-heading
-                  a.news__item-link(href=item.link target='_blank')=item.title
+                  a.news__item-link(href=item.link target='_blank' rel="nofollow noopener noreferrer")=item.title
                 p.news__item-desc__text=item.descr
               div
-                a.btn.btn-secondary.news__item-link(href=item.link target='_blank')
+                a.btn.btn-secondary.news__item-link(href=item.link target='_blank' rel="nofollow noopener noreferrer")
                   | Побдробнее
     a(href="./news.html").btn.btn-primary Больше новостей

@@ -1,0 +1,92 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Виноград 'Лора'";
+    - const banner = "grapes"
+
+block content
+    - const productTitle = "'Лора'";
+    - const imgPath = "../img/grapes/";
+    - const addInfo = "Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'lora/lora',
+                'alt': "Виноград 'Лора'"
+            },
+            {
+                'imgPath': 'lora/lora-2',
+                'alt': "Виноград 'Лора'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Лора - столовая форма винограда очень раннего срока созревания 110-115 дней. Грозди коническин, средней плотности, массой 1000-1200гр. Ягода цилиндрической, овальные,масса ягоды 6-9 гр. Женский сорт, требует опылителя (любой обоеполый сорт, но лучше Аркадия или к-ш 342).
+                                        | Мякоть плотная приятного вкуса.
+                                        | Сахар накапливает хорошо, может долго висеть на кустах, при этом содержание сахара может быть выше 20%. Транспонтабельность хорошая. Лоза вызревает хорошо. У формы винограда Лора устойчивость к милдью повышена. Требуется стандартные 2-3 обработки в течении вегетационного периода.
+                                        | Морозоустойчивость в условиях г.Мозыря -23-25°С.
+                                        | Растрескивание наблюдается крайне редко.
+                                        | При созревании ягоды крепко удерживаются на плодоножках и не осыпаются. Наивысшей кондиции урожай достигает в конце августа.
+                                        | САТ для созревания 2500 (Мозырь 2700-2900).
+                    .product__row
+                        .product__info
+                            .product__info-wrap
+                                h3.page__sub-heading Дополнительно к сорту
+                                .product__info-descr
+                                    p Старый, надежный, проверенный сорт. Один из лучших сортов в Украине.
+                                    p Лора очень гибкая в плане ухода. В коллекции 27 лет.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

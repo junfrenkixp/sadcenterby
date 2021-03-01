@@ -33,6 +33,9 @@
     &.honeysuckle {
         background-image: url(../img/banners/honeysuckle-banner.webp);
     }
+    &.honey {
+        background-image: url(../img/banners/honey-banner.webp);
+    }
 }
 .no-webp .banner {
     &.grapes {
@@ -49,5 +52,8 @@
     }
     &.honeysuckle {
         background-image: url(../img/banners/honeysuckle-banner.jpg);
+    }
+    &.honey {
+        background-image: url(../img/banners/honey-banner.jpg);
     }
 }
