@@ -1,0 +1,85 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Виноград 'Элегант сверхранний'";
+    - const banner = "grapes"
+
+block content
+    - const productTitle = "'Элегант сверхранний'";
+    - const imgPath = "../img/grapes/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'ehlegant-sverkhrannij/ehlegant-sverkhrannij',
+                'alt': "Виноград 'Элегант сверхранний'"
+            },
+            {
+                'imgPath': 'ehlegant-sverkhrannij/ehlegant-sverkhrannij-2',
+                'alt': "Виноград 'Элегант сверхранний'"
+            },
+            {
+                'imgPath': 'ehlegant-sverkhrannij/ehlegant-sverkhrannij-3',
+                'alt': "Виноград 'Элегант сверхранний'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Элегант сверхранний - гибридная форма винограда очень раннего срока созревания (100-110 дней). Кусты слабо- или среднерослые. Цветок обоеполый. Грозди крупные 300-600 г, цилиндроконические, умеренно-плотные. Ягоды крупные 29x20 мм, (5-6 г), зелено-белые, овальные, реже сосковидные, приятного гармоничного вкуса с легким мускатом. От Восторга досталось высокое сахаронакопление, способность гроздей долго висеть на кустах и не очень хорошая укореняемость черенков. Побеги вызревают хорошо. Элегант сверхранний  совместим с большинством подвоев.  Хорошо отзывается на высокий уровень агротехники. Устойчив к милдью (3 балла), серой гнили.
+                                        | Является столовым виноградом, поэтому делать вина из него не получится. Он хорошо транспортируется, поэтому постоянно пользуется спросом у любителей, начинающих садоводов. Некоторые хозяйки делают из этого сорта джемы, соки и варенье.
+                                        | Урожайность очень высокая. Созревание побегов замещения быстрое и качественное. Элегант является морозоустойчивым – он выдерживает до минуса 25 градусов по Цельсию, в условиях низин Мозырского района, подмерзаний в период весны не наблюдалось. Виноград может зимовать без специального укрытия, досточно лапника. Элегант выдерживает жару и засуху отлично!
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

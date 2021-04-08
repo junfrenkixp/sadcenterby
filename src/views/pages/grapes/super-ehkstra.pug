@@ -1,0 +1,81 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Виноград 'Супер экстра'";
+    - const banner = "grapes"
+
+block content
+    - const productTitle = "'Супер экстра'";
+    - const imgPath = "../img/grapes/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'super-ehkstra/super-ehkstra',
+                'alt': "Виноград 'Супер экстра'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Супер экстра - сорт винограда любительской селекции (Павловский Е.Г.). Срок созревания ягод - очень ранний (95-100 дней), конец середина/конец июля.
+                                        | Куст сильнорослый, с побегами светло-зелёного и светло-коричневого цвета. Листья насыщенного зелёного цвета, пятилопастные, несильно рассечённые.
+                                        | Грозди умеренно рыхлые, весом 0,5-0,8 кг. При хороших условиях вес отдельных гроздей может доходить до 1,5 кг. По форме удлинённые, слегка яйцевидные. Средняя длина ягоды — 2,8-3,5 см, ширина — 2,3-2,5 см. Вес в среднем от 7 до 10 г.
+                                        | Кожица средней толщины и плотности, мякоть мясисто-сочная, вкус гармоничный Кусты большой силы роста. Урожайность высокая.
+                                        | Урожайность сорта стабильная и высокая, поддерживается нормировкой соцветиями.
+                                        | Помимо быстрого созревания Супер экстра также хорошо переносит морозы и не страдает при понижении температуры до -25°C, однако, всё же требует укрывания на зиму.
+                                        | Сопротивляемость сорта грибковым заболеваниям высокая, но профилактическая обработка фунгицидными препаратами приветствуется.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

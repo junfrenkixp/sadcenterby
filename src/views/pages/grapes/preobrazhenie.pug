@@ -1,0 +1,83 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Виноград 'Преображение‌'";
+    - const banner = "grapes"
+
+block content
+    - const productTitle = "'Преображение‌'";
+    - const imgPath = "../img/grapes/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'preobrazhenie/preobrazhenie',
+                'alt': "Виноград 'Преображение‌'"
+            },
+            {
+                'imgPath': 'preobrazhenie/preobrazhenie-2',
+                'alt': "Виноград 'Преображение‌'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Преображение – столовый сорт винограда. Срок созревания вторая половина августа.
+                                        | Кусты очень большой силы роста с очень высокой пасынкообразовательной способностью. Цветок обоеполый. Грозди конические, широко конические или бесформенные, средней плотности и рыхлые, средней массой от 700 до 1500 г, отдельные грозди достигают 2-2,3 кг. Ягоды удлиненно-овальные, очень крупные, средней массой 12-15г г, от бело-розовых в тени куста до ярко-розовых на солнечной стороне, гармоничного вкуса. Мякоть мясисто-сочная, кожица средней прочности.
+                                        br
+                                        | Побеги вызревают удовлетворительно и хорошо. Высокая урожайность.
+                                        | Устойчивость к милдью достаточно высокая, к оидиуму средняя, устойчив к серой гнили. Требует укрытия кустов на зиму, при этом морозоустойчивость до -24 градусов. Транспортабельность и товарность очень высокая.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

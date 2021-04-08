@@ -1,0 +1,79 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Виноград 'Тимур'";
+    - const banner = "grapes"
+
+block content
+    - const productTitle = "'Тимур'";
+    - const imgPath = "../img/grapes/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'timur/timur',
+                'alt': "Виноград 'Тимур'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Тимур — это столовый сорт светлого винограда, полученный скрещиванием сортов Восторг и Фрумоаса Албэ. Оба сорта созревают довольно рано и хорошо сопротивляются болезням. Эти качества родителей и унаследовал сорт винограда Тимур, который вызревает в рекордно короткие сроки — 105-113 дней, и хорошо сопротивляется грибковым заболеваниям винограда, поэтому уход за ним достаточно прост. На сегодняшний день существует два вида сорта Тимур: белый и розовый. Розовый Тимур менее популярен среди виноградарей, так как созревает дольше, плодоносит не так сильно, как белый, и его ягоды уступают белому Тимуру по вкусовым качествам.
+                                        br
+                                        | Сорт классическийТимур имеет цилиндрические или конические грозди умеренной плотности и весом 500-800г. Ягоды жёлто-зелёного цвета, при созревании приобретают слабый коричневый загар и янтарно-медовый оттенок. Длина ягоды в среднем 29 мм, ширина — 21 мм; вес от 6 до 8 г, особо крупные ягоды могут весить до 10 г. Сорт Тимур даёт виноградины удлинённой формы, иногда с заострённым кончиком. Мякоть плотная, хрустящая, с заметным мускатным ароматом. Кожица тонкая, легко рвётся и почти не чувствуется при поедании.
+                                        | Отлично подходит для употребления в свежем виде, для приготовления изюма.
+                                        | Морозоустойчивость -25. В условиях низин (прудок, зимовищи, каменка), рекомендуем укрывать первые 3-4 года.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

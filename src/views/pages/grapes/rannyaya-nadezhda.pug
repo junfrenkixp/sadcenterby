@@ -1,0 +1,79 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Виноград 'Ранняя Надежда'";
+    - const banner = "grapes"
+
+block content
+    - const productTitle = "'Ранняя Надежда'";
+    - const imgPath = "../img/grapes/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'rannyaya-nadezhda/rannyaya-nadezhda',
+                'alt': "Виноград 'Ранняя Надежда'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | (ЗОС на Надежда АЗОС)
+                                        br
+                                        | Ранняя Надежда — гибридная форма винограда селекционера-любителя Голуба Анатолия Алексеевича.  Очень раннего срока созревания, в отдельные годы, созревает в последней декаде июля. Очень долго висит, на кусте не теряя товарных качеств. Ягода крупная и очень крупная, яйцевидно-овальная с заостренным кончиком, приятного вкуса. Мякоть мясисто-сочная, плотная, ягода чёрная, вкус сохраняется до осени. Не склонна к растрескиванию, осой не поражается. Горошения за время плодоношения не наблюдалось. Цветок обоеполый, устойчивость к болезням и морозу хорошая. Урожайность стабильная, высокая. Несколько тонов во вкусе не оставят никого равнодушным. Висит не теряя вкусовых и внешних качеств до заморозков.
+                                        br
+                                        | Рослость куста большая. Грозди крупные, 700-1000 г, конусообразные, в меру рыхлые, крылатые. Ягода крупная, около 14 г, овальная, вытянутая, темно-синяя с характерным бело-лунным налетом. Шкурка очень плотная, умеренной толщины, съедаемая. Мякоть мясистая, сочная, с простым, но не примитивным, приятным вкусом. Вызревший побег зеленовато-коричневый, в красноту. Лист среднего размера, ярко-зеленый, округлый, среднерассеченный. Плодоножки толстые, крепкие, светло-зеленые, относительно длинные. Цветок и мужской, и женский.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

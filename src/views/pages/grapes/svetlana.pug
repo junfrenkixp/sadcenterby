@@ -1,0 +1,87 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Виноград 'Светлана'";
+    - const banner = "grapes"
+
+block content
+    - const productTitle = "'Светлана'";
+    - const imgPath = "../img/grapes/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'svetlana/svetlana',
+                'alt': "Виноград 'Светлана'"
+            },
+            {
+                'imgPath': 'svetlana/svetlana-2',
+                'alt': "Виноград 'Светлана'"
+            },
+            {
+                'imgPath': 'svetlana/svetlana-3',
+                'alt': "Виноград 'Светлана'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Столовый виноград Светлана — отличный выбор для выращивания на дачном участке: кусты растут быстро и дают хороший урожай.
+                                        | Виноград Светлана имеет крупные зелёные листья и лозу светло-зелёного или светло-коричневого цвета. Кусты очень сильнорослые, побеги вызревают хорошо.
+                                        | Сорт Светлана имеет конические или бесформенные грозди средней плотности весом от 800 до 1000 г. Очень крупные ягоды светло-зелёного цвета длиной до 35 мм и шириной до 31 мм в среднем имеют вес 14-16 г. В особых случаях размеры ягоды могут достигать 40х35 мм, а вес — 20-25 г. Мякоть мясистая, сочная, гармоничная по вкусу, имеет лёгкий мускатный оттенок. Кожица плотная, но не жёсткая. Внутри виноградин бывает от 1 до 3 семян. Мелкие ягоды обычно семян не содержат.
+                                        | Урожайность сорта Светлана высокая: 80-90% побегов плодоносят. Однако существует опасность перегрузки урожаем, поэтому нужно тщательно нормировать соцветия и грозди. Созревание раннее: 117-125 дней.
+                                        | Сорт устойчив к оидиуму и милдью, но обработка фунгицидами 1-2 раза за сезон желательна. Кусты хорошо переносят холод и способны без ущерба выдерживать понижение температуры до -25°С. Плотные грозди и крепкие ягоды винограда Светлана мало повреждаются при транспортировке и могут долго храниться.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

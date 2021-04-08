@@ -1,0 +1,98 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Виноград 'Низина'";
+    - const banner = "grapes"
+
+block content
+    - const productTitle = "'Низина'";
+    - const imgPath = "../img/grapes/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'nizina/nizina',
+                'alt': "Виноград 'Низина'"
+            },
+            {
+                'imgPath': 'nizina/nizina-2',
+                'alt': "Виноград 'Низина'"
+            },
+            {
+                'imgPath': 'nizina/nizina-3',
+                'alt': "Виноград 'Низина'"
+            },
+            {
+                'imgPath': 'nizina/nizina-4',
+                'alt': "Виноград 'Низина'"
+            },
+            {
+                'imgPath': 'nizina/nizina-5',
+                'alt': "Виноград 'Низина'"
+            }
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Низина – столовый сорт,среднего срока созревания. Срок созревания середина конец августа. Грозди крупные, массой 600-1100 г, отдельные экземпляры до 1,5 кг, цилиндро-конические, средней плотности. Ягоды крупные и очень крупные, овальные, средней массы до 10-12г, красно-фиолетовые, гармоничного вкуса. Мякоть ягод мясисто-сочная, кожица съедаемая. Сахаристость 17-18 %, кислотность 8-9 г/л. Высокий товарный вид, популярный сорт среди начинающих виноградарей. Транспортабельность среднеяя. Морозостойкость до -25 °С. Устойчивость Низины к милдью порядка 3,0 балла. Устойчивость к серой гнили средняя, рекомендуем 2-3 стандартные обработки.
+
+                    .product__row
+                        .product__info
+                            .product__info-wrap
+                                h3.page__sub-heading Дополнительно к сорту
+                                .product__info-descr
+                                    p После окрашиваний ягод, рекомендуем выждать до 2х недель, в таком случае года получит максимальное сахаронакопление
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

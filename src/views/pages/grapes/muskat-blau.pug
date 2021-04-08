@@ -1,0 +1,88 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Виноград 'Мускат Блау'";
+    - const banner = "grapes"
+
+block content
+    - const productTitle = "'Мускат Блау'";
+    - const imgPath = "../img/grapes/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'muskat-blau/muskat-blau',
+                'alt': "Виноград 'Мускат Блау'"
+            }
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Мускат Блау – известный швейцарский виноград, выращиваемый в основном для заготовки вкуснейшего красного вина с сильным своеобразным ароматом. Кроме того его потребляют в свежем виде, ценят за отличный классический вкус и необыкновенный мускатный аромат. Фермеры ценят его за неприхотливость и хорошую переносимость как температурных условий, так и различных болезней.
+                                        | Швейцарское качество вкупе с повышенной устойчивостью к заболеваниям делают этот сорт желаемым как для садоводов-любителей, так и для промышленной заготовки вин.
+                                        | Кусты сильнорослые. Грозди крупные массой до 450-500г, рыхлые. Ягоды черные, крупные 3-5-8г, округлые с хорошим мускатным ароматом. Урожайность средняя. Нетребователен.
+                                        | Срок созревания: середина августа.
+                                        br
+                                        | Сорт устойчив к грибным болезням - милдью и оидиуму.
+                                        | Морозоустойчивость -25, не требует укрытия на зиму.
+
+                    .product__row
+                        .product__info
+                            .product__info-wrap
+                                h3.page__sub-heading Дополнительно к сорту
+                                .product__info-descr
+                                    p Великолепный универсальный сорт, всегда желанный в свежем виде. Не нуждается в специальной агротехнике. Имею личный интерес больше в столовом направлении, нежели техническом плане.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

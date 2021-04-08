@@ -1,0 +1,77 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Виноград 'Чарли'";
+    - const banner = "grapes"
+
+block content
+    - const productTitle = "'Чарли'";
+    - const imgPath = "../img/grapes/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'charli/charli',
+                'alt': "Виноград 'Чарли'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Чарли - столовая форма винограда, среднего срока созревания. Созревает в конце августа. Цветок обоеполый. Среднерослая. Гроздь крупная и очень крупная 650-800г, без горошения. Ягоды крупные 6-7 г, овальные, черного цвета. Мякоть плотная. Вкус приятный, гармоничный. Побеги вызревают рано по всей длине. Укоренение черенков хорошее. Устойчив в грибковым заболеваниям, морозоустойчивость -24.
+                                        | Также сорт Чарли отлично противостоит повышенной влажности. В условиях самого дождливого лета ему не грозит подгнивание ягод. Черенки демонстрируют быструю укореняемость и приспособление. За счёт этого кусты набирают сильный рост, образовывая мощные побеги. Плодовые почки противостоят поздним весенним заморозкам.
+                                        | Сопротивляемость Чарли грибковым заболеваниям находится на высоте, благодаря генам устойчивости, переданных ему по материнской линии. Для гарантированного предотвращения развития распространенных на винограде патогенов, будет достаточно проведения двух комплексных профилактических опрыскиваний на ранних этапах вегетации, когда наблюдается самая значительная вредоносность болезнетворных микроорганизмов.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

@@ -1,0 +1,90 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Виноград 'Черный ворон'";
+    - const banner = "grapes"
+
+block content
+    - const productTitle = "'Черный ворон'";
+    - const imgPath = "../img/grapes/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'chernyj-voron/chernyj-voron',
+                'alt': "Виноград 'Черный ворон'"
+            },
+            {
+                'imgPath': 'chernyj-voron/chernyj-voron-2',
+                'alt': "Виноград 'Черный ворон'"
+            },
+            {
+                'imgPath': 'chernyj-voron/chernyj-voron-3',
+                'alt': "Виноград 'Черный ворон'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Черный ворон – столовый сорт универсального назначения.
+                                        | Этот красавец с блестящими, отливающими в лунную синеву ягодами полностью оправдывает свое название.
+                                        | Срок созревания – конец августа, начало сентября.
+                                        | Масса грозди 650-700, некоторые 1100г, ягода 12-22г!
+                                        | Морозоустойчивость -23, изучается в более северных напрвлениях Гомельской области.
+                                        | Форма ягоды овально выятнутая, темно-синяя с черным отливом.
+                                        | Ягоды формируются в большую гроздь, которая устойчива к обильным осадкам, благодаря крепкому кусту и к поражению осами. Имея рыхлую структуру, где ягоды расположены на расстоянии друг от друга, гроздь не имеет гнильных образований, что является большим плюсом.  Процент сахаров растительного происхождения составляет 19%!, ягоды подходят для соков, джемов, варенья.
+                                        | В процессе укоренения отмечается средний положительный результат, рекомендуем преобретать саженцы в закрытой корневой системе!
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

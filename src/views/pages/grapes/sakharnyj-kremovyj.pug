@@ -1,0 +1,77 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Виноград 'Сахарный Кремовый'";
+    - const banner = "grapes"
+
+block content
+    - const productTitle = "'Сахарный Кремовый'";
+    - const imgPath = "../img/grapes/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'sakharnyj-kremovyj/sakharnyj-kremovyj',
+                'alt': "Виноград 'Сахарный Кремовый'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Сахарный Кремовый - столовый сорт винограда, созревает в третьей декаде августа, продукционный период 110-120 дней. Сила роста кустов средняя.
+                                        | Гроздь 400-650 г, коническая, среднеплотная или рыхлая. Цветок женский.
+                                        | Ягода средняя, массой 4,5-6 г, овальная или продолговато-яйцевидная с округлым кончиком, белая с бледно-желтым оттенком и светло-коричневыми пятнами загара. Мякоть мясисто-сочная, вкус гармоничный. Вызревание побегов хорошее. Средняя устойчивость к грибковым заболеваниям, морозоустойчивость -22 Требует профилактического комплекса мероприятий по защите от грибных болезней. Виноград используется для потребления в свежем виде. Транспортабельность хорошая.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

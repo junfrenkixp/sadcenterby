@@ -1,0 +1,85 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Виноград 'Юлиан'";
+    - const banner = "grapes"
+
+block content
+    - const productTitle = "'Юлиан'";
+    - const imgPath = "../img/grapes/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'yulian/yulian',
+                'alt': "Виноград 'Юлиан'"
+            },
+            {
+                'imgPath': 'yulian/yulian-2',
+                'alt': "Виноград 'Юлиан'"
+            },
+            {
+                'imgPath': 'yulian/yulian-3',
+                'alt': "Виноград 'Юлиан'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Юлиан - столовая форма винограда среднего срока созревания. Плодоношение в августе. Цветок обоеполый. Грозди очень крупные, похожи по форме на родительский сорт Ризамат, на длинной плодоножке, средне-рыхлые. Размер ягоды 42-32 мм, сосковидная, розового цвета. Вкус ягод гармоничный, мякоть плотная, хрустящая, кожица тонкая при еде почти не ощущается, с хорошим сахаронакоплением. Побеги вызревают рано и почти на всю длину прироста, черенки хорошо окореняются. Саженцы имеют развитую корневую систему, легко укореняются. Осами практически не поражается. Совместимость с подвоями и сортами очень хорошая. Нагрузка на куст 40-45 глазков, обрезка 8-10-12 глазков. Для получения высококачественного урожая необходимо нормирование гроздями и соцветиями. Товарность высокая, очень популярный сорт с которым справится даже начинающий. Устойчивость к милдью, оидиуму и серой гнили 2.5-3 балла. Морозоустойчивость -24, рекомендуем укрывать.
+                                        | Входит в тройку лучших сортов: «Юлиан», «Юбилей Новочеркасска», «Преображение».
+                                        | Юлиан признан одним из лучших сортов винограда, который можно вырастить на даче или приусадебном участке. Он не требует адаптации к климату, обладает положительными характеристиками. Именно поэтому большинство дачников и садоводов-любителей отдают предпочтение данному сорту. Юлиан обожают за его неприхотливость, высокую урожайность и изящную красоту кистей.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")
