@@ -1,0 +1,81 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Клубника 'Альба'";
+    - const banner = "strawberry"
+
+block content
+    - const productTitle = "'Альба'";
+    - const imgPath = "../img/strawberry/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'alba/alba',
+                'alt': "Клубника 'Альба'"
+            },
+            {
+                'imgPath': 'alba/alba-2',
+                'alt': "Клубника 'Альба'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Альба — неремонтантный сорт земляники садовой раннего срока созревания. Был выведен в Чезене (Италия) специалистами компании New Fruits. Предком нашей героини является знаменитый Альбион, от которого она унаследовала все лучшие характеристики. Эта клубника считается самой лучшей среди ранних, завоевала огромную популярность во многих странах, активно выращивается крупными агрофирмами Италии, а также России, Украины, Белоруссии. По праву называется одним из самых лучших и перспективных сортов, благодаря высокой урожайности, прекрасному товарному виду ягод и их отличному вкусу.
+                                        | Растение сильнорослое, мощное, высотой до 35 см, облиственность средняя, в целом кустик выглядит довольно компактно. Усы образуются в средних или малых количествах. Листья крупные, яркого зеленого окраса. Цветоносы длинные, крепкие, располагаются на уровне листьев, под тяжестью урожая укладываются на землю.
+                                        | Средняя масса ягод Альбы составляет 25−30 грамм, плодоношение стабильное, плоды не мельчают после первых сборов, лишь к концу сезона немного сбавляют размеры. При первом сборе нередки экземпляры весом около 50 грамм и более.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

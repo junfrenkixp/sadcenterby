@@ -1,0 +1,31 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Ежевика | Питомник растительных культур семьи Пухальских";
+
+block content
+
+    - let catalogTitle = 'Ежевика';
+    -
+        let catalogItems = [
+            {
+                'link': './blackberry/natchez.html',
+                'imgSrc': 'blackberry/natchez/natchez-md',
+                'name': "'Натчез'"
+            },
+        ]
+
+    include ../../blocks/components/banner/banner
+    +banner("blackberry")
+
+    section.catalog
+        .container
+            .catalog__wrap
+                include ../../blocks/modules/aside/aside
+                include ../../blocks/modules/catalog/catalog
+
+                +catalog(catalogItems, catalogTitle)
+
+block scripts
+    script(src="./js/main.js")
+    script(src="./js/vendor.js")

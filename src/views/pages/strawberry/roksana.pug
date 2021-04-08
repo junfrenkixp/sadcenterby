@@ -1,0 +1,83 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Клубника 'Роксана'";
+    - const banner = "strawberry"
+
+block content
+    - const productTitle = "'Роксана'";
+    - const imgPath = "../img/strawberry/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'roksana/roksana',
+                'alt': "Клубника 'Роксана'"
+            },
+            {
+                'imgPath': 'roksana/roksana-2',
+                'alt': "Клубника 'Роксана'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Роксана — неремонтантный сорт земляники садовой (клубники) среднепозднего срока созревания. Был выведен селекционерами итальянской компании «New fruits» в конце 90-х годов, массовое распространение новой разновидности началось только в 2001-ом году, после проведения испытаний полученных растений.
+                                        | Ягоды у Роксаны весьма крупные, очень красивые и эффектные, удлиненной тупоконической формы. Кожица ярко-красная с глянцевым блеском, при полном вызревании наливается темно-красным цветом. Семянки желтые, иногда красные, поверхностные, почти не заметные при употреблении. Мякоть красного цвета, средней плотности, сочная, с выраженным земляничным ароматом.
+                                        | Вкус у клубники поистине десертный, сладкий, с легкой изящной кислинкой. Среди других коммерческих разновидностей наша героиня, по отзывам садоводов, действительно выделяется непосредственным вкусом — он у нее более многогранный. Ягоды универсальны в использовании, прекрасны особенно в свежем виде, подойдут для любой переработки, консервирования, годятся и для замораживания.
+                                        | Средний вес плодов в сезоне составляет примерно 30 грамм, могут формироваться экземпляры массой 50 грамм и более. Плодоношение у клубники весьма стабильное, ягоды не мельчают к концу сезона. Созревание происходит дружно, что очень удобно — сборы не растягиваются по времени, проходят в сжатые сроки и весьма плодотворно. Урожайность у Роксаны высокая, с одного растения возможно собирать около 1,2−1,5 кг ягод.
+                                        | Вполне реально собирать около 800 грамм ягод с растения, а при благоприятных условиях и до 1 кг.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

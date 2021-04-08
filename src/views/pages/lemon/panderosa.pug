@@ -1,0 +1,101 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Лимон 'Пандероза'";
+    - const banner = "lemon"
+
+block content
+    - const productTitle = "'Пандероза'";
+    - const imgPath = "../img/lemon/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'panderosa/panderosa',
+                'alt': "Лимон 'Пандероза'"
+            },
+            {
+                'imgPath': 'panderosa/panderosa-2',
+                'alt': "Лимон 'Пандероза'"
+            },
+            {
+                'imgPath': 'panderosa/panderosa-3',
+                'alt': "Лимон 'Пандероза'"
+            },
+            {
+                'imgPath': 'panderosa/panderosa-4',
+                'alt': "Лимон 'Пандероза'"
+            },
+            {
+                'imgPath': 'panderosa/panderosa-5',
+                'alt': "Лимон 'Пандероза'"
+            },
+            {
+                'imgPath': 'panderosa/panderosa-6',
+                'alt': "Лимон 'Пандероза'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Среднерослое дерево 2,5-3,5 м высоты с красивой раскидистой кроной, короткими толстыми побегами. Обильно цветет гроздьями. Цветки крупные, с длинными лепестками. Пандероза впечатляет необыкновенно крупными плодами 800-1100 грушевидной формы со светло-зеленоватой мякотью.
+                                        | Считается спонтанно возникшим гибридом между лимоном и помпельмусом (Грушевидным Шеддоком). На Черноморское побережье Грузии эта форма была интродуцирована из США в 1926 г.
+                                        | Листья очень крупные 14-15 см длины и до 8 см ширины, широкоовальные, черешки короткие с небольшими крыльями. Бутоны, наружная сторона лепестков с антоциановой окраской, внутренняя сторона белая. Цветки одиночные или собраны в небольшие соцветия, крупные 4,5 - 6,2 см в диаметре, лепестки толстые ,мясистые.
+                                        | Плоды обратнояйцевидные или широкогрушевидные, очень крупные, средняя масса около 500 г. Вершина округлая или плоская, иногда с выпуклостью, напоминающей сосок. Основание ширококоническое или слабовытянутое. Под чашечкой заметно небольшое углубление. Чашечка крупная, чашелистики короткие с отгибом назад. Кожура толстая (до 9 мм), слабошероховатая, желтая. Отделяемость от мякоти средняя.
+                                        | Мякоть грубоватая, среднесочная, кислая, светло-зеленая. Долек 10-18, чаще 12, неравновеликие, четко очерченные, пленки толстые, грубоватые.
+                                        | Морозоустойчивость ниже, чем у лимона обыкновенного. Мальсеккоустойчивость не установлена.
+                                        | Перспективен для выращивания в защищенном грунте, домашних условиях и для озеленения интерьеров.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

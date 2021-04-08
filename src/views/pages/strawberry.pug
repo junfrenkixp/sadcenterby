@@ -1,0 +1,41 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Клубника | Питомник растительных культур семьи Пухальских";
+
+block content
+
+    - let catalogTitle = 'Клубника';
+    -
+        let catalogItems = [
+            {
+                'link': './strawberry/alba.html',
+                'imgSrc': 'strawberry/alba/alba-md',
+                'name': "'Альба'"
+            },
+            {
+                'link': './strawberry/roksana.html',
+                'imgSrc': 'strawberry/roksana/roksana-md',
+                'name': "'Роксана'"
+            },
+            {
+                'link': './strawberry/khonej.html',
+                'imgSrc': 'strawberry/khonej/khonej-md',
+                'name': "'Хоней'"
+            },
+        ]
+
+    include ../../blocks/components/banner/banner
+    +banner("strawberry")
+
+    section.catalog
+        .container
+            .catalog__wrap
+                include ../../blocks/modules/aside/aside
+                include ../../blocks/modules/catalog/catalog
+
+                +catalog(catalogItems, catalogTitle)
+
+block scripts
+    script(src="./js/main.js")
+    script(src="./js/vendor.js")

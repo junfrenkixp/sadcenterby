@@ -36,6 +36,18 @@
     &.honey {
         background-image: url(../img/banners/honey-banner.webp);
     }
+    &.blackberry {
+        background-image: url(../img/banners/blackberry-banner.webp);
+    }
+    &.raspberries {
+        background-image: url(../img/banners/raspberries-banner.webp);
+    }
+    &.lemon {
+        background-image: url(../img/banners/lemon-banner.webp);
+    }
+    &.strawberry {
+        background-image: url(../img/banners/strawberry-banner.webp);
+    }
 }
 .no-webp .banner {
     &.grapes {
@@ -55,5 +67,17 @@
     }
     &.honey {
         background-image: url(../img/banners/honey-banner.jpg);
+    }
+    &.blackberry {
+        background-image: url(../img/banners/blackberry-banner.jpg);
+    }
+    &.raspberries {
+        background-image: url(../img/banners/raspberries-banner.jpg);
+    }
+    &.lemon {
+        background-image: url(../img/banners/lemon-banner.jpg);
+    }
+    &.strawberry {
+        background-image: url(../img/banners/strawberry-banner.jpg);
     }
 }

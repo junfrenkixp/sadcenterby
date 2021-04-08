@@ -1,0 +1,36 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Малина | Питомник растительных культур семьи Пухальских";
+
+block content
+
+    - let catalogTitle = 'Малина';
+    -
+        let catalogItems = [
+            {
+                'link': './raspberries/kvelli.html',
+                'imgSrc': 'raspberries/kvelli/kvelli-md',
+                'name': "'Квелли'"
+            },
+            {
+                'link': './raspberries/khimbo-top.html',
+                'imgSrc': 'raspberries/khimbo-top/khimbo-top-md',
+                'name': "'Химбо Топ'"
+            },
+        ]
+
+    include ../../blocks/components/banner/banner
+    +banner("raspberries")
+
+    section.catalog
+        .container
+            .catalog__wrap
+                include ../../blocks/modules/aside/aside
+                include ../../blocks/modules/catalog/catalog
+
+                +catalog(catalogItems, catalogTitle)
+
+block scripts
+    script(src="./js/main.js")
+    script(src="./js/vendor.js")

@@ -1,0 +1,80 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Ежевика 'Натчез'";
+    - const banner = "blackberry"
+
+block content
+    - const productTitle = "'Натчез'";
+    - const imgPath = "../img/blackberry/";
+    - const addInfo = "Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'natchez/natchez',
+                'alt': "Ежевика 'Натчез'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Десертный сорт раннего срока созревания Натчез считается довольно молодым. Он был выведен и запатентован Джоном Кларком в США в 2007 году в научном университете Арканзаса.
+                                        | Кусты ежевики Натчез бесшипные, полустоячие. В начале роста отмечается вертикальное направление побегов, после чего они принимают положение, характерное для стелющихся сортов. Под тяжестью плодов либо от сильного ветра склоняются вниз, поэтому нуждаются в опоре.
+                                        | Сила роста побегов высокая, их длина достигает 4–6 м. Цветки белые, с 5–6 лепестками. Цветение в середине–конце мая в зависимости от региона.
+                                        | Вкус ягод сладкий, с едва уловимой кислинкой и тонким ежевичным ароматом. В послевкусии ощущается лёгкая горчинка. Ягоды очень сочные, семена костянки мелкие. Плоды удлинённой цилиндрической формы, умеренно плотные, тяжёлые, с выраженным блеском.
+                                        | Размер ягод первого урожая достигает длины в 3,5 см и веса до 14 г. При последующих урожаях плоды достигают размера спичечного коробка (около 5 см) и имееют вес до 22 г. Ягоды собраны в кисти, в каждой из которой по 10–30 штук. При полном созревании отрыв лёгкий, чашелистик подсыхает.
+                                        | Достаточно неприхотлив в содержании, но для получения в будущем хорошего урожая следует выполнять необходимые условия посадки. Ежевика любит плодородную суглинистую, хорошо дренированную почву с низким уровнем закислённости и протеканием грунтовых вод на расстоянии не менее 1,5 м. Слишком влажная почва приводит к загниванию корней и гибели растения.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")
