@@ -1,0 +1,93 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Виноград 'Мускат Диёвский'";
+    - const banner = "grapes"
+
+block content
+    - const productTitle = "'Мускат Диёвский'";
+    - const imgPath = "../img/grapes/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'muskat-diyovskij/muskat-diyovskij',
+                'alt': "Виноград 'Мускат Диёвский'"
+            }
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Мускат Диёвский - одна из лучших гибридных форм винограда селекции Голуба А.А. Правильное написание названия сорта именно ДиЁвский, от названия поселка Диёвка в Днепропетровской области Украины, а не Диевский, как часто встречается в описаниях.
+                                        br
+                                        br
+                                        | Мускат диевский Обоеполый. Среднего срока созревания (конец августа - начало сентября).
+                                        br
+                                        | Урожайность очень высокая, склонен к перегрузке , но справляется отлично. Ягоды очень крупные (до 20 гр). Масса грозди 900-1400гр, некоторые грозди больше 2кг!
+                                        br
+                                        | Гранд при в номинации  « самая красивая гроздь винограда 2016г » заняла 1 место.
+                                        br
+                                        | Белые, желтые на солнце. Овальной или конусной формы. Осами не повреждаются, длительная сохранность на кустах. Мякоть мясисто-сочная, кожица съедаемая. Вкус гармоничный, плавно переходит не сильно выраженный мускат.
+                                        br
+                                        | Грозди большие, умеренно рыхлые, не склонен к горошению. Транспортабельность и товарность высокие. Лоза вызревает полностью независимо от нагрузки . Повышенная устойчивость к болезням, по сравнению с обычными сортами.
+                                        br
+                                        br
+                                        | Мускат Диёвский приспособлен к переменчивому климату, положительные отзывы северных регионов РБ.
+                                        | Морозоустойчивость -25, рекомендуем укрывать на зиму.
+                                        | Дополнительно: за 16 лет не наблюдалось растрескиваний ягод, подмерзаний почек , нет поражения осами, не склонен к растрескиванию, не поражается серой гнилью. Не поражается мелидьо, незначительной степени может поражаться оидиумом. Данный сорт станет желанным на любом винограднике. Является лучшим сортом на нашем винограднике. Урожай на взрослых кустах составляет 50-70кг.Данный сорт может так же подходить для начинающего виноградаря, без большого опыта.
+                                        | Первые 3-4 года оставлять после цветения 1-2 грозди, далее по 1 грозди на плодоносящий побег.
+                                        | Личная оценка: 10/10 !
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")
