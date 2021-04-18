@@ -1,0 +1,90 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Азалия 'Speak's Orange'";
+    - const banner = "azalea"
+
+block content
+    - const productTitle = "Speak's Orange";
+    - const imgPath = "../img/azalea/";
+    - const addInfo = "Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'speak-s-orange/speak-s-orange',
+                'alt': "Азалия 'Speak's Orange'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Размеры взрослого растения: листопадный небольшой кустарник из группы Knap Hill-Exbury Hybride. Высота растения 1,5 м.
+                                        br
+                                        | Форма кроны: рыхлая, прямостоящая.
+                                        br
+                                        | Форма и окраска листьев: листья при распускании бронзовые, затем светло зелёные.
+                                        br
+                                        | Время цветения: цветки желто-оранжевые с более темной полоской по центру лепестка, ароматные. Цветёт обильно в конце мая и начале июня.
+                                        br
+                                        | Особенности роста: растёт быстро.
+                                        br
+                                        | Почвы: предпочитает кислые, хорошо дренированные, влажные почвы.
+                                        br
+                                        | Отношение к свету: солнце или легкая полутень.
+                                        br
+                                        | Морозостойкость: морозостойкость до -24°C.
+                                        br
+                                        | Применение в ландшафте: для групп, одиночных посадок, а также в вересковых и японских садах.
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

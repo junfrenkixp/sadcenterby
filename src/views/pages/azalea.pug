@@ -1,0 +1,46 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Азалия | Питомник растительных культур семьи Пухальских";
+
+block content
+
+    - let catalogTitle = 'Азалия';
+    -
+        let catalogItems = [
+            {
+                'link': './azalea/gold-topaz.html',
+                'imgSrc': 'azalea/gold-topaz/gold-topaz-md',
+                'name': "Голд Топаз"
+            },
+            {
+                'link': './azalea/golden-lights.html',
+                'imgSrc': 'azalea/golden-lights/golden-lights-md',
+                'name': "Голден Лайтс"
+            },
+            {
+                'link': './azalea/speak-s-orange.html',
+                'imgSrc': 'azalea/speak-s-orange/speak-s-orange-md',
+                'name': "Speak's Orange"
+            },
+            {
+                'link': './azalea/toucan.html',
+                'imgSrc': 'azalea/toucan/toucan-md',
+                'name': "Toucan"
+            },
+        ]
+
+    include ../../blocks/components/banner/banner
+    +banner("azalea")
+
+    section.catalog
+        .container
+            .catalog__wrap
+                include ../../blocks/modules/aside/aside
+                include ../../blocks/modules/catalog/catalog
+
+                +catalog(catalogItems, catalogTitle)
+
+block scripts
+    script(src="./js/main.js")
+    script(src="./js/vendor.js")

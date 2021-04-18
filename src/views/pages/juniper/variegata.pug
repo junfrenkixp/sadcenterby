@@ -1,0 +1,100 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Можжевельник 'Вариегата'";
+    - const banner = "juniper"
+
+block content
+    - const productTitle = "Вариегата";
+    - const imgPath = "../img/juniper/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'variegata/variegata',
+                'alt': "Можжевельник 'Вариегата'"
+            },
+            {
+                'imgPath': 'variegata/variegata-2',
+                'alt': "Можжевельник 'Вариегата'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        i Juniperus chinensis Variegata
+                                    p
+                                        | Характер роста:
+                                        br
+                                        | Высота 2-3 м, диаметр кроны 1,2-1,6 м в позднем возрасте.
+                                    p
+                                        | Хвоя:
+                                        br
+                                        | Голубовато-зеленая с кремовыми включениями
+                                    p
+                                        | Почва:
+                                        br
+                                        | Хорошо переносит сухую, известковую и песчаную почвы, хорошо дренированную, идеально растёт на торфе.
+                                    p
+                                        | Дизайн:
+                                        br
+                                        | Отличный выбор для каменистых садов, альпинариев, для вересковых пейзажей и композиций в контейнерах, хвойных и смешанных групп.
+                                    p
+                                        | Важно:
+                                        br
+                                        | Предпочитает солнечные места, в тени может терять насыщенность окраски хвои.
+                                        | Если хотите удивить соседей, это ваш выбор.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

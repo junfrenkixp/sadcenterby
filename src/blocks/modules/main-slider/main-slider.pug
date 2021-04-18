@@ -12,19 +12,20 @@
     }
   ]
 
-section.main-slider-wrap
-  h2.visually-hidden Главный слайдер
-  .main-slider
-    each slide in slides
-      .slider__item
-        picture
-          source(srcset=slide.imgPath+slide.desktopImg+'.webp, '+slide.imgPath+slide.desktopRetinaImg+'.webp 2x' media="(min-width: 1367px)" type="image/webp")
-          source(srcset=slide.imgPath+slide.desktopImg+'.jpg, '+slide.imgPath+slide.desktopRetinaImg+'.jpg 2x' media="(min-width: 1367px)")
-          source(srcset=slide.imgPath+slide.laptopImg+'.webp' media="(min-width: 1025px)" type="image/webp")
-          source(srcset=slide.imgPath+slide.laptopImg+'.jpg' media="(min-width: 1025px)")
-          source(srcset=slide.imgPath+slide.tabletImg+'.webp' media="(min-width: 769px)" type="image/webp")
-          source(srcset=slide.imgPath+slide.tabletImg+'.jpg' media="(min-width: 769px)")
-          source(srcset=slide.imgPath+slide.mobileImg+'.webp' media="(min-width: 376px)" type="image/webp")
-          source(srcset=slide.imgPath+slide.mobileImg+'.jpg' media="(min-width: 376px)")
-          source(srcset=slide.imgPath + slide.mobileMImg + '.webp' type="image/webp")
-          img(src=slide.imgPath+slide.mobileMImg+'.jpg' alt=slide.alt)
+.container-fluid
+  section.main-slider-wrap
+    h2.visually-hidden Главный слайдер
+    .main-slider
+      each slide in slides
+        .slider__item
+          picture
+            source(srcset=slide.imgPath+slide.desktopImg+'.webp, '+slide.imgPath+slide.desktopRetinaImg+'.webp 2x' media="(min-width: 1367px)" type="image/webp")
+            source(srcset=slide.imgPath+slide.desktopImg+'.jpg, '+slide.imgPath+slide.desktopRetinaImg+'.jpg 2x' media="(min-width: 1367px)")
+            source(srcset=slide.imgPath+slide.laptopImg+'.webp' media="(min-width: 1025px)" type="image/webp")
+            source(srcset=slide.imgPath+slide.laptopImg+'.jpg' media="(min-width: 1025px)")
+            source(srcset=slide.imgPath+slide.tabletImg+'.webp' media="(min-width: 769px)" type="image/webp")
+            source(srcset=slide.imgPath+slide.tabletImg+'.jpg' media="(min-width: 769px)")
+            source(srcset=slide.imgPath+slide.mobileImg+'.webp' media="(min-width: 376px)" type="image/webp")
+            source(srcset=slide.imgPath+slide.mobileImg+'.jpg' media="(min-width: 376px)")
+            source(srcset=slide.imgPath + slide.mobileMImg + '.webp' type="image/webp")
+            img(src=slide.imgPath+slide.mobileMImg+'.jpg' alt=slide.alt)

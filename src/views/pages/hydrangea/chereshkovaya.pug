@@ -1,0 +1,83 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Гортензия черешковая";
+    - const banner = "hydrangea"
+
+block content
+    - const productTitle = "Гортензия черешковая";
+    - const imgPath = "../img/hydrangea/";
+    - const addInfo = "Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'chereshkovaya/chereshkovaya',
+                'alt': "Гортензия черешковая"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Гортензия черешковая
+                                        br
+                                        | Длина лианы зависит от сорта и климатических условий – в холодных регионах она вырастает до 5–6 м, а на юге способна достигать 20 м.
+                                        | Листья длиной 10 см тёмно-зелёного цвета, прикреплены к веткам длинными черешками, они округлые, крупные и имеют заострённый кончик и шершавую нижнюю сторону.
+                                        | Кустарник считается быстрорастущим, ежегодно прибавляя в длину 0,5-1 м.
+                                        | Ветви покрыты коричневато-красной корой и в сочетании с густой листвой успевают оплести опорные сооружения уже в середине апреля.
+                                        | Зеленоватые и белые цветы, собранные в большие щитковидные соцветия, вырастающие до 20 см, появляются в начале лета и продолжают цветение до конца августа. Они щедро рассыпаны по кроне и источают неповторимый аромат свежего мёда.
+                                        | Корневая система гортензии сильная, развитая, разрастается в верхнем слое почвы, а воздушные корни помогают ей взбираться по любым поверхностям.
+                                        | Черешковые сорта предпочитают кислую почву, им не страшны даже предельно низкие температуры (-30–35 градусов), поскольку растение обладает фантастической зимостойкостью
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

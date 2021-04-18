@@ -1,0 +1,113 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Можжевельник 'Skyrocket'";
+    - const banner = "juniper"
+
+block content
+    - const productTitle = "Skyrocket";
+    - const imgPath = "../img/juniper/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'skyrocket/skyrocket',
+                'alt': "Можжевельник 'Skyrocket'"
+            },
+            {
+                'imgPath': 'skyrocket/skyrocket-2',
+                'alt': "Можжевельник 'Skyrocket'"
+            },
+            {
+                'imgPath': 'skyrocket/skyrocket-3',
+                'alt': "Можжевельник 'Skyrocket'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Можжевельник скальный 'Skyrocket'
+                                        br
+                                        i Juniperus scopulorum `Skyrocket`
+                                    p
+                                        | Описание:
+                                        br
+                                        | Сильнорослый кустарник с плотной, колонновидной, прямостоячей кроной. Достигает в высоту 5–7 м и до 1 м в диаметре. Побеги прямые, прижаты к стволу.
+                                    p
+                                        | Хвоя:
+                                        br
+                                        | Мелкая чешуйчатая, сизоватого цвета
+                                    p
+                                        | Почвы:
+                                        br
+                                        | От сухих до свежих, от кислых до щелочных, хорошо дренированные, идеально растёт на рыжем торфе.
+                                    p
+                                        | Требования:
+                                        br
+                                        | Солнце, не переносит тень, переносит высокие температуры, зимостоек, засухоустойчив, относительно устойчив в условиях городской среды, ветроустойчив.
+                                    p
+                                        | Корневая система:
+                                        br
+                                        | Очень глубокая, не выносит тяжелых по мехсоставу почв(глина).
+                                    p
+                                        | Морозоустойчивость:
+                                        br
+                                        | Растёт зарослями на склонах Скалистых гор Северной Америки на высоте 2000 м над уровнем моря.
+                                    p
+                                        | Применение:
+                                        br
+                                        | Высаживается в декоративных группах, в живой изгороди, как солитер, в масштабных каменистых садах.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

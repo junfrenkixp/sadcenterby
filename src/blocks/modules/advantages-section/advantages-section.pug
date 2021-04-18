@@ -17,10 +17,11 @@
     },
   ];
 
-section.advantages
-  each item in adventagesContent
-    .advantages__col(class="advantages__col--" + item.img)
-      .advantages__descr
-        .advantages__descr-content
-          h2.advantages__title=item.title
-          p.advantages__descr-text=item.text
+.container-fluid
+  section.advantages
+    each item in adventagesContent
+      .advantages__col(class="advantages__col--" + item.img)
+        .advantages__descr
+          .advantages__descr-content
+            h2.advantages__title=item.title
+            p.advantages__descr-text=item.text

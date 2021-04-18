@@ -1,0 +1,79 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Гортензия 'Wims Red'";
+    - const banner = "hydrangea"
+
+block content
+    - const productTitle = "Wims Red";
+    - const imgPath = "../img/hydrangea/";
+    - const addInfo = "Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'wims-red/wims-red',
+                'alt': "Гортензия 'Wims Red'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Метельчатая гортензия «Вимс ред» отличается от других представителей этого семейства тем, что сорт имеет очень низкий рост. Растение не может быть выше 1,5 м. Побеги раскидываются по сторонам вширь, что создает потрясающий внешний эффект. При этом соцветия достигают 0,3-0,4 м в длину. Для соцветий характерна форма суженой пирамиды.
+                                        br
+                                        | Самые ранние цветки белоснежны, постепенно они розовеют. А с наступлением осени гортензия покрывается винно-красной массой. Главное, даже не в привлекательном красном цвете, а в исключительно сильном, словно у меда, аромате. «Вимс ред» отличается большими темно-зелеными, имеющими легкий красноватый оттенок, листочками. Максимума изящества они достигают в осенние месяцы, как только листва покрывается участками с металлическим блеском.
+                                        br
+                                        | «Вимс ред» оптимально развивается при слабой кислотности земли. Допустимы участки с нейтральным кислотно-щелочным балансом. Однако на них получить цветки яркого окраса невозможно. Щелочная земля и вовсе погубит метельчатую гортензию. Потому сажать ее там, куда закладывали известь, категорически нельзя.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

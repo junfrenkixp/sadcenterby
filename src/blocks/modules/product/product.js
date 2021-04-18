@@ -16,6 +16,7 @@ window.addEventListener('DOMContentLoaded', function() {
         slidesToScroll: 1,
         asNavFor: '.product__gallery-main',
         dots: false,
+        arrows: false,
         centerMode: true,
         centerPadding: '0px',
         focusOnSelect: true

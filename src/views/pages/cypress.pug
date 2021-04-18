@@ -1,0 +1,31 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Кипарис | Питомник растительных культур семьи Пухальских";
+
+block content
+
+    - let catalogTitle = 'Кипарис';
+    -
+        let catalogItems = [
+            {
+                'link': './cypress/vait-spot.html',
+                'imgSrc': 'cypress/vait-spot/vait-spot-md',
+                'name': "Кипарисовик Лавсона Вайт Спот"
+            },
+        ]
+
+    include ../../blocks/components/banner/banner
+    +banner("cypress")
+
+    section.catalog
+        .container
+            .catalog__wrap
+                include ../../blocks/modules/aside/aside
+                include ../../blocks/modules/catalog/catalog
+
+                +catalog(catalogItems, catalogTitle)
+
+block scripts
+    script(src="./js/main.js")
+    script(src="./js/vendor.js")

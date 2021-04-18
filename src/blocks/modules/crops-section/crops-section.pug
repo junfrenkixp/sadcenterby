@@ -39,15 +39,15 @@
   ];
 - var cultureTitle = 'Наши культуры'
 
-
-section.culture
-  .container
-    h2.heading.main__heading.heading-light=cultureTitle
-    .culture__grid
-      each item in cultureContent
-        a.catalog__item.catalog__item--lg(href=item.link)
-          picture
-            source(srcset='./img/' + item.imgPath + '.webp' type="image/webp")
-            img(src='./img/' + item.imgPath + '.jpg' alt=item.altImg)
-          .catalog__item-name
-            span=item.name
+.container-fluid
+  section.culture
+    .container
+      h2.heading.main__heading.heading-light=cultureTitle
+      .culture__grid
+        each item in cultureContent
+          a.catalog__item.catalog__item--lg(href=item.link)
+            picture
+              source(srcset='./img/' + item.imgPath + '.webp' type="image/webp")
+              img(src='./img/' + item.imgPath + '.jpg' alt=item.altImg)
+            .catalog__item-name
+              span=item.name

@@ -1,0 +1,75 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Гортензия 'Skyfall'";
+    - const banner = "hydrangea"
+
+block content
+    - const productTitle = "Skyfall";
+    - const imgPath = "../img/hydrangea/";
+    - const addInfo = "Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'skyfall/skyfall',
+                'alt': "Гортензия 'Skyfall'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Гортензия метельчатая Skyfall (Скайфол) — прекрасная гортензия с чрезвычайно большими метелками при небольшой высоте. Метелки намного больше, чем аналогичные «Limelight». Соцветия очень большие, конические. Большие белые цветы становятся светло-розовыми и имеют большие лепестки, напоминающие гиацинт. Куст компактный. Побеги вертикальные, сильные. Размер куста 120 см в высоту и 70 см в ширину, делает его идеальным для выращивания не только в саду, но и в контейнерах на балконах или патио, для смешанных контейнеров, для оформления бордюров, для массовой посадки или групповой посадки. Цветение в июле-сентябре. Куст компактный, растёт быстро. Место солнечное или полутенистое. Почва плодородная, влажная, дренированная. Зона 4 (до -29°С).
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

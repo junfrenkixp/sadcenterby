@@ -1,0 +1,81 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Гортензия 'Vanille Fraise'";
+    - const banner = "hydrangea"
+
+block content
+    - const productTitle = "Vanille Fraise";
+    - const imgPath = "../img/hydrangea/";
+    - const addInfo = "Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'vanille-fraise/vanille-fraise',
+                'alt': "Гортензия 'Vanille Fraise'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Гортензия метельчатая Vanille Fraise
+                                        br
+                                        | Быстрорастущий кустарник с эффектными цветами и пряморастущими буро-красными побегами высотой 1,5 — 2 м.
+                                        | Соцветия пирамидальной формы, длиной 30-35 см. Сначала лепестки имеют белую окраску, которая к августу становится розовой. В сентябре соцветия приобретают бордово-красный цвет. Гортензия Ванилла Фрейз начинает цвести в год высадки.
+                                        | Цветет очень обильно и продолжительно с июня до морозов.
+                                        | Данная гортензия зимостойкая и не требует укрытия на зимний период.
+                                        | Гортензия эффектна и в одиночных, и в групповых посадках. Главное, чтобы почва была увлажненной. Растет в тени, полутени и на ярком солнце. Часто гортензию используют для создания заднего плана, прикрытия стены, забора.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

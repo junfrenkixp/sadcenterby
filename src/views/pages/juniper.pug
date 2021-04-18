@@ -1,0 +1,46 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Можжевельник | Питомник растительных культур семьи Пухальских";
+
+block content
+
+    - let catalogTitle = 'Можжевельник';
+    -
+        let catalogItems = [
+            {
+                'link': './juniper/variegata.html',
+                'imgSrc': 'juniper/variegata/variegata-md',
+                'name': "Вариегата"
+            },
+            {
+                'link': './juniper/loderi.html',
+                'imgSrc': 'juniper/loderi/loderi-md',
+                'name': "Loderi"
+            },
+            {
+                'link': './juniper/skyrocket.html',
+                'imgSrc': 'juniper/skyrocket/skyrocket-md',
+                'name': "Skyrocket"
+            },
+            {
+                'link': './juniper/meieri-kompakta.html',
+                'imgSrc': 'juniper/meieri-kompakta/meieri-kompakta-md',
+                'name': "Мейери Компакта"
+            },
+        ]
+
+    include ../../blocks/components/banner/banner
+    +banner("juniper")
+
+    section.catalog
+        .container
+            .catalog__wrap
+                include ../../blocks/modules/aside/aside
+                include ../../blocks/modules/catalog/catalog
+
+                +catalog(catalogItems, catalogTitle)
+
+block scripts
+    script(src="./js/main.js")
+    script(src="./js/vendor.js")

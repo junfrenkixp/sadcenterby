@@ -1,0 +1,64 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Декор | Питомник растительных культур семьи Пухальских";
+
+block content
+
+    - let otherTitle = 'Декор';
+    -
+        let otherCatalogItems = [
+            {
+                'link': 'azalea.html',
+                'imgSrc': 'covers/azalea',
+                'name': "Азалия"
+            },
+            {
+                'link': 'hydrangea.html',
+                'imgSrc': 'covers/hydrangea',
+                'name': "Гортензия"
+            },
+            {
+                'link': 'cypress.html',
+                'imgSrc': 'covers/cypress',
+                'name': "Кипарис"
+            },
+            {
+                'link': 'juniper.html',
+                'imgSrc': 'covers/juniper',
+                'name': "Можжевельник"
+            },
+            {
+                'link': 'mint.html',
+                'imgSrc': 'covers/mint',
+                'name': "Мята"
+            },
+            {
+                'link': 'paulownia.html',
+                'imgSrc': 'covers/paulownia',
+                'name': "Павлония"
+            }, {
+                'link': 'rhododendron.html',
+                'imgSrc': 'covers/rhododendron',
+                'name': "Рододендрон"
+            },
+            {
+                'link': 'thuja.html',
+                'imgSrc': 'covers/thuja',
+                'name': "Туя"
+            },
+        ]
+
+    include ../../blocks/components/banner/banner
+    +banner("azalea")
+
+    section.catalog
+        .container
+            .catalog__wrap
+                include ../../blocks/modules/catalog/catalog
+
+                +catalog(otherCatalogItems, otherTitle, 'lg')(class="w-100")
+
+block scripts
+    script(src="./js/main.js")
+    script(src="./js/vendor.js")

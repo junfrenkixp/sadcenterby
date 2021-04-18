@@ -1,0 +1,99 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Можжевельник 'Loderi'";
+    - const banner = "juniper"
+
+block content
+    - const productTitle = "Loderi";
+    - const imgPath = "../img/juniper/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'loderi/loderi',
+                'alt': "Можжевельник 'Loderi'"
+            },
+            {
+                'imgPath': 'loderi/loderi-2',
+                'alt': "Можжевельник 'Loderi'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Можжевельник чешуйчатый 'Loderi'
+                                        br
+                                        i Juniperus pingii 'Loderi'
+                                    p
+                                        | Свойства:
+                                        br
+                                        | Высота: 1,5/1,8 м
+                                        br
+                                        | Ширина: 0,8/1 м
+                                    p
+                                        | Описание:
+                                        br
+                                        | Нетребовательный, растет на сухих или свежих, хорошо дренированных почвах, от кислых до щелочных.
+                                    p
+                                        | Выращивание:
+                                        br
+                                        | Произрастает в горах Китая, о. Тайвань и в Восточных Гималаях. Двудомный, реже однодомный стелющийся кустарник. Кора коричневая, шелушащаяся. Хвоя игольчатая, 3–9 мм длиной, очень жёсткая, колючая, обычно сизовато-зелёная. Шишкоягоды округлые или яйцевидные, 4–9 мм в диаметре, чёрные, глянцевые.
+                                    p
+                                        | Применение:
+                                        br
+                                        | Применение одиночные и групповые посадки альпинариях, в смешанных группах, в качестве почвопокровного растения, в контейнерах.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

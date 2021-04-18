@@ -1,3 +1,27 @@
+-
+  let otherStatus =
+          (filename == 'other' ||
+            filename == 'currant' ||
+            filename == 'gooseberry' ||
+            filename == 'blackberry' ||
+            filename == 'raspberries' ||
+            filename == 'strawberry' ||
+            filename == 'lemon' ||
+            filename == 'honey'
+          );
+-
+  let decorStatus =
+          (filename == 'decor' ||
+            filename == 'azalea' ||
+            filename == 'hydrangea' ||
+            filename == 'cypress' ||
+            filename == 'juniper' ||
+            filename == 'mint' ||
+            filename == 'paulownia' ||
+            filename == 'rhododendron' ||
+            filename == 'thuja'
+          );
+
 nav.header__nav
   .header__nav-mob
     button.header__nav-mob__toggle
@@ -13,7 +37,7 @@ nav.header__nav
       a(href='./blueberry.html') Голубика
     li.header__nav-item(class=filename == 'honeysuckle' ? 'active' : '')
       a(href='./honeysuckle.html') Жимолость
-    li.header__nav-item(class=((filename == 'other' || filename == 'currant' || filename == 'gooseberry' || filename == 'honey') ? 'active' : ''))
+    li.header__nav-item._sublist(class=(otherStatus ? 'active' : ''))
       a(href='./other.html') Прочее
       ul.header__nav-item__sublist
         li.header__nav-item__subitem(class=filename == 'currant' ? 'active' : '')
@@ -24,11 +48,30 @@ nav.header__nav
           a(href='./blackberry.html') Ежевика
         li.header__nav-item__subitem(class=filename == 'raspberries' ? 'active' : '')
           a(href='./raspberries.html') Малина
-            li.header__nav-item__subitem(class=filename == 'strawberry' ? 'active' : '')
-              a(href='./strawberry.html') Клубника
+        li.header__nav-item__subitem(class=filename == 'strawberry' ? 'active' : '')
+          a(href='./strawberry.html') Клубника
         li.header__nav-item__subitem(class=filename == 'lemon' ? 'active' : '')
           a(href='./lemon.html') Лимон
         li.header__nav-item__subitem(class=filename == 'honey' ? 'active' : '')
           a(href='./honey.html') Мёд
+    li.header__nav-item._sublist(class=(decorStatus ? 'active' : ''))
+      a(href='./decor.html') Декор
+      ul.header__nav-item__sublist
+        li.header__nav-item__subitem(class=filename == 'azalea' ? 'active' : '')
+          a(href='./azalea.html') Азалия
+        li.header__nav-item__subitem(class=filename == 'hydrangea' ? 'active' : '')
+          a(href='./hydrangea.html') Гортензия
+        li.header__nav-item__subitem(class=filename == 'cypress' ? 'active' : '')
+          a(href='./cypress.html') Кипарис
+        li.header__nav-item__subitem(class=filename == 'juniper' ? 'active' : '')
+          a(href='./juniper.html') Можжевельник
+        li.header__nav-item__subitem(class=filename == 'mint' ? 'active' : '')
+          a(href='./mint.html') Мята
+        li.header__nav-item__subitem(class=filename == 'paulownia' ? 'active' : '')
+          a(href='./paulownia.html') Павлония
+        li.header__nav-item__subitem(class=filename == 'rhododendron' ? 'active' : '')
+          a(href='./rhododendron.html') Рододендрон
+        li.header__nav-item__subitem(class=filename == 'thuja' ? 'active' : '')
+          a(href='./thuja.html') Туя
     li.header__nav-item(class=filename == 'contacts' ? 'active' : '')
       a(href='./contacts.html') Контакты

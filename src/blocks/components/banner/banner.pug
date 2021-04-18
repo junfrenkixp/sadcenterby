@@ -1,4 +1,5 @@
 mixin banner(className)
     - var text = className + " banner"
-    .banner(class=className)
-        span=text
+    .container-fluid
+        .banner(class=className)
+            span=text

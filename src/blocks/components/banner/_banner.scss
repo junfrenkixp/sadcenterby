@@ -19,65 +19,325 @@
 }
 .webp .banner {
     &.grapes {
-        background-image: url(../img/banners/grape-banner.webp);
+        background-image: url(../img/banners/grape/grape-banner.webp);
+
+        @include tablet {
+            background-image: url(../img/banners/grape/grape-banner-tablet.webp);
+        }
+        @include mobile {
+            background-image: url(../img/banners/grape/grape-banner-mobile.webp);
+        }
     }
     &.blueberry {
-        background-image: url(../img/banners/blueberry-banner.webp);
+        background-image: url(../img/banners/blueberry/blueberry-banner.webp);
+
+        @include tablet {
+            background-image: url(../img/banners/blueberry/blueberry-banner-tablet.webp);
+        }
+        @include mobile {
+            background-image: url(../img/banners/blueberry/blueberry-banner-mobile.webp);
+        }
     }
     &.currant {
-        background-image: url(../img/banners/currant-banner.webp);
+        background-image: url(../img/banners/currant/currant-banner.webp);
+
+        @include tablet {
+            background-image: url(../img/banners/currant/currant-banner-tablet.webp);
+        }
+        @include mobile {
+            background-image: url(../img/banners/currant/currant-banner-mobile.webp);
+        }
     }
     &.gooseberry {
-        background-image: url(../img/banners/gooseberry-banner.webp);
+        background-image: url(../img/banners/gooseberry/gooseberry-banner.webp);
+
+        @include tablet {
+            background-image: url(../img/banners/gooseberry/gooseberry-banner-tablet.webp);
+        }
+        @include mobile {
+            background-image: url(../img/banners/gooseberry/gooseberry-banner-mobile.webp);
+        }
     }
     &.honeysuckle {
-        background-image: url(../img/banners/honeysuckle-banner.webp);
+        background-image: url(../img/banners/honeysuckle/honeysuckle-banner.webp);
+
+        @include tablet {
+            background-image: url(../img/banners/honeysuckle/honeysuckle-banner-tablet.webp);
+        }
+        @include mobile {
+            background-image: url(../img/banners/honeysuckle/honeysuckle-banner-mobile.webp);
+        }
     }
     &.honey {
-        background-image: url(../img/banners/honey-banner.webp);
+        background-image: url(../img/banners/honey/honey-banner.webp);
+
+        @include tablet {
+            background-image: url(../img/banners/honey/honey-banner-tablet.webp);
+        }
+        @include mobile {
+            background-image: url(../img/banners/honey/honey-banner-mobile.webp);
+        }
     }
     &.blackberry {
-        background-image: url(../img/banners/blackberry-banner.webp);
+        background-image: url(../img/banners/blackberry/blackberry-banner.webp);
+
+        @include tablet {
+            background-image: url(../img/banners/blackberry/blackberry-banner-tablet.webp);
+        }
+        @include mobile {
+            background-image: url(../img/banners/blackberry/blackberry-banner-mobile.webp);
+        }
     }
     &.raspberries {
-        background-image: url(../img/banners/raspberries-banner.webp);
+        background-image: url(../img/banners/raspberries/raspberries-banner.webp);
+
+        @include tablet {
+            background-image: url(../img/banners/raspberries/raspberries-banner-tablet.webp);
+        }
+        @include mobile {
+            background-image: url(../img/banners/raspberries/raspberries-banner-mobile.webp);
+        }
     }
     &.lemon {
-        background-image: url(../img/banners/lemon-banner.webp);
+        background-image: url(../img/banners/lemon/lemon-banner.webp);
+
+        @include tablet {
+            background-image: url(../img/banners/lemon/lemon-banner-tablet.webp);
+        }
+        @include mobile {
+            background-image: url(../img/banners/lemon/lemon-banner-mobile.webp);
+        }
     }
     &.strawberry {
-        background-image: url(../img/banners/strawberry-banner.webp);
+        background-image: url(../img/banners/strawberry/strawberry-banner.webp);
+
+        @include tablet {
+            background-image: url(../img/banners/strawberry/strawberry-banner-tablet.webp);
+        }
+        @include mobile {
+            background-image: url(../img/banners/strawberry/strawberry-banner-mobile.webp);
+        }
+    }
+    &.azalea {
+        background-image: url(../img/banners/azalea/azalea-banner.webp);
+
+        @include tablet {
+            background-image: url(../img/banners/azalea/azalea-banner-tablet.webp);
+        }
+        @include mobile {
+            background-image: url(../img/banners/azalea/azalea-banner-mobile.webp);
+        }
+    }
+    &.thuja {
+        background-image: url(../img/banners/thuja/thuja-banner.webp);
+
+        @include tablet {
+            background-image: url(../img/banners/thuja/thuja-banner-tablet.webp);
+        }
+        @include mobile {
+            background-image: url(../img/banners/thuja/thuja-banner-mobile.webp);
+        }
+    }
+    &.mint {
+        background-image: url(../img/banners/mint/mint-banner.webp);
+
+        @include tablet {
+            background-image: url(../img/banners/mint/mint-banner-tablet.webp);
+        }
+        @include mobile {
+            background-image: url(../img/banners/mint/mint-banner-mobile.webp);
+        }
+    }
+    &.hydrangea {
+        background-image: url(../img/banners/hydrangea/hydrangea-banner.webp);
+
+        @include tablet {
+            background-image: url(../img/banners/hydrangea/hydrangea-banner-tablet.webp);
+        }
+        @include mobile {
+            background-image: url(../img/banners/hydrangea/hydrangea-banner-mobile.webp);
+        }
+    }
+    &.juniper {
+        background-image: url(../img/banners/juniper/juniper-banner.webp);
+
+        @include tablet {
+            background-image: url(../img/banners/juniper/juniper-banner-tablet.webp);
+        }
+        @include mobile {
+            background-image: url(../img/banners/juniper/juniper-banner-mobile.webp);
+        }
+    }
+    &.rhododendron {
+        background-image: url(../img/banners/rhododendron/rhododendron-banner.webp);
+
+        @include tablet {
+            background-image: url(../img/banners/rhododendron/rhododendron-banner-tablet.webp);
+        }
+        @include mobile {
+            background-image: url(../img/banners/rhododendron/rhododendron-banner-mobile.webp);
+        }
     }
 }
 .no-webp .banner {
     &.grapes {
-        background-image: url(../img/banners/grape-banner.jpg);
+        background-image: url(../img/banners/grape/grape-banner.jpg);
+
+        @include tablet {
+            background-image: url(../img/banners/grape/grape-banner-tablet.jpg);
+        }
+        @include mobile {
+            background-image: url(../img/banners/grape/grape-banner-mobile.jpg);
+        }
     }
     &.blueberry {
-        background-image: url(../img/banners/blueberry-banner.jpg);
+        background-image: url(../img/banners/blueberry/blueberry-banner.jpg);
+
+        @include tablet {
+            background-image: url(../img/banners/blueberry/blueberry-banner-tablet.jpg);
+        }
+        @include mobile {
+            background-image: url(../img/banners/blueberry/blueberry-banner-mobile.jpg);
+        }
     }
     &.currant {
-        background-image: url(../img/banners/currant-banner.jpg);
+        background-image: url(../img/banners/currant/currant-banner.jpg);
+
+        @include tablet {
+            background-image: url(../img/banners/currant/currant-banner-tablet.jpg);
+        }
+        @include mobile {
+            background-image: url(../img/banners/currant/currant-banner-mobile.jpg);
+        }
     }
     &.gooseberry {
-        background-image: url(../img/banners/gooseberry-banner.jpg);
+        background-image: url(../img/banners/gooseberry/gooseberry-banner.jpg);
+
+        @include tablet {
+            background-image: url(../img/banners/gooseberry/gooseberry-banner-tablet.jpg);
+        }
+        @include mobile {
+            background-image: url(../img/banners/gooseberry/gooseberry-banner-mobile.jpg);
+        }
     }
     &.honeysuckle {
-        background-image: url(../img/banners/honeysuckle-banner.jpg);
+        background-image: url(../img/banners/honeysuckle/honeysuckle-banner.jpg);
+
+        @include tablet {
+            background-image: url(../img/banners/honeysuckle/honeysuckle-banner-tablet.jpg);
+        }
+        @include mobile {
+            background-image: url(../img/banners/honeysuckle/honeysuckle-banner-mobile.jpg);
+        }
     }
     &.honey {
-        background-image: url(../img/banners/honey-banner.jpg);
+        background-image: url(../img/banners/honey/honey-banner.jpg);
+
+        @include tablet {
+            background-image: url(../img/banners/honey/honey-banner-tablet.jpg);
+        }
+        @include mobile {
+            background-image: url(../img/banners/honey/honey-banner-mobile.jpg);
+        }
     }
     &.blackberry {
-        background-image: url(../img/banners/blackberry-banner.jpg);
+        background-image: url(../img/banners/blackberry/blackberry-banner.jpg);
+
+        @include tablet {
+            background-image: url(../img/banners/blackberry/blackberry-banner-tablet.jpg);
+        }
+        @include mobile {
+            background-image: url(../img/banners/blackberry/blackberry-banner-mobile.jpg);
+        }
     }
     &.raspberries {
-        background-image: url(../img/banners/raspberries-banner.jpg);
+        background-image: url(../img/banners/raspberries/raspberries-banner.jpg);
+
+        @include tablet {
+            background-image: url(../img/banners/raspberries/raspberries-banner-tablet.jpg);
+        }
+        @include mobile {
+            background-image: url(../img/banners/raspberries/raspberries-banner-mobile.jpg);
+        }
     }
     &.lemon {
-        background-image: url(../img/banners/lemon-banner.jpg);
+        background-image: url(../img/banners/lemon/lemon-banner.jpg);
+
+        @include tablet {
+            background-image: url(../img/banners/lemon/lemon-banner-tablet.jpg);
+        }
+        @include mobile {
+            background-image: url(../img/banners/lemon/lemon-banner-mobile.jpg);
+        }
     }
     &.strawberry {
-        background-image: url(../img/banners/strawberry-banner.jpg);
+        background-image: url(../img/banners/strawberry/strawberry-banner.jpg);
+
+        @include tablet {
+            background-image: url(../img/banners/strawberry/strawberry-banner-tablet.jpg);
+        }
+        @include mobile {
+            background-image: url(../img/banners/strawberry/strawberry-banner-mobile.jpg);
+        }
+    }
+    &.azalea {
+        background-image: url(../img/banners/azalea/azalea-banner.jpg);
+
+        @include tablet {
+            background-image: url(../img/banners/azalea/azalea-banner-tablet.jpg);
+        }
+        @include mobile {
+            background-image: url(../img/banners/azalea/azalea-banner-mobile.jpg);
+        }
+    }
+    &.thuja {
+        background-image: url(../img/banners/thuja/thuja-banner.jpg);
+
+        @include tablet {
+            background-image: url(../img/banners/thuja/thuja-banner-tablet.jpg);
+        }
+        @include mobile {
+            background-image: url(../img/banners/thuja/thuja-banner-mobile.jpg);
+        }
+    }
+    &.mint {
+        background-image: url(../img/banners/mint/mint-banner.jpg);
+
+        @include tablet {
+            background-image: url(../img/banners/mint/mint-banner-tablet.jpg);
+        }
+        @include mobile {
+            background-image: url(../img/banners/mint/mint-banner-mobile.jpg);
+        }
+    }
+    &.hydrangea {
+        background-image: url(../img/banners/hydrangea/hydrangea-banner.jpg);
+
+        @include tablet {
+            background-image: url(../img/banners/hydrangea/hydrangea-banner-tablet.jpg);
+        }
+        @include mobile {
+            background-image: url(../img/banners/hydrangea/hydrangea-banner-mobile.jpg);
+        }
+    }
+    &.juniper {
+        background-image: url(../img/banners/juniper/juniper-banner.jpg);
+
+        @include tablet {
+            background-image: url(../img/banners/juniper/juniper-banner-tablet.jpg);
+        }
+        @include mobile {
+            background-image: url(../img/banners/juniper/juniper-banner-mobile.jpg);
+        }
+    }
+    &.rhododendron {
+        background-image: url(../img/banners/rhododendron/rhododendron-banner.jpg);
+
+        @include tablet {
+            background-image: url(../img/banners/rhododendron/rhododendron-banner-tablet.jpg);
+        }
+        @include mobile {
+            background-image: url(../img/banners/rhododendron/rhododendron-banner-mobile.jpg);
+        }
     }
 }

@@ -1,0 +1,46 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Рододендрон | Питомник растительных культур семьи Пухальских";
+
+block content
+
+    - let catalogTitle = 'Рододендрон';
+    -
+        let catalogItems = [
+            {
+                'link': './rhododendron/hania.html',
+                'imgSrc': 'rhododendron/hania/hania-md',
+                'name': "Hania"
+            },
+            {
+                'link': './rhododendron/marie-forte.html',
+                'imgSrc': 'rhododendron/marie-forte/marie-forte-md',
+                'name': "Marie Forte"
+            },
+            {
+                'link': './rhododendron/p-j-m-elite.html',
+                'imgSrc': 'rhododendron/p-j-m-elite/p-j-m-elite-md',
+                'name': "P.J.M.Elite"
+            },
+            {
+                'link': './rhododendron/percy-wiseman.html',
+                'imgSrc': 'rhododendron/percy-wiseman/percy-wiseman-md',
+                'name': "Percy Wiseman"
+            },
+        ]
+
+    include ../../blocks/components/banner/banner
+    +banner("rhododendron")
+
+    section.catalog
+        .container
+            .catalog__wrap
+                include ../../blocks/modules/aside/aside
+                include ../../blocks/modules/catalog/catalog
+
+                +catalog(catalogItems, catalogTitle)
+
+block scripts
+    script(src="./js/main.js")
+    script(src="./js/vendor.js")

@@ -1,0 +1,106 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Азалия 'Голден Лайтс'";
+    - const banner = "azalea"
+
+block content
+    - const productTitle = "Голден Лайтс";
+    - const imgPath = "../img/azalea/";
+    - const addInfo = "Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'golden-lights/golden-lights',
+                'alt': "Азалия 'Голден Лайтс'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Азалия Голден Лайтс (Golden Lights) - лиственный кустарник, растущий до высоты от 1,5 до 1,75 м, листья зеленые, желтые цветы насыщенным ароматом, цветение обильное. Азалии требуют света, кислотность почвы рН 4-5, предпочитает полутень.
+                                        | Полив летом 3-4 раза в неделю, зимой 2. В жаркие дни нуждается в опрыскивании листьев. Оптимальная температура от + 5°С до +22°С. Пересаживание раз в 2-3 года, после цветения. Медленнорастущий. Морозостоек.
+                                        br
+                                        | Размер:
+                                        br
+                                        | - Обычно 1,5 м высотой и шириной
+                                        br
+                                        br
+                                        | Габитус:
+                                        br
+                                        | - подушковидный, компактный кустарник, медленнорастущий
+                                        br
+                                        br
+                                        | Период цветения:
+                                        br
+                                        | - Конец мая - середина июня
+                                        br
+                                        br
+                                        | Корневая система:
+                                        br
+                                        | - Поверхностная, чувствительная к уплотнению почвы, рыхлению и затоплению
+                                        br
+                                        br
+                                        | Требования к освещенности:
+                                        br
+                                        | - Полутень
+                                        br
+                                        br
+                                        | Условия выращивания:
+                                        br
+                                        | - Предпочитает прохладные и влажные места, защищенное местоположение; рыхлую, богатую гумусом, хорошо дренированную, суглинистую почву; от очень кислой до подкисленной; следует избегать застойного увлажнения и уплотнения; хорошо переносит стрижку
+
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

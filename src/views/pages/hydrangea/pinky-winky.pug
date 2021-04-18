@@ -1,0 +1,79 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Гортензия 'Pinky Winky'";
+    - const banner = "hydrangea"
+
+block content
+    - const productTitle = "Pinky Winky";
+    - const imgPath = "../img/hydrangea/";
+    - const addInfo = "Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'pinky-winky/pinky-winky',
+                'alt': "Гортензия 'Pinky Winky'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Гортензия метельчатая "Пинки Винки" (Pinky Winky)
+                                    p
+                                        | Это прекрасный пышный и в то же время компактный кустарник, имеющий неповторимые соцветия, сменяющие тон на протяжении цветения. Листья у сорта крупные, содержат легкое опушение на верхней их части. В летний период они имеют насыщенный зеленый тон, к осени становятся ярко-красными. Явным изыском сорта этой гортензии является конусовидное соцветие (кисть), длина которого составляет до 20 см. В него собраны как стерильные, так и плодные цветки. Зацветает гортензия Пинки в середине лета (примерно с 10 числа июля), длится цветение до наступления холодов (в октябре).
+                                        | Особое внимание стоит обратить на количество света в том месте, где будет расти гортензия Pinky Winky. Стоит отдавать предпочтение той зоне, которая находится постоянно под хорошим освещением. Метельчатая гортензия характеризуется достаточной светолюбивостью. Пинки нормально отзывается на непродолжительное притенение в течение дня. Вторым моментом в выборе места выступает ветер. Этот сорт не любит обветривания, поэтому участок должен быть максимально защищен от ветра.
+                                        | Почва должна быть рыхлой, хорошо пропускать влагу и воздух, чтобы растению хватало питания. Заранее необходимо позаботиться об органических удобрениях. Навоз нельзя вносить в почву при посадке Пинки. Он в процессе перепревания начинает повышать температуру земли, что плохо влияет на состояние корней и всего кустарника. Поэтому необходимо заранее приобрести перегной или заложить навоз, чтобы он перепрел. Посадка сорта на постоянное место.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

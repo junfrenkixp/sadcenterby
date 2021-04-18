@@ -1,0 +1,56 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Гортензия | Питомник растительных культур семьи Пухальских";
+
+block content
+
+    - let catalogTitle = 'Гортензия';
+    -
+        let catalogItems = [
+            {
+                'link': './hydrangea/magical-candle.html',
+                'imgSrc': 'hydrangea/magical-candle/magical-candle-md',
+                'name': "Magical Candle"
+            },
+            {
+                'link': './hydrangea/pinky-winky.html',
+                'imgSrc': 'hydrangea/pinky-winky/pinky-winky-md',
+                'name': "Pinky Winky"
+            },
+            {
+                'link': './hydrangea/skyfall.html',
+                'imgSrc': 'hydrangea/skyfall/skyfall-md',
+                'name': "Skyfall"
+            },
+            {
+                'link': './hydrangea/vanille-fraise.html',
+                'imgSrc': 'hydrangea/vanille-fraise/vanille-fraise-md',
+                'name': "Vanille Fraise"
+            },
+            {
+                'link': './hydrangea/wims-red.html',
+                'imgSrc': 'hydrangea/wims-red/wims-red-md',
+                'name': "Wims Red"
+            },
+            {
+                'link': './hydrangea/chereshkovaya.html',
+                'imgSrc': 'hydrangea/chereshkovaya/chereshkovaya-md',
+                'name': "Гортензия черешковая"
+            },
+        ]
+
+    include ../../blocks/components/banner/banner
+    +banner("hydrangea")
+
+    section.catalog
+        .container
+            .catalog__wrap
+                include ../../blocks/modules/aside/aside
+                include ../../blocks/modules/catalog/catalog
+
+                +catalog(catalogItems, catalogTitle)
+
+block scripts
+    script(src="./js/main.js")
+    script(src="./js/vendor.js")
