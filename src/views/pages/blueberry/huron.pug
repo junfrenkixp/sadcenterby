@@ -1,0 +1,91 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Голубика 'Гурон'";
+    - const banner = "blueberry"
+
+block content
+    - const productTitle = "Гурон";
+    - const imgPath = "../img/blueberry/";
+    - const addInfo = "Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны. К продукции прилагается наша аннотация по уходу (обработка, посадка)."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'huron/huron',
+                'alt': "Голубика 'Гурон'"
+            },
+            {
+                'imgPath': 'huron/huron-2',
+                'alt': "Голубика 'Гурон'"
+            }
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | «Гурон» (Huron) один новых сортов голубики нашего питомника.
+                                        br
+                                        | Прямой куст 1,5-1,6м.
+                                        br
+                                        | Ширина +- 1.2м
+                                        br
+                                        | Цветёт поздно, не боится возвратных заморозков. Отлично себя зарекомендовал в паре с сортами «Ханна-Чойс», «Река», «Чандлер», «Аврора».
+                                        br
+                                        | Ягоды 16-18мм в диаметре, массой 1.5-1.7г.
+                                        br
+                                        | Очень сладкие, созревание дружное.
+                                        br
+                                        | Устойчивость к заболеваниям изучается.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")

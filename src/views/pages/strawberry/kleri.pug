@@ -1,0 +1,87 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Клубника 'Клери'";
+    - const banner = "strawberry"
+
+block content
+    - const productTitle = "Клери";
+    - const imgPath = "../img/strawberry/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'kleri/kleri',
+                'alt': "Клубника 'Клери'"
+            },
+            {
+                'imgPath': 'kleri/kleri-2',
+                'alt': "Клубника 'Клери'"
+            },
+            {
+                'imgPath': 'kleri/kleri-3',
+                'alt': "Клубника 'Клери'"
+            },
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Клубника Клери — это сильный, мощный, среднеоблиственный куст. В нём красиво всё: огромные блестящие листья насыщенного зелёного цвета, белоснежные цветки и крупные округло-удлиненные ягоды с притупленным кончиком. Соцветия расположены на уровне листьев. Усообразовательная способность высокая. Плоды выровненные, среднего размера, хотя первые ягоды крупные: 40-50 г. В течение всего периода плодоношения ягоды остаются оптимального размера и формы для реализации. Урожайность сорта отличная, в теплицах умножается в 2 раза.
+                                    p
+                                        | Проблем с завязыванием ягод у сорта Клери нет, по этому параметру она один из фаворитов. Есть отзывы об успешном зимнем выращивании сорта в цветочных горшках, размещенных в квартире.
+                                    p
+                                        | Цвести Клери начинает в начале мая. Уже через месяц можно лакомиться вкусными ягодами. Плоды плотные, сочные, не образуют пустот в середине.
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")
