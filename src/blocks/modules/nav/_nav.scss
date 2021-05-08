@@ -71,6 +71,51 @@
             width: 100%;
         }
 
+        &._sublist {
+            > a {
+                position: relative;
+                padding-right: 25px;
+
+                @include tablet {
+                    padding-right: 15px;
+                }
+
+                &:after {
+                    content: '';
+                    @include align(false, true);
+                    right: 10px;
+                    width: 10px;
+                    height: 10px;
+                    background-image: url(../img/svg/arrow-down.svg);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+
+                    @include tablet {
+                        top: 49%;
+                        right: 0;
+                        width: 8px;
+                        height: 8px;
+                    }
+                    @include mobile {
+                        content: none;
+                    }
+                }
+                &:hover {
+                    &:after {
+                        background-image: url(../img/svg/arrow-down-green.svg);
+                    }
+                }
+            }
+
+            &.active {
+                > a {
+                    &:after {
+                        background-image: url(../img/svg/arrow-down-green.svg);
+                    }
+                }
+            }
+        }
+
         &__sublist {
             display: none;
             position: absolute;
