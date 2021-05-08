@@ -2,6 +2,10 @@
     background-color: $dark-bg-color;
     color: $white-color;
 
+    address {
+        font-style: normal;
+    }
+
     .copyright {
         &__wrap {
             border-top: 1px solid #33373b;
