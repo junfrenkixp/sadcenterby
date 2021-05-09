@@ -3,8 +3,6 @@
     &-wrap {
         position: relative;
         height: 600px;
-        background-image: -webkit-linear-gradient(45deg, rgb(105, 175, 7), rgb(122, 206, 5));
-        background-image: -moz-linear-gradient(45deg, rgb(105, 175, 7), rgb(122, 206, 5));
         background-image: linear-gradient(45deg, rgb(105, 175, 7), rgb(122, 206, 5));
 
         @include tablet {
@@ -44,63 +42,35 @@
         }
     }
 
-    &__left-wrap, &__right-wrap {
+    .slick-dots {
         display: flex;
-        align-items: center;
-        justify-content: center;
         position: absolute;
-        z-index: 1000000;
-        top: 0;
-        bottom: 0;
-        width: 100px;
-        cursor: pointer;
-
-        @include mobile {
-            width: 60px;
-        }
-
-        &:hover {
-            svg {
-                fill: lighten($black-color, 5%);
-            }
-        }
-
-        svg {
-            width: 30px;
-            height: 50px;
-            transition: .3s;
-            fill: $black-color;
-
-            @include tablet {
-                width: 18px;
-                height: 40px;
-            }
-
-            @include mobile {
-                width: 18px;
-                height: 30px;
-            }
-        }
-    }
-
-    &__left-wrap {
-        left: 0;
-        background: linear-gradient(90deg, #38423b 0%, rgba(196, 196, 196, 0) 100%);
-
-        &:hover {
-            svg {
-                transform: translateX(-10px);
-            }
-        }
-    }
-
-    &__right-wrap {
         right: 0;
-        background: linear-gradient(270deg, #38423b 0%, rgba(196, 196, 196, 0) 100%);
+        bottom: -2px;
+        left: 0;
 
-        &:hover {
-            svg {
-                transform: translateX(10px);
+        li {
+            flex: 1;
+            width: auto;
+            height: auto;
+            margin: 0;
+
+            button {
+                width: 100%;
+                height: 4px;
+                padding: 0;
+                background-color: #dcdee4;
+                opacity: .8;
+
+                &:before {
+                    content: none;
+                }
+            }
+
+            &.slick-active {
+                button {
+                    background-color: #69af07;
+                }
             }
         }
     }
