@@ -30,6 +30,7 @@
         }
 
         &-heading {
+            display: block;
             padding: 12px 15px;
             font-size: 17px;
             font-weight: 400;
@@ -39,6 +40,10 @@
         &-info {
             padding: 12px 15px;
             font-weight: 500;
+        }
+        
+        a {
+            text-decoration: underline;
         }
     }
 }
