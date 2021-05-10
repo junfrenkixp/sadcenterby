@@ -1,0 +1,91 @@
+extends ../../layouts/product-item
+
+block variables
+    - const title = "Клубника 'Сан Андреа'";
+    - const banner = "strawberry"
+
+block content
+    - const productTitle = "Сан Андреа";
+    - const imgPath = "../img/strawberry/";
+    - const addInfo = "Гарантия 1 год. Саженцы двухлетние, трехлетние, закрытая корневая система, выращено в открытом грунте, обработаны."
+    -
+        const postImgs = [
+            {
+                'img': '../img/product/post-1',
+                'alt': 'M&M'
+            },
+            {
+                'img': '../img/product/post-2',
+                'alt': 'Белпочта'
+            },
+            {
+                'img': '../img/product/post-3',
+                'alt': 'Европочта'
+            }
+        ]
+    -
+        const productImgs = [
+            {
+                'imgPath': 'san-andrea/san-andrea',
+                'alt': "Клубника 'Сан Андреа'"
+            }
+        ]
+
+    section.product
+        .container
+            .product__wrap
+                .product__inner
+                    .product__row
+                        .product__gallery
+                            .product__gallery-main
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '.jpg' alt=productImg.alt)
+
+                            .product__gallery-nav
+                                each productImg in productImgs
+                                    picture
+                                        source(srcset=imgPath + productImg.imgPath + '-sm.webp' type="image/webp")
+                                        img(src=imgPath + productImg.imgPath + '-sm.jpg' alt=productImg.alt)
+
+                        .product__info
+                            h2.heading.page__heading= productTitle
+                            .product__info-wrap
+                                .product__info-descr
+                                    p
+                                        | Альбион и отбор Cal 97.86-1. 2002 год, южная Калифорния, США.
+                                        br
+                                        | Ягода твердая, блестящая, продолговатой формы с закругленным концом.
+                                        br
+                                        | Масса 25-35г.
+                                        br
+                                        | На вкус сочная и сладкая, с небольшой кислинкой.
+                                        br
+                                        | На кусте встречается около 10 цветоносов, несущих потенциальный урожай от 450-800гр.
+                                        br
+                                        | Имеет более высокую устойчивость к разным заболеваниям, загниванию и повышенным температурам, чем «Альбион».
+                                        br
+                                        | Каждые 5-7 недель у культуры наступает пик плодоношения (на сезон 4-5 волн).
+                                        br
+                                        | Плохо растет в песчанике и плотной почве. Идеальным является питательный чернозем с небольшими торфяными добавками.
+                                        br
+                                        | Некоторые утверждают, что знаменитый SJ лично сам одобрил название сорта
+
+                .add-info
+                    h2.heading.add-info__heading Дополнительная информация
+                    .add-info__text
+                        p.add-info__descr= addInfo
+
+                .info-logo__wrap
+                    ul.info-logo__list
+                        each post in postImgs
+                            li.info-logo__item
+                                picture
+                                    source(srcset=post.img+'.webp' type="image/webp")
+                                    img(src=post.img+'.png' alt=post.alt)
+
+
+block scripts
+    script(src="../js/main.js")
+    script(src="../js/vendor.js")
