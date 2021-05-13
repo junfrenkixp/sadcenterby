@@ -20,15 +20,15 @@
         position: relative;
         height: 600px;
         overflow: hidden;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
 
         @include tablet {
             height: 400px;
         }
         @include mobile {
             height: 300px;
-        }
-        @include mobile-m {
-            height: 250px;
         }
 
         img {
@@ -39,6 +39,163 @@
             height: 100%;
             transform: translateY(-50%);
             object-fit: cover;
+        }
+        
+        &--grape {
+            background-image: url(../img/main-slider/main-slider-grape.jpg);
+
+            @include tablet {
+                background-image: url(../img/main-slider/main-slider-grape-tablet.jpg);
+            }
+            @include mobile {
+                background-image: url(../img/main-slider/main-slider-grape-mobile.jpg);
+            }
+        }
+        &--gooseberry {
+            background-image: url(../img/main-slider/main-slider-gooseberry.jpg);
+
+            @include tablet {
+                background-image: url(../img/main-slider/main-slider-gooseberry-tablet.jpg);
+            }
+            @include mobile {
+                background-image: url(../img/main-slider/main-slider-gooseberry-mobile.jpg);
+            }
+        }
+        &--blueberry {
+            background-image: url(../img/main-slider/main-slider-blueberry.jpg);
+
+            @include tablet {
+                background-image: url(../img/main-slider/main-slider-blueberry-tablet.jpg);
+            }
+            @include mobile {
+                background-image: url(../img/main-slider/main-slider-blueberry-mobile.jpg);
+            }
+        }
+        &--currant {
+            background-image: url(../img/main-slider/main-slider-currant.jpg);
+
+            @include tablet {
+                background-image: url(../img/main-slider/main-slider-currant-tablet.jpg);
+            }
+            @include mobile {
+                background-image: url(../img/main-slider/main-slider-currant-mobile.jpg);
+            }
+        }
+        &--honeysuckle {
+            background-image: url(../img/main-slider/main-slider-honeysuckle.jpg);
+
+            @include tablet {
+                background-image: url(../img/main-slider/main-slider-honeysuckle-tablet.jpg);
+            }
+            @include mobile {
+                background-image: url(../img/main-slider/main-slider-honeysuckle-mobile.jpg);
+            }
+        }
+    }
+
+    .slider__info {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        width: 50%;
+        padding: 60px;
+        background-color: rgba(255, 255, 255, .9);
+
+        @include laptop {
+            padding: 45px;
+        }
+        @include tablet {
+            padding: 40px;
+        }
+        @include mobile {
+            padding: 28px;
+        }
+        @include mobile-m {
+            padding: 10px;
+        }
+        @include mobile-s {
+            padding: 10px;
+        }
+
+        &-title {
+            margin: 0;
+            font-size: 62px;
+            line-height: 73px;
+            color: #69af07;
+
+            @include tablet {
+                font-size: 44px;
+                line-height: 52px;
+            }
+            @include mobile {
+                font-size: 20px;
+                line-height: 23px;
+            }
+        }
+
+        &-subtitle {
+            margin: 0 0 46px;
+            font-weight: 500;
+            font-size: 46px;
+            line-height: 54px;
+            color: #69af07;
+
+            @include tablet {
+                margin: 0 0 28px;
+                font-size: 32px;
+                line-height: 37px;
+            }
+            @include mobile {
+                margin: 0 0 20px;
+                font-size: 18px;
+                line-height: 21px;
+            }
+            @include mobile-m {
+                margin: 0 0 10px;
+            }
+            @include mobile-s {
+                margin: 0 0 10px;
+            }
+        }
+
+        &-list {
+            margin: 0 0 40px;
+            padding: 0;
+            list-style-type: none;
+
+            @include tablet {
+                margin: 0 0 28px;
+            }
+            @include mobile {
+                margin: 0 0 20px;
+            }
+            @include mobile-m {
+                margin: 0 0 10px;
+            }
+            @include mobile-s {
+                margin: 0 0 10px;
+            }
+        }
+
+        &-item {
+            font-weight: 300;
+            font-size: 30px;
+            line-height: 38px;
+            color: #69af07;
+
+            @include tablet {
+                font-size: 22px;
+                line-height: 26px;
+            }
+            @include mobile {
+                font-size: 16px;
+                line-height: 19px;
+            }
         }
     }
 

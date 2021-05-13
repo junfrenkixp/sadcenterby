@@ -1,5 +1,5 @@
 -
-  var slides = [
+  const slides = [
     {
       'alt': 'Садцентр превью',
       'imgPath': './img/main-slider/',
@@ -15,20 +15,63 @@
 
 .container-fluid
   section.main-slider-wrap
-    h2.visually-hidden Главный слайдер
+    h1.visually-hidden Главный слайдер
     .main-slider
-      each slide in slides
-        .slider__item
-          picture
-            source(srcset=slide.imgPath+slide.desktopImg+'.webp, '+slide.imgPath+slide.desktopRetinaImg+'.webp 2x' media="(min-width: 1367px)" type="image/webp")
-            source(srcset=slide.imgPath+slide.desktopImg+'.jpg, '+slide.imgPath+slide.desktopRetinaImg+'.jpg 2x' media="(min-width: 1367px)")
-            source(srcset=slide.imgPath+slide.laptopImg+'.webp' media="(min-width: 1025px)" type="image/webp")
-            source(srcset=slide.imgPath+slide.laptopImg+'.jpg' media="(min-width: 1025px)")
-            source(srcset=slide.imgPath+slide.tabletImg+'.webp' media="(min-width: 769px)" type="image/webp")
-            source(srcset=slide.imgPath+slide.tabletImg+'.jpg' media="(min-width: 769px)")
-            source(srcset=slide.imgPath+slide.mobileLImg+'.webp' media="(min-width: 425px)" type="image/webp")
-            source(srcset=slide.imgPath+slide.mobileLImg+'.jpg' media="(min-width: 425px)")
-            source(srcset=slide.imgPath+slide.mobileImg+'.webp' media="(min-width: 376px)" type="image/webp")
-            source(srcset=slide.imgPath+slide.mobileImg+'.jpg' media="(min-width: 376px)")
-            source(srcset=slide.imgPath + slide.mobileMImg + '.webp' type="image/webp")
-            img(src=slide.imgPath+slide.mobileMImg+'.jpg' alt=slide.alt)
+      .slider__item
+        picture
+          source(srcset=slides[0].imgPath + slides[0].desktopImg + '.webp, ' + slides[0].imgPath + slides[0].desktopRetinaImg + '.webp 2x' media="(min-width: 1367px)" type="image/webp")
+          source(srcset=slides[0].imgPath + slides[0].desktopImg + '.jpg, ' + slides[0].imgPath + slides[0].desktopRetinaImg + '.jpg 2x' media="(min-width: 1367px)")
+          source(srcset=slides[0].imgPath + slides[0].laptopImg + '.webp' media="(min-width: 1025px)" type="image/webp")
+          source(srcset=slides[0].imgPath + slides[0].laptopImg + '.jpg' media="(min-width: 1025px)")
+          source(srcset=slides[0].imgPath + slides[0].tabletImg + '.webp' media="(min-width: 769px)" type="image/webp")
+          source(srcset=slides[0].imgPath + slides[0].tabletImg + '.jpg' media="(min-width: 769px)")
+          source(srcset=slides[0].imgPath + slides[0].mobileLImg + '.webp' media="(min-width: 425px)" type="image/webp")
+          source(srcset=slides[0].imgPath + slides[0].mobileLImg + '.jpg' media="(min-width: 425px)")
+          source(srcset=slides[0].imgPath + slides[0].mobileImg + '.webp' media="(min-width: 376px)" type="image/webp")
+          source(srcset=slides[0].imgPath + slides[0].mobileImg + '.jpg' media="(min-width: 376px)")
+          source(srcset=slides[0].imgPath + slides[0].mobileMImg + '.webp' type="image/webp")
+          img(src=slides[0].imgPath + slides[0].mobileMImg + '.jpg' alt=slides[0].alt)
+      .slider__item.slider__item--grape
+        .slider__info
+          h2.slider__info-title Виноград
+          h3.slider__info-subtitle Лучшие сорта
+          ul.slider__info-list
+            li.slider__info-item 130 сортов
+            li.slider__info-item Открытый грунт
+            li.slider__info-item Закрытая корневая система
+            li.slider__info-item Лучшие сорта для климата РБ
+          a(href="./grapes.html").btn.btn-primary Подробнее
+      .slider__item.slider__item--blueberry
+        .slider__info
+          h2.slider__info-title Голубика
+          h3.slider__info-subtitle Элитные сорта
+          ul.slider__info-list
+            li.slider__info-item Крупная ягода
+            li.slider__info-item Открытый грунт
+            li.slider__info-item Закрытая корневая система
+          a(href="./blueberry.html").btn.btn-primary Подробнее
+      .slider__item.slider__item--honeysuckle
+        .slider__info
+          h2.slider__info-title Жимолость
+          h3.slider__info-subtitle Отборные сорта
+          ul.slider__info-list
+            li.slider__info-item Русская/канадская селекция
+            li.slider__info-item Закрытая корневая система
+          a(href="./honeysuckle.html").btn.btn-primary Подробнее
+      .slider__item.slider__item--currant
+        .slider__info
+          h2.slider__info-title Смородина
+          h3.slider__info-subtitle Крупные сорта
+          ul.slider__info-list
+            li.slider__info-item Закрытая корневая система
+            li.slider__info-item Новинки селекции и проверенные временем сорта
+          a(href="./currant.html").btn.btn-primary Подробнее
+      .slider__item.slider__item--gooseberry
+        .slider__info
+          h2.slider__info-title Крыжовник
+          h3.slider__info-subtitle Эксклюзивные сорта
+          ul.slider__info-list
+            li.slider__info-item Крупноплодный
+            li.slider__info-item Бесшипный
+            li.slider__info-item Десертные сорта
+          a(href="./gooseberry.html").btn.btn-primary Подробнее

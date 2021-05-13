@@ -10,6 +10,15 @@ window.addEventListener("DOMContentLoaded", function() {
         arrows: false,
         swipe: false,
         autoplay: true,
-        autoplaySpeed: 5000,
+        autoplaySpeed: 4000,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    swipe: true,
+                    autoplaySpeed: 2200,
+                }
+            }
+        ]
     });
 });
