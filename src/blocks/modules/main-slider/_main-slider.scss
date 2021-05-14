@@ -156,10 +156,10 @@
                 line-height: 21px;
             }
             @include mobile-m {
-                margin: 0 0 10px;
+                margin: 0 0 15px;
             }
             @include mobile-s {
-                margin: 0 0 10px;
+                margin: 0 0 15px;
             }
         }
 
@@ -205,6 +205,10 @@
         right: 0;
         bottom: -2px;
         left: 0;
+
+        @include tablet-and-phone {
+            bottom: -1px;
+        }
 
         li {
             flex: 1;
